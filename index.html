@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fearless Diving — Scuba Adventures</title>
+  <meta name="description" content="Fearless Diving — guided scuba tours, certification courses, and unforgettable underwater experiences." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#">
+        <!-- Inline SVG logo -->
+        <svg width="40" height="40" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <circle cx="32" cy="32" r="30" fill="#0b6e8a"/>
+          <path d="M18 38c6-8 14-12 22-9" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M38 46c-6-8-14-12-22-9" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.9"/>
+        </svg>
+        <span>Fearless Diving</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
+        <ul id="nav-list" class="nav-list">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <h1>Discover the Ocean — Dive with Confidence</h1>
+        <p class="lead">Guided dives, SSI/PADI courses, and custom experiences for beginners to advanced divers.</p>
+        <p class="ctas">
+          <a class="btn primary" href="mailto:info@fearlessdiving.com?subject=Booking%20Inquiry">Book a Dive</a>
+          <a class="btn ghost" href="#services">Our Services</a>
+        </p>
+      </div>
+    </section>
+
+    <section id="services" class="services container">
+      <h2>Our Services</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Guided Dives</h3>
+          <p>Explore reefs, wrecks and marine life with our certified guides — small groups for a personal experience.</p>
+        </article>
+
+        <article class="card">
+          <h3>Certification Courses</h3>
+          <p>PADI and SSI certification programs from Open Water through Divemaster — flexible schedules and experienced instructors.</p>
+        </article>
+
+        <article class="card">
+          <h3>Private Charters</h3>
+          <p>Private boat charters for groups, photography trips, and custom itineraries tailored to your level and interests.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container about-inner">
+        <div class="about-text">
+          <h2>About Fearless Diving</h2>
+          <p>We are a small team of passionate instructors and dive guides focused on safety, education, and unforgettable underwater adventures. Whether you're trying scuba for the first time or logging your 500th dive, we craft experiences that fit your goals.</p>
+          <ul>
+            <li>Experienced, certified instructors</li>
+            <li>Modern, well-maintained equipment</li>
+            <li>Eco-conscious practices and local conservation support</li>
+          </ul>
+        </div>
+        <div class="about-cta">
+          <div class="card card-cta">
+            <h3>Ready to dive in?</h3>
+            <p>Contact us to reserve your spot or ask about certifications.</p>
+            <a class="btn primary" href="mailto:info@fearlessdiving.com?subject=Certification%20Inquiry">Get in touch</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="testimonials container">
+      <h2>What Divers Say</h2>
+      <div class="testi-grid">
+        <blockquote>
+          "Incredible guides, amazing visibility — one of our best dive trips ever!"<cite>— Alex M.</cite>
+        </blockquote>
+        <blockquote>
+          "Professional instruction and patient teachers. I got certified in 3 days!"<cite>— Priya S.</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <section id="contact" class="contact container">
+      <h2>Contact & Booking</h2>
+      <div class="contact-grid">
+        <div>
+          <p>Email: <a href="mailto:info@fearlessdiving.com">info@fearlessdiving.com</a></p>
+          <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+          <p>Address: 123 Ocean Way, Seaside Town</p>
+        </div>
+        <div>
+          <form action="mailto:info@fearlessdiving.com" method="post" enctype="text/plain" class="contact-form">
+            <label>
+              Name
+              <input type="text" name="name" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" required />
+            </label>
+            <label>
+              Message
+              <textarea name="message" rows="4" required></textarea>
+            </label>
+            <div class="form-actions">
+              <button type="submit" class="btn primary">Send</button>
+              <button type="reset" class="btn ghost">Reset</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Fearless Diving — All rights reserved.</p>
+      <p class="socials">
+        <a href="#" aria-label="Instagram">Instagram</a> ·
+        <a href="#" aria-label="Facebook">Facebook</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Populate year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navList = document.getElementById('nav-list');
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!expanded));
+      navList.classList.toggle('open');
+    });
+
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
