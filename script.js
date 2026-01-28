@@ -26,29 +26,8 @@ function toggleMenu() {
 
 // WhatsApp Booking Logic
 function bookNow(serviceName, price) {
-    const phone = "919876543210"; // Replace with real number
+    const phone = "919876543210"; 
     const text = `Hello FearLess Diving, I am interested in booking: ${serviceName} (${price}). Please provide more details.`;
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank');
-}
-
-// Search Functionality (Front-end Filter)
-function filterServices() {
-    const input = document.getElementById('searchInput');
-    const filter = input.value.toUpperCase();
-    const cards = document.querySelectorAll('.service-card');
-
-    cards.forEach(card => {
-        const title = card.getAttribute('data-title');
-        if (title.toUpperCase().indexOf(filter) > -1) {
-            card.style.display = "";
-        } else {
-            card.style.display = "none";
-        }
-    });
-    
-    // Scroll to services if searching
-    if(filter.length > 0) {
-        document.getElementById('services-section').scrollIntoView({behavior: 'smooth'});
-    }
 }
