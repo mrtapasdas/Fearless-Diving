@@ -1,50 +1,50 @@
-/* Custom CSS for features not handled by Tailwind utilities */
+/* Custom Styles & Overrides */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-/* 1. Review Marquee Animation */
-@keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0f172a; /* Slate 900 */
+    color: #e2e8f0; /* Slate 200 */
+    overflow-x: hidden;
 }
 
-.animate-marquee {
-    animation: marquee 20s linear infinite;
-    /* Ensure content is wide enough */
-    width: max-content; 
-}
-
-/* 2. Floating Effect for Hero Text */
-.floating-content {
-    animation: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
-}
-
-/* 3. Scrollbar Styling */
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: #0f172a; 
-}
-
-::-webkit-scrollbar-thumb {
-    background: #06b6d4; 
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #14b8a6; 
-}
-
-/* 4. Disable Selection Utility classes */
-.select-none {
+/* Disable Select */
+.no-select {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+/* Hero Floating Animation */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Review Slider Scrollbar Hide */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Glassmorphism for cards */
+.glass-card {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
