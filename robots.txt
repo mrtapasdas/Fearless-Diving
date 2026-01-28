@@ -1,3 +1,4 @@
 User-agent: *
-Disallow: 
-Sitemap: https://www.fearlessdiving.com/sitemap.xml
+Allow: /
+Disallow: /private/
+Sitemap: http://www.fearlessdiving.com/sitemap.xml
