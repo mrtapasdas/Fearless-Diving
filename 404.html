@@ -5,12 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Not Found | FearLess Diving</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config={theme:{extend:{colors:{ocean:'#0f172a',deep:'#020617',cyan:'#06b6d4'}}}}</script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            accent: '#0d9488',
+                            hover: '#14b8a6'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="bg-deep text-white h-screen flex flex-col items-center justify-center text-center px-4">
-    <h1 class="text-9xl font-bold text-cyan mb-4">404</h1>
-    <h2 class="text-3xl font-bold mb-4">Lost at Sea?</h2>
-    <p class="text-gray-400 mb-8">The page you are looking for has drifted away.</p>
-    <a href="index.html" class="bg-cyan text-deep font-bold py-3 px-8 rounded-full hover:bg-white transition">Swim Back Home</a>
+<body class="bg-brand-dark text-slate-200 flex items-center justify-center min-h-screen text-center">
+    <div class="p-4">
+        <h1 class="text-9xl font-bold text-brand-accent mb-4">404</h1>
+        <p class="text-2xl mb-8">Oops! Looks like you've drifted too far.</p>
+        <a href="index.html" class="bg-brand-accent hover:bg-brand-hover text-white px-8 py-3 rounded-full font-bold transition">Return to Surface</a>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
