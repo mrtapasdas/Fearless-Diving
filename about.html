@@ -6,80 +6,79 @@
     <title>About Us | FearLess Diving</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = { theme: { extend: { colors: { deepBlue: '#0f172a', oceanTeal: '#0d9488', } } } }
+        tailwind.config = { theme: { extend: { colors: { ocean: '#0f172a', deep: '#020617', cyan: '#06b6d4', teal: '#14b8a6' } } } }
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-deepBlue text-slate-200 no-select">
+<body class="bg-ocean text-white antialiased select-none overflow-x-hidden">
 
-    <!-- Header (Same) -->
-    <header class="bg-slate-900/95 backdrop-blur-md fixed w-full top-0 z-50 border-b border-gray-800">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-oceanTeal flex items-center gap-2"><i class="fas fa-water"></i> FearLess Diving</a>
-            <nav class="hidden md:flex gap-8 font-semibold">
-                <a href="index.html" class="hover:text-oceanTeal transition">Home</a>
-                <a href="about.html" class="text-oceanTeal transition">About Us</a>
-                <a href="services.html" class="hover:text-oceanTeal transition">Services</a>
-                <a href="contact.html" class="hover:text-oceanTeal transition">Contact Us</a>
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-ocean/90 backdrop-blur-md border-b border-gray-800 shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2">
+                <i class="fa-solid fa-water text-cyan text-3xl"></i>
+                <span class="text-2xl font-bold tracking-wider">FEAR<span class="text-cyan">LESS</span></span>
+            </a>
+            <nav class="hidden md:flex gap-8 font-medium">
+                <a href="index.html" class="hover:text-cyan transition">Home</a>
+                <a href="about.html" class="text-cyan transition">About Us</a>
+                <a href="services.html" class="hover:text-cyan transition">Services</a>
+                <a href="contact.html" class="hover:text-cyan transition">Contact Us</a>
             </nav>
-            <button id="menu-btn" class="md:hidden text-2xl text-oceanTeal focus:outline-none"><i class="fas fa-bars"></i></button>
+            <button id="menu-btn" class="md:hidden text-2xl focus:outline-none"><i class="fa-solid fa-bars"></i></button>
         </div>
-        <div id="mobile-menu" class="hidden bg-slate-800 md:hidden flex flex-col items-center py-4 space-y-4 border-t border-gray-700">
-            <a href="index.html" class="block w-full text-center hover:bg-slate-700 py-2">Home</a>
-            <a href="about.html" class="block w-full text-center hover:bg-slate-700 py-2">About Us</a>
-            <a href="services.html" class="block w-full text-center hover:bg-slate-700 py-2">Services</a>
-            <a href="contact.html" class="block w-full text-center hover:bg-slate-700 py-2">Contact Us</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-deep border-t border-gray-800">
+            <a href="index.html" class="block py-3 px-4 hover:bg-gray-800">Home</a>
+            <a href="about.html" class="block py-3 px-4 hover:bg-gray-800">About Us</a>
+            <a href="services.html" class="block py-3 px-4 hover:bg-gray-800">Services</a>
+            <a href="contact.html" class="block py-3 px-4 hover:bg-gray-800">Contact Us</a>
         </div>
     </header>
 
-    <section class="pt-32 pb-20 px-4">
-        <div class="container mx-auto max-w-4xl">
-            <h1 class="text-4xl font-bold text-center mb-10 text-white">Our <span class="text-oceanTeal">Story</span></h1>
-            
-            <div class="bg-slate-800 p-8 rounded-xl shadow-lg border border-gray-700 mb-10">
-                <h2 class="text-2xl font-bold text-white mb-4">Who We Are</h2>
-                <p class="text-gray-400 leading-relaxed mb-4">
-                    Founded in 2015, <strong>FearLess Diving</strong> started with a simple mission: to make the underwater world accessible to everyone, regardless of their swimming skills or fear of water. We are a team of passionate PADI certified instructors who believe that the ocean heals the soul.
-                </p>
-                <p class="text-gray-400 leading-relaxed">
-                    Over the years, we have trained thousands of divers and introduced them to the magical marine life of India. Safety is our religion, and adventure is our passion.
-                </p>
+    <!-- Content -->
+    <div class="pt-28 pb-16 container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
+            <div>
+                <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1932&auto=format&fit=crop" class="rounded-lg shadow-2xl rotate-2 hover:rotate-0 transition duration-500" alt="Team">
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-                <div class="bg-slate-800 p-8 rounded-xl shadow-lg border border-gray-700">
-                    <h3 class="text-xl font-bold text-oceanTeal mb-3">Our Vision</h3>
-                    <p class="text-gray-400">To become the safest and most trusted diving school in the country, fostering a community of ocean lovers who care for marine conservation.</p>
-                </div>
-                <div class="bg-slate-800 p-8 rounded-xl shadow-lg border border-gray-700">
-                    <h3 class="text-xl font-bold text-oceanTeal mb-3">The Owners</h3>
-                    <p class="text-gray-400">Led by Capt. Rajesh & Sarah, both Master Scuba Divers with over 15 years of experience diving in the Red Sea, Maldives, and Andaman.</p>
-                </div>
-            </div>
-
-            <div class="bg-cover bg-center h-64 rounded-xl relative overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1511216335778-7cb8f49fa7a3?w=1000');">
-                <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
-                    <h2 class="text-3xl font-bold text-white">Join the FearLess Family</h2>
+            <div>
+                <h1 class="text-4xl font-bold mb-6 text-cyan">Who We Are</h1>
+                <p class="text-gray-300 mb-4 leading-relaxed">
+                    FearLess Diving was born from a passion for the ocean and a desire to make the underwater world accessible to everyone. Founded in 2015 by a group of PADI Master Divers, we have grown into one of the most trusted names in the region.
+                </p>
+                <p class="text-gray-300 mb-6 leading-relaxed">
+                    Our mission is simple: To banish fear and instill wonder. We believe that with the right guidance, anyone can explore the blue planet.
+                </p>
+                <div class="flex gap-8">
+                    <div>
+                        <span class="text-3xl font-bold text-teal">5000+</span>
+                        <p class="text-sm text-gray-500">Dives Completed</p>
+                    </div>
+                    <div>
+                        <span class="text-3xl font-bold text-teal">100%</span>
+                        <p class="text-sm text-gray-500">Safety Record</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Footer same as index -->
-    <footer class="bg-slate-900 border-t border-gray-800 pt-16 pb-24 md:pb-8">
-        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
-            <div><a href="#" class="text-2xl font-bold text-oceanTeal flex items-center gap-2 mb-4"><i class="fas fa-water"></i> FearLess Diving</a></div>
-            <div><h3 class="text-lg font-bold text-white mb-4">Quick Links</h3><ul class="space-y-2"><li><a href="index.html" class="text-gray-400 hover:text-oceanTeal">Home</a></li><li><a href="contact.html" class="text-gray-400 hover:text-oceanTeal">Contact Us</a></li></ul></div>
-            <div><h3 class="text-lg font-bold text-white mb-4">Contact Info</h3><ul class="space-y-2 text-gray-400"><li>+91 99999 99999</li><li>info@fearlessdiving.com</li></ul></div>
+        <h2 class="text-3xl font-bold text-center mb-10">Gallery</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=2070" class="rounded hover:opacity-75 transition" alt="G1">
+            <img src="https://images.unsplash.com/photo-1682687220063-4742bd7fd538?q=80&w=2070" class="rounded hover:opacity-75 transition" alt="G2">
+            <img src="https://images.unsplash.com/photo-1682685797828-d3b2559774ba?q=80&w=2070" class="rounded hover:opacity-75 transition" alt="G3">
+            <img src="https://images.unsplash.com/photo-1582967788606-a171f1080ca8?q=80&w=2070" class="rounded hover:opacity-75 transition" alt="G4">
         </div>
-        <div class="text-center text-gray-500 mt-10 border-t border-gray-800 pt-6">&copy; <span id="year"></span> FearLess Diving.</div>
+    </div>
+
+    <!-- Footer (Standard) -->
+    <footer class="bg-deep border-t border-gray-800 pt-16 pb-8">
+        <div class="container mx-auto px-4 text-center text-gray-600 text-xs">
+            &copy; 2024 FearLess Diving. All rights reserved.
+        </div>
     </footer>
-
-    <!-- Floating Icons -->
-    <a href="tel:+919999999999" class="fixed bottom-4 left-4 z-50 bg-blue-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700 transition animate-bounce"><i class="fas fa-phone-alt text-2xl"></i></a>
-    <a href="https://wa.me/919999999999" target="_blank" class="fixed bottom-4 right-4 z-50 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition animate-bounce"><i class="fab fa-whatsapp text-3xl"></i></a>
-
-    <script src="js/script.js"></script>
+    
+    <script src="script.js"></script>
 </body>
 </html>
