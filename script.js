@@ -1,65 +1,58 @@
-document.addEventListener('DOMContentLoaded', () => {
+// Security Measures
+document.addEventListener('contextmenu', (e) => e.preventDefault());
 
-    // 1. Mobile Menu Toggle
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    if(menuBtn && mobileMenu) {
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+document.addEventListener('keydown', (e) => {
+    // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+    if (e.keyCode === 123 || (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) || (e.ctrlKey && e.keyCode === 85)) {
+        e.preventDefault();
     }
-
-    // 2. SECURITY FEATURES (Disable Right Click, Copy, Zoom)
-    
-    // Disable Right Click
-    document.addEventListener('contextmenu', (e) => {
+    // Disable Zoom (Ctrl + / Ctrl -)
+    if (e.ctrlKey && (e.key === '+' || e.key === '-' || e.key === '=')) {
         e.preventDefault();
-    });
+    }
+});
 
-    // Disable Key Combinations (Ctrl+U, Ctrl+C, Ctrl+S, F12, Ctrl+Shift+I)
-    document.addEventListener('keydown', (e) => {
-        // Prevent F12 (Dev Tools)
-        if(e.key === 'F12') {
-            e.preventDefault();
-            return false;
-        }
-
-        // Prevent Ctrl+Shift+I (Dev Tools)
-        if(e.ctrlKey && e.shiftKey && e.key === 'I') {
-            e.preventDefault();
-            return false;
-        }
-
-        // Prevent Ctrl+C (Copy), Ctrl+U (View Source), Ctrl+S (Save)
-        if (e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's' || e.key === 'p')) {
-            e.preventDefault();
-            return false;
-        }
-    });
-
-    // Disable Zoom (Ctrl + Wheel)
-    document.addEventListener('wheel', (e) => {
-        if (e.ctrlKey) {
-            e.preventDefault();
-        }
-    }, { passive: false });
-
-    // Disable Zoom (Touch - Pinch)
-    // Note: 'touch-action: pan-x pan-y' usually handles this in CSS, 
-    // but JS listener adds extra layer for older browsers.
-    document.addEventListener('gesturestart', function(e) {
+// Disable Wheel Zoom
+document.addEventListener('wheel', (e) => {
+    if (e.ctrlKey) {
         e.preventDefault();
-    });
+    }
+}, { passive: false });
 
-    // 3. Smooth Scroll for Anchor Links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
 
+// Mobile Menu Toggle
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+if(menuBtn){
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+}
+
+// Auto Scroll Reviews (Index Page)
+const slider = document.getElementById('review-slider');
+if(slider) {
+    let scrollAmount = 0;
+    const slideTimer = setInterval(() => {
+        slider.scrollLeft += 1;
+        scrollAmount += 1;
+        // Reset if reached end (approximate check)
+        if(scrollAmount >= (slider.scrollWidth - slider.clientWidth)) {
+            slider.scrollLeft = 0;
+            scrollAmount = 0;
+        }
+    }, 20); // Speed
+}
+
+// FAQ Accordion
+const accordions = document.querySelectorAll('.accordion-header');
+accordions.forEach(acc => {
+    acc.addEventListener('click', () => {
+        const body = acc.nextElementSibling;
+        body.classList.toggle('hidden');
+        const icon = acc.querySelector('i');
+        icon.classList.toggle('fa-chevron-down');
+        icon.classList.toggle('fa-chevron-up');
+    });
 });
