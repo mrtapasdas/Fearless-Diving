@@ -1,133 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Contact Us | FearLess Diving</title>
-    <meta name="description" content="Get in touch with FearLess Diving. Visit our centre or drop a message.">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { ocean: '#0f172a', cyan: '#06b6d4', } } }
+        }
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-slate-900 text-slate-100 no-select">
+<body class="bg-ocean text-gray-200 no-select">
 
-     <!-- Header -->
-     <header class="fixed w-full top-0 z-50 bg-slate-900/95 backdrop-blur shadow-lg border-b border-teal-800">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-teal-400 tracking-wider">
-                <i class="fa-solid fa-water"></i> FearLess
-            </a>
+    <nav class="fixed w-full z-50 bg-ocean/90 backdrop-blur-md border-b border-gray-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold text-cyan">FearLess<span class="text-white">Diving</span></a>
             <div class="hidden md:flex space-x-8">
-                <a href="about.html" class="hover:text-teal-400 transition">About Us</a>
-                <a href="services.html" class="hover:text-teal-400 transition">Services</a>
-                <a href="contact.html" class="text-teal-400 font-semibold transition">Contact Us</a>
-                <a href="https://wa.me/919876543210" class="bg-teal-600 hover:bg-teal-500 text-white px-4 py-2 rounded-full transition">Book Now</a>
+                <a href="index.html" class="hover:text-cyan transition">Home</a>
+                <a href="about.html" class="hover:text-cyan transition">About Us</a>
+                <a href="services.html" class="hover:text-cyan transition">Services</a>
+                <a href="contact.html" class="text-cyan font-bold transition">Contact Us</a>
             </div>
-            <button id="menu-btn" class="md:hidden text-2xl focus:outline-none"><i class="fa-solid fa-bars"></i></button>
-        </nav>
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-800 absolute w-full left-0 top-full shadow-xl">
-            <div class="flex flex-col p-6 space-y-4 text-center">
-                <a href="about.html" class="block hover:text-teal-400">About Us</a>
-                <a href="services.html" class="block hover:text-teal-400">Services</a>
-                <a href="contact.html" class="block text-teal-400">Contact Us</a>
-            </div>
+            <button id="menu-btn" class="block md:hidden text-2xl focus:outline-none"><i class="fas fa-bars"></i></button>
         </div>
-    </header>
+        <div id="menu" class="hidden flex-col items-center bg-ocean md:hidden border-t border-gray-800 py-4 space-y-4">
+            <a href="index.html" class="hover:text-cyan">Home</a>
+            <a href="about.html" class="hover:text-cyan">About Us</a>
+            <a href="services.html" class="hover:text-cyan">Services</a>
+            <a href="contact.html" class="text-cyan">Contact Us</a>
+        </div>
+    </nav>
 
-    <section class="pt-32 pb-20">
-        <div class="container mx-auto px-6">
-            <h1 class="text-4xl font-bold text-center mb-12">Get In <span class="text-teal-400">Touch</span></h1>
+    <div class="pt-32 pb-10 bg-slate-900 text-center">
+        <h1 class="text-4xl font-bold text-white">Contact <span class="text-cyan">Us</span></h1>
+    </div>
+
+    <section class="py-16">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
             
-            <div class="grid md:grid-cols-2 gap-12">
-                <!-- Contact Info & Form -->
-                <div>
-                    <div class="space-y-6 mb-10">
-                        <div class="flex items-center space-x-4">
-                            <div class="bg-slate-800 p-4 rounded-full text-teal-400"><i class="fa-solid fa-location-dot fa-xl"></i></div>
-                            <div>
-                                <h3 class="font-bold text-lg">Our Location</h3>
-                                <p class="text-slate-400">Shop No 5, Calangute Beach Road, Goa, India</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center space-x-4">
-                            <div class="bg-slate-800 p-4 rounded-full text-teal-400"><i class="fa-solid fa-phone fa-xl"></i></div>
-                            <div>
-                                <h3 class="font-bold text-lg">Call Us</h3>
-                                <p class="text-slate-400">+91 98765 43210</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center space-x-4">
-                            <div class="bg-slate-800 p-4 rounded-full text-teal-400"><i class="fa-solid fa-envelope fa-xl"></i></div>
-                            <div>
-                                <h3 class="font-bold text-lg">Email Us</h3>
-                                <p class="text-slate-400">info@fearlessdiving.com</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <form class="bg-slate-800 p-8 rounded-xl border border-slate-700 space-y-4">
-                        <h3 class="text-xl font-bold mb-4">Send a Message</h3>
-                        <input type="text" placeholder="Your Name" class="w-full bg-slate-900 border border-slate-700 p-3 rounded text-white focus:outline-none focus:border-teal-400">
-                        <input type="email" placeholder="Your Email" class="w-full bg-slate-900 border border-slate-700 p-3 rounded text-white focus:outline-none focus:border-teal-400">
-                        <input type="tel" placeholder="Phone Number" class="w-full bg-slate-900 border border-slate-700 p-3 rounded text-white focus:outline-none focus:border-teal-400">
-                        <textarea rows="4" placeholder="Your Message" class="w-full bg-slate-900 border border-slate-700 p-3 rounded text-white focus:outline-none focus:border-teal-400"></textarea>
-                        <button type="button" class="w-full bg-teal-600 hover:bg-teal-500 text-white font-bold py-3 rounded transition">Submit Inquiry</button>
-                    </form>
+            <!-- Contact Info & Map -->
+            <div>
+                <h2 class="text-2xl font-bold mb-6">Get In Touch</h2>
+                <div class="space-y-4 mb-8">
+                    <p class="flex items-center text-gray-400"><i class="fas fa-phone-alt text-cyan w-8"></i> +91 98765 43210</p>
+                    <p class="flex items-center text-gray-400"><i class="fab fa-whatsapp text-cyan w-8"></i> +91 98765 43210</p>
+                    <p class="flex items-center text-gray-400"><i class="fas fa-envelope text-cyan w-8"></i> info@fearlessdiving.com</p>
+                    <p class="flex items-center text-gray-400"><i class="fas fa-map-marker-alt text-cyan w-8"></i> Beach Road, Havelock Island, Andaman.</p>
                 </div>
 
-                <!-- Google Map -->
-                <div class="h-96 md:h-auto rounded-xl overflow-hidden border border-slate-700 shadow-xl">
+                <!-- Google Map Embed (Iframe) -->
+                <div class="w-full h-64 bg-gray-800 rounded-lg overflow-hidden border border-gray-700">
                     <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3844.646733256193!2d73.753!3d15.549!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTXCsDMyJzU2LjQiTiA3M8KwNDUnMTAuOCJF!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31307.57522437654!2d92.9866826!3d11.9763789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3088d9047970d4c1%3A0x675841444907997b!2sHavelock%20Island!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin" 
                         width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
                     </iframe>
                 </div>
             </div>
+
+            <!-- Contact Form -->
+            <div class="bg-slate-800 p-8 rounded-lg border border-gray-700 shadow-lg">
+                <h2 class="text-2xl font-bold mb-6">Send Message</h2>
+                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you! We will contact you soon.');">
+                    <div class="mb-4">
+                        <label class="block text-gray-400 text-sm mb-2">Name</label>
+                        <input type="text" class="w-full bg-ocean border border-gray-600 rounded p-3 text-white focus:border-cyan focus:outline-none" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-400 text-sm mb-2">Phone</label>
+                        <input type="tel" class="w-full bg-ocean border border-gray-600 rounded p-3 text-white focus:border-cyan focus:outline-none" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-400 text-sm mb-2">Message</label>
+                        <textarea class="w-full bg-ocean border border-gray-600 rounded p-3 text-white focus:border-cyan focus:outline-none h-32" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-cyan text-ocean font-bold py-3 rounded hover:bg-white transition">
+                        Submit
+                    </button>
+                </form>
+            </div>
+
         </div>
     </section>
 
-    <!-- Floating Buttons -->
-    <a href="tel:+919876543210" class="fixed bottom-4 left-4 z-50 bg-blue-600 p-4 rounded-full shadow-lg hover:bg-blue-700 transition text-white">
-        <i class="fa-solid fa-phone text-2xl"></i>
-    </a>
-    <a href="https://wa.me/919876543210" class="fixed bottom-4 right-4 z-50 bg-green-500 p-4 rounded-full shadow-lg hover:bg-green-600 transition text-white">
-        <i class="fa-brands fa-whatsapp text-3xl"></i>
-    </a>
-
-    <!-- Footer -->
-    <footer class="bg-slate-950 pt-16 pb-8 border-t border-slate-800 mt-10">
-        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-8">
-            <div>
-                <a href="#" class="text-2xl font-bold text-teal-400 mb-4 block"><i class="fa-solid fa-water"></i> FearLess</a>
-                <p class="text-slate-500 text-sm mb-4">Discover the hidden beauty of the ocean with the most trusted diving partners.</p>
-                <div class="flex space-x-4">
-                    <a href="#" class="text-slate-400 hover:text-white"><i class="fa-brands fa-facebook fa-lg"></i></a>
-                    <a href="#" class="text-slate-400 hover:text-white"><i class="fa-brands fa-instagram fa-lg"></i></a>
-                    <a href="#" class="text-slate-400 hover:text-white"><i class="fa-brands fa-youtube fa-lg"></i></a>
-                </div>
-            </div>
-            <div>
-                <h3 class="text-lg font-bold text-white mb-4">Contact Info</h3>
-                <ul class="space-y-2 text-slate-400 text-sm">
-                    <li><i class="fa-solid fa-location-dot mr-2"></i> Calangute Beach, Goa, India</li>
-                    <li><i class="fa-solid fa-phone mr-2"></i> +91 98765 43210</li>
-                    <li><i class="fa-solid fa-envelope mr-2"></i> info@fearlessdiving.com</li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="text-lg font-bold text-white mb-4">Quick Links</h3>
-                <ul class="space-y-2 text-slate-400 text-sm">
-                    <li><a href="about.html" class="hover:text-teal-400">About Us</a></li>
-                    <li><a href="services.html" class="hover:text-teal-400">Services</a></li>
-                    <li><a href="contact.html" class="hover:text-teal-400">Contact</a></li>
-                    <li><a href="sitemap.xml" class="hover:text-teal-400">Sitemap</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="text-center text-slate-600 text-xs border-t border-slate-900 pt-6">
-            &copy; 2026 FearLess Diving. All rights reserved.
-        </div>
+    <!-- FOOTER (Simplified) -->
+    <footer class="bg-ocean border-t border-gray-800 pt-10 pb-24 text-center">
+        <p class="text-gray-500 text-sm">&copy; <span id="year"></span> FearLess Diving.</p>
     </footer>
+
+    <a href="tel:+919876543210" class="float-icon phone-float"><i class="fas fa-phone-alt"></i></a>
+    <a href="https://wa.me/919876543210" target="_blank" class="float-icon wa-float"><i class="fab fa-whatsapp"></i></a>
+
     <script src="script.js"></script>
 </body>
 </html>
