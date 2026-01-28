@@ -10,6 +10,15 @@ body {
     -ms-user-select: none;
     user-select: none;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
 }
 
 /* Scrollbar Customization */
@@ -24,21 +33,31 @@ body {
     border-radius: 4px;
 }
 
-/* Floating Animation */
+/* Floating Animation & Delays */
 @keyframes float {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-20px); }
     100% { transform: translateY(0px); }
 }
+
 .animate-float {
     animation: float 6s ease-in-out infinite;
 }
+.delay-1000 { animation-delay: 1s; }
+.delay-2000 { animation-delay: 2s; }
 
-/* Horizontal Scroll Snap for Images */
+/* Horizontal Scroll Snap */
 .snap-gallery {
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none;  /* IE 10+ */
 }
 .snap-gallery::-webkit-scrollbar { 
     display: none; /* Chrome/Safari */
+}
+
+/* Glass Effect for Reviews */
+.glass-panel {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
