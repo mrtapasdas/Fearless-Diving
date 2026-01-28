@@ -5,214 +5,161 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Our Services | FearLess Diving</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = { theme: { extend: { colors: { ocean: '#0f172a', cyan: '#06b6d4' } } } }
-    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-ocean text-white antialiased no-select">
+<body class="bg-slate-900 text-slate-100 no-select flex flex-col min-h-screen">
 
-    <!-- Nav (Simplified for brevity, same as index) -->
-    <nav class="fixed w-full z-50 bg-slate-900/90 backdrop-blur-md border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <i class="fas fa-water text-cyan-400 text-3xl"></i>
-                <a href="index.html" class="font-bold text-2xl tracking-wider">FEAR<span class="text-cyan-400">LESS</span></a>
-            </div>
+    <!-- Header Reuse -->
+    <header class="bg-slate-900/90 backdrop-blur-md fixed w-full top-0 z-50 border-b border-cyan-900">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-cyan-400">
+                <i class="fa-solid fa-water"></i> FearLess<span class="text-white">Diving</span>
+            </a>
             <div class="hidden md:flex space-x-8">
-                <a href="index.html" class="hover:text-cyan-400">Home</a>
-                <a href="about.html" class="hover:text-cyan-400">About</a>
-                <a href="services.html" class="text-cyan-400">Services</a>
-                <a href="contact.html" class="bg-cyan-600 px-4 py-2 rounded-full">Contact</a>
+                <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
+                <a href="about.html" class="hover:text-cyan-400 transition">About Us</a>
+                <a href="services.html" class="text-cyan-400 font-bold">Services</a>
+                <a href="contact.html" class="hover:text-cyan-400 transition">Contact Us</a>
             </div>
-            <div class="md:hidden">
-                <button id="menu-btn"><i class="fas fa-bars text-xl"></i></button>
-            </div>
+            <button id="menu-btn" class="md:hidden text-2xl"><i class="fa-solid fa-bars"></i></button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-800 border-t border-slate-700">
+            <a href="index.html" class="block py-3 px-6 hover:bg-slate-700">Home</a>
+            <a href="about.html" class="block py-3 px-6 hover:bg-slate-700">About Us</a>
+            <a href="services.html" class="block py-3 px-6 hover:bg-slate-700">Services</a>
+            <a href="contact.html" class="block py-3 px-6 hover:bg-slate-700">Contact Us</a>
         </div>
-        <div class="hidden bg-slate-800" id="mobile-menu">
-            <a href="index.html" class="block px-4 py-3 border-b border-slate-700">Home</a>
-            <a href="about.html" class="block px-4 py-3 border-b border-slate-700">About</a>
-            <a href="contact.html" class="block px-4 py-3">Contact</a>
-        </div>
-    </nav>
+    </header>
 
-    <div class="pt-32 pb-10 text-center bg-slate-900">
-        <h1 class="text-4xl font-bold">Dive Packages</h1>
-        <p class="text-slate-400 mt-2">Choose your underwater adventure</p>
-    </div>
+    <main class="flex-grow pt-32 pb-20 container mx-auto px-6">
+        <h1 class="text-4xl font-bold text-center mb-4">Choose Your <span class="text-cyan-400">Adventure</span></h1>
+        <p class="text-center text-slate-400 mb-12">Select from our premium scuba diving and water sports packages.</p>
 
-    <!-- Services Grid -->
-    <section class="py-10 max-w-7xl mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <!-- Service Item Template 1 -->
-            <div class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-xl flex flex-col">
-                <!-- Image Slider -->
-                <div class="relative h-64 bg-black group">
-                    <img id="img-s1" src="" class="w-full h-full object-cover" alt="Service">
-                    <button onclick="changeSlide('s1', -1)" class="slider-btn absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full cursor-pointer z-10 hover:bg-cyan-600">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button onclick="changeSlide('s1', 1)" class="slider-btn absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full cursor-pointer z-10 hover:bg-cyan-600">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
-
-                <div class="p-6 flex-1 flex flex-col">
-                    <h2 class="text-2xl font-bold mb-2">Try Scuba Diving</h2>
-                    <div class="text-3xl font-bold text-cyan-400 mb-4">$60 <span class="text-sm text-slate-500 font-normal">/ person</span></div>
+            <!-- Service 1 -->
+            <div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg border border-slate-700">
+                <!-- Slider -->
+                <div class="service-card-slider slider-container relative">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="slide-image active" alt="Diving 1">
+                    <img src="https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="slide-image" alt="Diving 2">
+                    <img src="https://images.unsplash.com/photo-1582967788606-a171f1080cae?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="slide-image" alt="Diving 3">
+                    <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="slide-image" alt="Diving 4">
                     
-                    <div class="space-y-3 text-sm text-slate-300 mb-8 flex-1">
-                        <div class="flex justify-between border-b border-slate-700 pb-2">
-                            <span><i class="fas fa-map-marker-alt text-cyan-500 w-6"></i> Location</span>
-                            <span class="font-semibold text-white">Grand Island</span>
-                        </div>
-                        <div class="flex justify-between border-b border-slate-700 pb-2">
-                            <span><i class="fas fa-clock text-cyan-500 w-6"></i> Duration</span>
-                            <span class="font-semibold text-white">45 Mins underwater</span>
-                        </div>
-                        <div class="flex justify-between border-b border-slate-700 pb-2">
-                            <span><i class="fas fa-arrow-down text-cyan-500 w-6"></i> Depth</span>
-                            <span class="font-semibold text-white">Up to 12 meters</span>
-                        </div>
-                        <div class="flex justify-between border-b border-slate-700 pb-2">
-                            <span><i class="fas fa-user-check text-cyan-500 w-6"></i> Beginner Friendly</span>
-                            <span class="font-semibold text-green-400">Yes</span>
-                        </div>
-                        <div class="flex justify-between border-b border-slate-700 pb-2">
-                            <span><i class="fas fa-camera text-cyan-500 w-6"></i> Photos/Videos</span>
-                            <span class="font-semibold text-green-400">Included</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span><i class="fas fa-bus text-cyan-500 w-6"></i> Pick Up & Drop</span>
-                            <span class="font-semibold text-white">Available</span>
-                        </div>
+                    <button class="prev-btn absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-cyan-500"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="next-btn absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-cyan-500"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold mb-2">Grand Island Trip</h2>
+                    <p class="text-3xl font-bold text-cyan-400 mb-6">₹2,500 <span class="text-sm text-slate-400 font-normal line-through">₹3,500</span></p>
+                    
+                    <div class="space-y-3 text-sm text-slate-300 mb-8">
+                        <div class="flex justify-between border-b border-slate-700 pb-2"><span>Location:</span> <span class="text-white">Grand Island</span></div>
+                        <div class="flex justify-between border-b border-slate-700 pb-2"><span>Duration:</span> <span class="text-white">8 Hours</span></div>
+                        <div class="flex justify-between border-b border-slate-700 pb-2"><span>Depth:</span> <span class="text-white">Up to 30ft</span></div>
+                        <div class="flex justify-between border-b border-slate-700 pb-2"><span>Age:</span> <span class="text-white">10+ Years</span></div>
+                        <div class="flex justify-between border-b border-slate-700 pb-2"><span>Pickup:</span> <span class="text-white">Included (North Goa)</span></div>
+                        <div class="flex justify-between border-b border-slate-700 pb-2"><span>Includes:</span> <span class="text-white">Photos & Video</span></div>
+                        <div class="flex justify-between border-b border-slate-700 pb-2"><span>Guide:</span> <span class="text-white">PADI Certified Personal Diver</span></div>
+                        <div class="flex justify-between"><span>Training:</span> <span class="text-white">Pool Training Included</span></div>
                     </div>
 
-                    <a href="https://wa.me/1234567890?text=Booking%20Scuba%20Diving" class="block w-full bg-cyan-600 hover:bg-cyan-700 text-white text-center font-bold py-3 rounded-xl transition">
-                        Book Now
-                    </a>
+                    <button onclick="bookNow('Grand Island Trip')" class="w-full bg-cyan-500 hover:bg-cyan-600 text-slate-900 font-bold py-3 rounded uppercase tracking-wider transition">Book Now</button>
                 </div>
             </div>
 
-            <!-- Service Item Template 2 -->
-            <div class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-xl flex flex-col">
-                <div class="relative h-64 bg-black group">
-                    <img id="img-s2" src="" class="w-full h-full object-cover" alt="Service">
-                    <button onclick="changeSlide('s2', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-cyan-600"><i class="fas fa-chevron-left"></i></button>
-                    <button onclick="changeSlide('s2', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-cyan-600"><i class="fas fa-chevron-right"></i></button>
-                </div>
-
-                <div class="p-6 flex-1 flex flex-col">
-                    <h2 class="text-2xl font-bold mb-2">Advance Open Water</h2>
-                    <div class="text-3xl font-bold text-cyan-400 mb-4">$350 <span class="text-sm text-slate-500 font-normal">/ course</span></div>
+            <!-- Service 2 -->
+            <div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg border border-slate-700">
+                <!-- Slider -->
+                <div class="service-card-slider slider-container relative">
+                    <img src="https://images.unsplash.com/photo-1582967788606-a171f1080cae?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="slide-image active" alt="Snorkeling">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="slide-image" alt="Snorkeling 2">
+                    <img src="https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="slide-image" alt="Snorkeling 3">
+                    <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="slide-image" alt="Snorkeling 4">
                     
-                    <div class="space-y-3 text-sm text-slate-300 mb-8 flex-1">
-                        <div class="flex justify-between border-b border-slate-700 pb-2">
-                            <span><i class="fas fa-map-marker-alt text-cyan-500 w-6"></i> Location</span>
-                            <span class="font-semibold text-white">Deep Sea</span>
-                        </div>
-                        <div class="flex justify-between border-b border-slate-700 pb-2">
-                            <span><i class="fas fa-clock text-cyan-500 w-6"></i> Duration</span>
-                            <span class="font-semibold text-white">2 Days</span>
-                        </div>
-                        <div class="flex justify-between border-b border-slate-700 pb-2">
-                            <span><i class="fas fa-arrow-down text-cyan-500 w-6"></i> Depth</span>
-                            <span class="font-semibold text-white">Up to 30 meters</span>
-                        </div>
-                        <div class="flex justify-between border-b border-slate-700 pb-2">
-                            <span><i class="fas fa-user-check text-cyan-500 w-6"></i> Pre-requisite</span>
-                            <span class="font-semibold text-yellow-400">OW License</span>
-                        </div>
-                        <div class="flex justify-between border-b border-slate-700 pb-2">
-                            <span><i class="fas fa-certificate text-cyan-500 w-6"></i> Certification</span>
-                            <span class="font-semibold text-green-400">PADI</span>
-                        </div>
+                    <button class="prev-btn absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-cyan-500"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="next-btn absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-cyan-500"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold mb-2">Parasailing Combo</h2>
+                    <p class="text-3xl font-bold text-cyan-400 mb-6">₹2,000 <span class="text-sm text-slate-400 font-normal line-through">₹2,800</span></p>
+                    
+                    <div class="space-y-3 text-sm text-slate-300 mb-8">
+                        <div class="flex justify-between border-b border-slate-700 pb-2"><span>Location:</span> <span class="text-white">Calangute</span></div>
+                        <div class="flex justify-between border-b border-slate-700 pb-2"><span>Duration:</span> <span class="text-white">2 Hours</span></div>
+                        <div class="flex justify-between border-b border-slate-700 pb-2"><span>Activity:</span> <span class="text-white">Air & Water</span></div>
+                        <div class="flex justify-between border-b border-slate-700 pb-2"><span>Age:</span> <span class="text-white">12+ Years</span></div>
+                        <div class="flex justify-between border-b border-slate-700 pb-2"><span>Pickup:</span> <span class="text-white">Self Reporting</span></div>
+                        <div class="flex justify-between border-b border-slate-700 pb-2"><span>Includes:</span> <span class="text-white">GoPro Video</span></div>
+                        <div class="flex justify-between border-b border-slate-700 pb-2"><span>Guide:</span> <span class="text-white">Safety Marshall</span></div>
+                        <div class="flex justify-between"><span>Training:</span> <span class="text-white">Briefing Included</span></div>
                     </div>
 
-                    <a href="https://wa.me/1234567890?text=Booking%20Open%20Water" class="block w-full bg-cyan-600 hover:bg-cyan-700 text-white text-center font-bold py-3 rounded-xl transition">
-                        Book Now
-                    </a>
+                    <button onclick="bookNow('Parasailing Combo')" class="w-full bg-cyan-500 hover:bg-cyan-600 text-slate-900 font-bold py-3 rounded uppercase tracking-wider transition">Book Now</button>
                 </div>
             </div>
-
-            <!-- Service Item Template 3 -->
-            <div class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-xl flex flex-col">
-                <div class="relative h-64 bg-black group">
-                    <img id="img-s3" src="" class="w-full h-full object-cover" alt="Service">
-                    <button onclick="changeSlide('s3', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-cyan-600"><i class="fas fa-chevron-left"></i></button>
-                    <button onclick="changeSlide('s3', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-cyan-600"><i class="fas fa-chevron-right"></i></button>
+            
+            <!-- Service 3 -->
+            <div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg border border-slate-700">
+                <div class="service-card-slider slider-container relative">
+                   <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="slide-image active" alt="Shore 1">
+                   <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="slide-image" alt="Shore 2">
+                   <img src="https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="slide-image" alt="Shore 3">
+                   <img src="https://images.unsplash.com/photo-1582967788606-a171f1080cae?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="slide-image" alt="Shore 4">
+                   <button class="prev-btn absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-cyan-500"><i class="fa-solid fa-chevron-left"></i></button>
+                   <button class="next-btn absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-cyan-500"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
-
-                <div class="p-6 flex-1 flex flex-col">
-                    <h2 class="text-2xl font-bold mb-2">Jet Ski Ride</h2>
-                    <div class="text-3xl font-bold text-cyan-400 mb-4">$20 <span class="text-sm text-slate-500 font-normal">/ ride</span></div>
-                    
-                    <div class="space-y-3 text-sm text-slate-300 mb-8 flex-1">
-                        <div class="flex justify-between border-b border-slate-700 pb-2">
-                            <span><i class="fas fa-map-marker-alt text-cyan-500 w-6"></i> Location</span>
-                            <span class="font-semibold text-white">Beach Shore</span>
-                        </div>
-                        <div class="flex justify-between border-b border-slate-700 pb-2">
-                            <span><i class="fas fa-clock text-cyan-500 w-6"></i> Duration</span>
-                            <span class="font-semibold text-white">10 Mins</span>
-                        </div>
-                         <div class="flex justify-between border-b border-slate-700 pb-2">
-                            <span><i class="fas fa-user-friends text-cyan-500 w-6"></i> Capacity</span>
-                            <span class="font-semibold text-white">2 Persons</span>
-                        </div>
-                        <div class="flex justify-between border-b border-slate-700 pb-2">
-                            <span><i class="fas fa-user-check text-cyan-500 w-6"></i> Self Drive</span>
-                            <span class="font-semibold text-yellow-400">With Instructor</span>
-                        </div>
-                        <div class="flex justify-between border-b border-slate-700 pb-2">
-                            <span><i class="fas fa-life-ring text-cyan-500 w-6"></i> Jacket</span>
-                            <span class="font-semibold text-green-400">Included</span>
-                        </div>
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold mb-2">Advance Scuba</h2>
+                    <p class="text-3xl font-bold text-cyan-400 mb-6">₹5,000 <span class="text-sm text-slate-400 font-normal line-through">₹7,000</span></p>
+                     <div class="space-y-3 text-sm text-slate-300 mb-8">
+                        <div class="flex justify-between border-b border-slate-700 pb-2"><span>Location:</span> <span class="text-white">Deep Sea</span></div>
+                        <div class="flex justify-between border-b border-slate-700 pb-2"><span>Duration:</span> <span class="text-white">6 Hours</span></div>
+                        <div class="flex justify-between border-b border-slate-700 pb-2"><span>Depth:</span> <span class="text-white">Up to 12 Meters</span></div>
+                        <div class="flex justify-between border-b border-slate-700 pb-2"><span>Age:</span> <span class="text-white">15+ Years</span></div>
+                        <div class="flex justify-between border-b border-slate-700 pb-2"><span>Pickup:</span> <span class="text-white">Included</span></div>
+                        <div class="flex justify-between border-b border-slate-700 pb-2"><span>Includes:</span> <span class="text-white">Certificate & Log</span></div>
+                        <div class="flex justify-between border-b border-slate-700 pb-2"><span>Guide:</span> <span class="text-white">Dive Master</span></div>
+                        <div class="flex justify-between"><span>Training:</span> <span class="text-white">Advance Training</span></div>
                     </div>
-
-                    <a href="https://wa.me/1234567890?text=Booking%20Jet%20Ski" class="block w-full bg-cyan-600 hover:bg-cyan-700 text-white text-center font-bold py-3 rounded-xl transition">
-                        Book Now
-                    </a>
+                    <button onclick="bookNow('Advance Scuba')" class="w-full bg-cyan-500 hover:bg-cyan-600 text-slate-900 font-bold py-3 rounded uppercase tracking-wider transition">Book Now</button>
                 </div>
             </div>
 
         </div>
-    </section>
+    </main>
 
-    <!-- Footer Include -->
-    <footer class="bg-slate-900 pt-16 pb-8 border-t border-slate-800">
-        <div class="text-center text-slate-500 text-xs">
-            &copy; 2024 FearLess Diving.
+    <!-- Footer Reuse -->
+    <footer class="bg-slate-950 pt-16 pb-8 border-t border-slate-800">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-8">
+            <div>
+                <a href="#" class="text-2xl font-bold text-cyan-400 mb-4 block"><i class="fa-solid fa-water"></i> FearLess<span class="text-white">Diving</span></a>
+                <p class="text-slate-400">We provide the safest and most thrilling underwater experiences.</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-4">Contact Info</h3>
+                <ul class="text-slate-400 space-y-2">
+                    <li><i class="fa-solid fa-phone w-6 text-cyan-400"></i> +91 98765 43210</li>
+                    <li><i class="fa-solid fa-envelope w-6 text-cyan-400"></i> info@fearlessdiving.com</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                <ul class="text-slate-400 space-y-2">
+                    <li><a href="index.html" class="hover:text-cyan-400">Home</a></li>
+                    <li><a href="contact.html" class="hover:text-cyan-400">Contact</a></li>
+                </ul>
+            </div>
         </div>
+        <div class="text-center text-slate-600 pt-8 border-t border-slate-900">&copy; 2024 FearLess Diving.</div>
     </footer>
 
-    <!-- Floating Icons -->
-    <a href="tel:+1234567890" class="fixed left-4 bottom-4 bg-blue-600 text-white p-4 rounded-full shadow-lg z-50"><i class="fas fa-phone-alt text-xl"></i></a>
-    <a href="https://wa.me/1234567890" target="_blank" class="fixed right-4 bottom-4 bg-green-500 text-white p-4 rounded-full shadow-lg z-50"><i class="fab fa-whatsapp text-2xl"></i></a>
-
+    <!-- Floating Buttons Reuse -->
+    <a href="tel:+919876543210" class="fixed bottom-6 left-6 bg-blue-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700 transition z-50 animate-bounce"><i class="fa-solid fa-phone text-2xl"></i></a>
+    <a href="https://wa.me/919876543210" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition z-50 animate-bounce"><i class="fa-brands fa-whatsapp text-3xl"></i></a>
     <script src="script.js"></script>
-    <script>
-        // Initialize sliders for this page
-        initServiceSlider('s1', [
-            'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600', 
-            'https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=600',
-            'https://images.unsplash.com/photo-1632833239869-a37e3a5806d2?w=600',
-            'https://images.unsplash.com/photo-1576610616656-d3aa5d1f4534?w=600'
-        ]);
-        initServiceSlider('s2', [
-            'https://images.unsplash.com/photo-1517865288-978fcb780652?w=600', 
-            'https://images.unsplash.com/photo-1682686578707-140b042e8f19?w=600',
-            'https://images.unsplash.com/photo-1682695796954-bad25145f86a?w=600',
-            'https://images.unsplash.com/photo-1582967788606-a171f1080ca8?w=600'
-        ]);
-        initServiceSlider('s3', [
-            'https://images.unsplash.com/photo-1563816568-d064de62f3f8?w=600',
-            'https://images.unsplash.com/photo-1596752765879-19266718d098?w=600',
-            'https://images.unsplash.com/photo-1610982540700-17a424b7a1e0?w=600',
-            'https://images.unsplash.com/photo-1596752765781-67825d109403?w=600'
-        ]);
-    </script>
 </body>
 </html>
