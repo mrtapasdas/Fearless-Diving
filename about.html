@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>About Us | FearLess Diving</title>
+    <title>About | FearLess Diving</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-slate-900 text-slate-50 antialiased">
+<body class="bg-slate-900 text-slate-50 antialiased pt-16">
 
-    <!-- Nav (Duplicate of Home for consistency) -->
-    <nav class="bg-slate-800/90 backdrop-blur-md fixed w-full z-50 border-b border-cyan-900">
+    <!-- Fixed Nav -->
+    <nav class="bg-slate-900/95 backdrop-blur-md fixed top-0 w-full z-50 border-b border-cyan-900 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center">
                     <a href="index.html" class="flex items-center">
-                        <i class="fa-solid fa-water text-cyan-400 text-3xl mr-2"></i>
+                        <i class="fa-solid fa-water text-cyan-400 text-2xl mr-2"></i>
                         <span class="font-bold text-xl tracking-wider">FearLess<span class="text-cyan-400">Diving</span></span>
                     </a>
                 </div>
@@ -35,7 +35,7 @@
                 </div>
             </div>
         </div>
-        <div class="hidden md:hidden bg-slate-800" id="mobile-nav">
+        <div class="hidden md:hidden bg-slate-900 border-t border-slate-800 absolute w-full" id="mobile-nav">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="index.html" class="text-gray-300 block px-3 py-2 rounded-md">Home</a>
                 <a href="about.html" class="text-cyan-400 font-bold block px-3 py-2 rounded-md">About Us</a>
@@ -45,57 +45,35 @@
         </div>
     </nav>
 
-    <!-- Header -->
-    <div class="pt-32 pb-12 text-center bg-slate-800">
-        <h1 class="text-4xl md:text-5xl font-bold text-cyan-400">Our Story</h1>
-        <p class="mt-4 text-gray-400">Passion for the ocean since 2010.</p>
-    </div>
-
-    <!-- Content -->
-    <div class="max-w-4xl mx-auto px-4 py-16">
-        <div class="mb-16 flex flex-col md:flex-row items-center gap-8">
-            <div class="w-full md:w-1/2">
-                <img src="https://images.unsplash.com/photo-1517840933437-c713c78b9c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="rounded-lg shadow-lg rotate-2 hover:rotate-0 transition duration-500" alt="Team">
+    <main class="pt-10 pb-12 px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h1 class="text-3xl font-bold text-cyan-400">Our Story</h1>
+                <p class="text-gray-400 mt-2">Diving since 2010.</p>
             </div>
-            <div class="w-full md:w-1/2">
-                <h2 class="text-2xl font-bold text-white mb-4">History & Origins</h2>
-                <p class="text-gray-300 leading-relaxed">
-                    FearLess Diving started as a small shack on the beach with just two tanks and a dream. Founded by ex-Navy divers, our mission was to remove the 'fear' from the deep blue. Over the last decade, we have certified over 5,000 students and completed 20,000+ safe dives.
-                </p>
-            </div>
-        </div>
-
-        <div class="mb-16">
-            <h2 class="text-2xl font-bold text-white mb-6 text-center">Meet The Owners</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-slate-800 p-6 rounded-lg border border-slate-700 text-center">
-                    <img src="https://randomuser.me/api/portraits/men/1.jpg" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-cyan-400" alt="Owner">
-                    <h3 class="text-xl font-bold">Capt. Mark Ryder</h3>
-                    <p class="text-cyan-500 text-sm">Master Diver Trainer</p>
-                    <p class="text-gray-400 text-sm mt-2">20 years of experience navigating the toughest currents.</p>
+            <div class="flex flex-col md:flex-row items-center gap-8 mb-12">
+                <div class="w-full md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1517840933437-c713c78b9c3b?w=600&q=60&auto=format" class="rounded-lg shadow-lg rotate-1" alt="Team" loading="lazy">
                 </div>
-                <div class="bg-slate-800 p-6 rounded-lg border border-slate-700 text-center">
-                    <img src="https://randomuser.me/api/portraits/women/2.jpg" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-cyan-400" alt="Owner">
-                    <h3 class="text-xl font-bold">Elena Cruz</h3>
-                    <p class="text-cyan-500 text-sm">Marine Biologist</p>
-                    <p class="text-gray-400 text-sm mt-2">Ensuring our dives are eco-friendly and educational.</p>
+                <div class="w-full md:w-1/2 text-gray-300">
+                    <h2 class="text-xl font-bold text-white mb-2">Origins</h2>
+                    <p class="mb-4">Founded by ex-Navy divers, FearLess Diving aims to make the ocean accessible to everyone. We have certified over 5,000 students.</p>
                 </div>
             </div>
         </div>
+    </main>
 
-        <div class="bg-gradient-to-r from-cyan-900 to-slate-900 p-8 rounded-xl text-center">
-            <h2 class="text-2xl font-bold text-white mb-4">Our Vision</h2>
-            <p class="text-gray-300">
-                "To create a world where everyone respects and enjoys the ocean, free from fear, through safe, sustainable, and thrilling underwater experiences."
-            </p>
+    <!-- Footer -->
+    <footer class="bg-slate-950 pt-10 pb-8 px-4 border-t border-slate-800 mt-auto">
+        <div class="text-center text-gray-600 text-xs">
+            &copy; 2026 FearLess Diving. All rights reserved.
         </div>
-    </div>
+    </footer>
 
-    <!-- Fixed Buttons & Script -->
-    <div class="fixed bottom-4 right-4 flex flex-col space-y-3 z-50">
-        <a href="tel:+919876543210" class="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg"><i class="fa-solid fa-phone"></i></a>
-        <a href="https://wa.me/919876543210" target="_blank" class="bg-green-500 w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg"><i class="fa-brands fa-whatsapp text-2xl"></i></a>
-    </div>
+    <!-- Fixed Icons -->
+    <a href="tel:+919876543210" class="fixed bottom-4 left-4 z-50 bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg border-2 border-white"><i class="fa-solid fa-phone"></i></a>
+    <a href="https://wa.me/919876543210" target="_blank" class="fixed bottom-4 right-4 z-50 bg-green-500 w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg border-2 border-white"><i class="fa-brands fa-whatsapp text-xl"></i></a>
+
     <script src="script.js"></script>
 </body>
 </html>
