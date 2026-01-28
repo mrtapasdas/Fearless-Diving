@@ -1,30 +1,14 @@
-/* Import Google Fonts */
+/* style.css */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-/* Base Styles */
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #0f172a; /* Slate 900 */
     color: #f1f5f9; /* Slate 100 */
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-    width: 10px;
-}
-::-webkit-scrollbar-track {
-    background: #1e293b;
-}
-::-webkit-scrollbar-thumb {
-    background: #0ea5e9;
-    border-radius: 5px;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: #0284c7;
-}
-
-/* Security Classes (applied via JS/HTML) */
+/* Security & UX Restrictions */
 .no-select {
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -39,43 +23,32 @@ body {
     100% { transform: translateY(0px); }
 }
 
-.float-anim {
-    animation: float 4s ease-in-out infinite;
-}
-.float-anim-delay {
-    animation: float 5s ease-in-out infinite;
-    animation-delay: 1s;
+@keyframes float-delayed {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
 }
 
-/* Card Hover Effects */
-.service-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.animate-float-1 { animation: float 4s ease-in-out infinite; }
+.animate-float-2 { animation: float-delayed 5s ease-in-out infinite; }
+.animate-float-3 { animation: float 6s ease-in-out infinite; }
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
 }
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(14, 165, 233, 0.2);
+::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+    background: #0d9488;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #14b8a6;
 }
 
 /* Mobile Menu Transition */
 #mobile-menu {
-    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-}
-#mobile-menu.active {
-    max-height: 400px;
-    opacity: 1;
-}
-
-/* Review Slider */
-.review-container {
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-.review-container::-webkit-scrollbar {
-    display: none;
+    transition: transform 0.3s ease-in-out;
 }
