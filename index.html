@@ -3,36 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>FearLess Diving | Scuba Diving & Water Sports</title>
-    <meta name="description" content="Premium Scuba Diving and Water Sports center. Safe, affordable and adventurous. Book your dive today!">
-    
-    <!-- Tailwind CSS -->
+    <title>FearLess Diving | Premium Scuba & Water Sports</title>
+    <meta name="description" content="Best Scuba Diving. Safe, affordable and adventurous.">
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-slate-900 text-slate-50 antialiased">
+<body class="bg-slate-900 text-slate-50 antialiased flex flex-col min-h-screen">
 
-    <!-- Fixed Navigation -->
-    <nav class="bg-slate-900/95 backdrop-blur-md fixed top-0 w-full z-40 border-b border-cyan-900 shadow-lg">
+    <!-- Fixed Header -->
+    <nav class="bg-slate-900/95 backdrop-blur-md fixed w-full top-0 z-50 border-b border-cyan-900 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex items-center">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center cursor-pointer" onclick="window.location.href='index.html'">
                     <i class="fa-solid fa-water text-cyan-400 text-3xl mr-2"></i>
-                    <span class="font-bold text-xl tracking-wider">FearLess<span class="text-cyan-400">Diving</span></span>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="index.html" class="text-cyan-400 font-bold px-3 py-2 rounded-md">Home</a>
-                        <a href="about.html" class="hover:text-cyan-400 px-3 py-2 rounded-md transition">About Us</a>
-                        <a href="services.html" class="hover:text-cyan-400 px-3 py-2 rounded-md transition">Services</a>
-                        <a href="contact.html" class="bg-cyan-600 hover:bg-cyan-500 text-white px-4 py-2 rounded-md transition">Contact Us</a>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-xl tracking-wider leading-none">FearLess<span class="text-cyan-400">Diving</span></span>
+                        <span class="text-[10px] text-gray-400 uppercase tracking-widest">Explore The Deep</span>
                     </div>
                 </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-6">
+                        <a href="index.html" class="text-cyan-400 font-bold border-b-2 border-cyan-400 px-1 py-5">Home</a>
+                        <a href="about.html" class="hover:text-cyan-400 transition font-medium">About Us</a>
+                        <a href="services.html" class="hover:text-cyan-400 transition font-medium">Services</a>
+                        <a href="contact.html" class="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white px-5 py-2 rounded-full shadow-lg transition transform hover:scale-105">Contact Us</a>
+                    </div>
+                </div>
+                <!-- Mobile Menu Button -->
                 <div class="-mr-2 flex md:hidden">
                     <button onclick="toggleMenu()" class="text-gray-300 hover:text-white p-2">
                         <i class="fa-solid fa-bars text-2xl"></i>
@@ -42,8 +42,8 @@
         </div>
         <!-- Mobile Menu -->
         <div class="hidden md:hidden bg-slate-900 border-t border-slate-800" id="mobile-nav">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="index.html" class="text-cyan-400 block px-3 py-2 rounded-md font-bold">Home</a>
+            <div class="px-4 pt-4 pb-6 space-y-2">
+                <a href="index.html" class="text-cyan-400 block px-3 py-2 rounded-md font-bold bg-slate-800">Home</a>
                 <a href="about.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md">About Us</a>
                 <a href="services.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md">Services</a>
                 <a href="contact.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md">Contact Us</a>
@@ -51,306 +51,317 @@
         </div>
     </nav>
 
-    <main>
-        <!-- Hero Section with Floating Images -->
-        <header class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-            <!-- Background Gradient -->
-            <div class="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 z-0"></div>
+    <!-- Dynamic Hero Section -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden mt-16">
+        <!-- Background Gradient -->
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 z-0"></div>
+        
+        <!-- Floating Images (Optimized for Mobile & PC) -->
+        <div class="absolute inset-0 z-0 opacity-40 select-none pointer-events-none">
+            <!-- Image 1: Diver (Top Right) -->
+            <img src="https://images.unsplash.com/photo-1544551763-46a8723ba3f9?w=600&q=60" 
+                 class="absolute top-10 right-[-50px] md:right-10 w-64 md:w-96 rounded-full opacity-60 animate-float-1 border-4 border-cyan-500/20 blur-[1px]">
             
-            <div class="relative z-10 max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                
-                <!-- Text Content -->
-                <div class="text-center lg:text-left">
-                    <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
-                        Conquer The <br><span class="text-cyan-400">Deep Blue</span>
-                    </h1>
-                    <p class="text-xl text-gray-300 mb-8 max-w-lg mx-auto lg:mx-0">
-                        Join the elite community of FearLess divers. Experience Scuba, Snorkeling, and Night Diving with certified professionals.
-                    </p>
-                    <a href="services.html" class="inline-block bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold text-lg py-4 px-10 rounded-full shadow-lg shadow-cyan-500/30 transition transform hover:scale-105">
-                        Start Your Adventure
-                    </a>
-                </div>
-
-                <!-- Floating Images Container -->
-                <div class="relative h-[500px] w-full hidden md:block">
-                    <!-- Image 1: Scuba -->
-                    <div class="absolute top-0 right-10 w-64 h-80 rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-700 animate-float z-20">
-                        <img src="https://images.unsplash.com/photo-1544551763-46a8723ba3f9?w=500&q=80" class="w-full h-full object-cover" alt="Scuba">
-                        <div class="absolute bottom-0 bg-black/60 w-full p-2 text-center text-sm font-bold">Scuba Diving</div>
-                    </div>
-                    
-                    <!-- Image 2: Snorkel (Delayed) -->
-                    <div class="absolute top-20 left-10 w-56 h-72 rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-700 animate-float delay-1000 z-10">
-                        <img src="https://images.unsplash.com/photo-1544551763-92ab472cad5d?w=500&q=80" class="w-full h-full object-cover" alt="Snorkel">
-                        <div class="absolute bottom-0 bg-black/60 w-full p-2 text-center text-sm font-bold">Snorkeling</div>
-                    </div>
-
-                    <!-- Image 3: Shore (Delayed More) -->
-                    <div class="absolute bottom-10 right-32 w-48 h-60 rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-700 animate-float delay-2000 z-30">
-                        <img src="https://images.unsplash.com/photo-1682687981922-7b55dbb30892?w=500&q=80" class="w-full h-full object-cover" alt="Shore">
-                        <div class="absolute bottom-0 bg-black/60 w-full p-2 text-center text-sm font-bold">Shore Diving</div>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <!-- Services Section (3 Columns) -->
-        <section id="services-section" class="py-20 px-4 max-w-7xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-12 text-cyan-400">Popular Packages</h2>
+            <!-- Image 2: Coral/Fish (Bottom Left) -->
+            <img src="https://images.unsplash.com/photo-1516815231560-8f41ec531527?w=600&q=60" 
+                 class="absolute bottom-20 left-[-40px] md:left-20 w-56 md:w-80 rounded-full opacity-60 animate-float-2 border-4 border-blue-500/20">
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Image 3: Bubbles (Center) -->
+            <img src="https://images.unsplash.com/photo-1465634836201-185c5361438a?w=600&q=60" 
+                 class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full object-cover opacity-20 animate-pulse">
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto mt-[-50px]">
+            <span class="inline-block py-1 px-3 rounded-full bg-cyan-900/50 border border-cyan-500/30 text-cyan-400 text-sm font-semibold tracking-wide mb-6 backdrop-blur-sm animate-float-3">
+                #1 Rated Diving Center
+            </span>
+            <h1 class="text-5xl md:text-8xl font-black mb-6 leading-tight tracking-tight drop-shadow-2xl">
+                DIVE BEYOND <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">FEAR.</span>
+            </h1>
+            <p class="text-lg md:text-2xl mb-10 text-gray-300 max-w-2xl mx-auto font-light">
+                Experience the silence of the ocean. Professional instructors, premium gear, and memories that last a lifetime.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#services-section" class="bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-extrabold text-lg px-10 py-4 rounded-full transition shadow-[0_0_20px_rgba(6,182,212,0.5)]">
+                    Explore Packages
+                </a>
+                <a href="contact.html" class="bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white font-bold text-lg px-10 py-4 rounded-full transition">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section (3 Column Grid) -->
+    <section id="services-section" class="py-24 px-4 max-w-7xl mx-auto relative z-10">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">Our <span class="text-cyan-400">Packages</span></h2>
+            <div class="h-1 w-24 bg-cyan-500 mx-auto rounded-full"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Card 1 -->
+            <div class="bg-slate-800 rounded-2xl overflow-hidden shadow-2xl border border-slate-700/50 group hover:border-cyan-500/50 transition duration-300 flex flex-col">
+                <div class="relative h-56 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1682687981922-7b55dbb30892?w=800&q=80" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute bottom-0 left-0 bg-cyan-600 text-white text-xs font-bold px-3 py-1 rounded-tr-lg">BEGINNER</div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col">
+                    <h3 class="text-xl font-bold mb-2">Discovery Scuba</h3>
+                    <div class="flex items-end gap-2 mb-4">
+                        <span class="text-3xl font-bold text-cyan-400">$80</span>
+                        <span class="text-sm text-gray-500 line-through mb-1">$100</span>
+                    </div>
+                    <ul class="text-gray-400 text-sm space-y-3 mb-6 flex-1">
+                        <li><i class="fa-solid fa-check text-cyan-500 mr-2"></i> No Swimming Needed</li>
+                        <li><i class="fa-solid fa-check text-cyan-500 mr-2"></i> Free Photos & Videos</li>
+                        <li><i class="fa-solid fa-check text-cyan-500 mr-2"></i> 1 Instructor per Person</li>
+                    </ul>
+                    <button onclick="bookNow('Discovery Scuba', '$80')" class="w-full bg-slate-700 hover:bg-cyan-600 hover:text-white text-gray-200 font-bold py-3 rounded-lg transition border border-slate-600">
+                        Book Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-slate-800 rounded-2xl overflow-hidden shadow-2xl border border-slate-700/50 group hover:border-cyan-500/50 transition duration-300 flex flex-col">
+                <div class="relative h-56 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1544551763-92ab472cad5d?w=800&q=80" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute bottom-0 left-0 bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-tr-lg">FAMILY FUN</div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col">
+                    <h3 class="text-xl font-bold mb-2">Snorkeling Trip</h3>
+                    <div class="flex items-end gap-2 mb-4">
+                        <span class="text-3xl font-bold text-cyan-400">$50</span>
+                        <span class="text-sm text-gray-500 line-through mb-1">$65</span>
+                    </div>
+                    <ul class="text-gray-400 text-sm space-y-3 mb-6 flex-1">
+                        <li><i class="fa-solid fa-check text-cyan-500 mr-2"></i> Full Face Mask</li>
+                        <li><i class="fa-solid fa-check text-cyan-500 mr-2"></i> Boat Ride Included</li>
+                        <li><i class="fa-solid fa-check text-cyan-500 mr-2"></i> Guide Included</li>
+                    </ul>
+                    <button onclick="bookNow('Snorkeling', '$50')" class="w-full bg-slate-700 hover:bg-cyan-600 hover:text-white text-gray-200 font-bold py-3 rounded-lg transition border border-slate-600">
+                        Book Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-slate-800 rounded-2xl overflow-hidden shadow-2xl border border-slate-700/50 group hover:border-cyan-500/50 transition duration-300 flex flex-col">
+                <div class="relative h-56 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1582967788606-a171f1080ca8?w=800&q=80" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute bottom-0 left-0 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-tr-lg">CERTIFICATION</div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col">
+                    <h3 class="text-xl font-bold mb-2">Open Water Course</h3>
+                    <div class="flex items-end gap-2 mb-4">
+                        <span class="text-3xl font-bold text-cyan-400">$350</span>
+                        <span class="text-sm text-gray-500 line-through mb-1">$400</span>
+                    </div>
+                    <ul class="text-gray-400 text-sm space-y-3 mb-6 flex-1">
+                        <li><i class="fa-solid fa-check text-cyan-500 mr-2"></i> 4 Day Course</li>
+                        <li><i class="fa-solid fa-check text-cyan-500 mr-2"></i> International License</li>
+                        <li><i class="fa-solid fa-check text-cyan-500 mr-2"></i> Depth up to 18m</li>
+                    </ul>
+                    <button onclick="bookNow('PADI Course', '$350')" class="w-full bg-slate-700 hover:bg-cyan-600 hover:text-white text-gray-200 font-bold py-3 rounded-lg transition border border-slate-600">
+                        Book Now
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Why Choose Us (Expanded to 6 Options) -->
+    <section class="bg-slate-800 py-24 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16">Why <span class="text-cyan-400">FearLess?</span></h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- Card 1 -->
-                <div class="bg-slate-800 rounded-2xl overflow-hidden shadow-xl border border-slate-700 hover:border-cyan-500 transition duration-300 flex flex-col">
-                    <div class="relative h-56">
-                        <img src="https://images.unsplash.com/photo-1544551763-46a8723ba3f9?w=600&q=80" class="w-full h-full object-cover">
-                        <div class="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Best Seller</div>
-                    </div>
-                    <div class="p-5 flex-1 flex flex-col">
-                        <h3 class="text-xl font-bold mb-2">Discovery Scuba</h3>
-                        <div class="text-2xl font-bold text-cyan-400 mb-4">$80 <span class="text-sm text-gray-500 line-through">$100</span></div>
-                        <ul class="text-gray-400 text-sm mb-6 space-y-2 flex-1">
-                            <li><i class="fa-solid fa-check text-cyan-500"></i> Non-Swimmers Allowed</li>
-                            <li><i class="fa-solid fa-check text-cyan-500"></i> 12 Meters Depth</li>
-                            <li><i class="fa-solid fa-check text-cyan-500"></i> Photos & Videos Included</li>
-                        </ul>
-                        <button onclick="bookNow('Discovery Scuba', '$80')" class="w-full bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-3 rounded-lg transition">Book Now</button>
-                    </div>
+                <div class="p-8 bg-slate-900 rounded-xl hover:-translate-y-2 transition duration-300 border-t-4 border-cyan-500">
+                    <i class="fa-solid fa-certificate text-4xl text-cyan-400 mb-4"></i>
+                    <h3 class="text-xl font-bold text-white mb-2">PADI Certified</h3>
+                    <p class="text-gray-400 text-sm">Our entire team holds international certifications.</p>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="bg-slate-800 rounded-2xl overflow-hidden shadow-xl border border-slate-700 hover:border-cyan-500 transition duration-300 flex flex-col">
-                    <div class="relative h-56">
-                        <img src="https://images.unsplash.com/photo-1544551763-92ab472cad5d?w=600&q=80" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-5 flex-1 flex flex-col">
-                        <h3 class="text-xl font-bold mb-2">Snorkeling Safari</h3>
-                        <div class="text-2xl font-bold text-cyan-400 mb-4">$50 <span class="text-sm text-gray-500 line-through">$65</span></div>
-                        <ul class="text-gray-400 text-sm mb-6 space-y-2 flex-1">
-                            <li><i class="fa-solid fa-check text-cyan-500"></i> 3 Island Points</li>
-                            <li><i class="fa-solid fa-check text-cyan-500"></i> Full Face Mask</li>
-                            <li><i class="fa-solid fa-check text-cyan-500"></i> Boat Ride Included</li>
-                        </ul>
-                        <button onclick="bookNow('Snorkeling Safari', '$50')" class="w-full bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-3 rounded-lg transition">Book Now</button>
-                    </div>
+                <div class="p-8 bg-slate-900 rounded-xl hover:-translate-y-2 transition duration-300 border-t-4 border-yellow-400">
+                    <i class="fa-solid fa-camera-retro text-4xl text-yellow-400 mb-4"></i>
+                    <h3 class="text-xl font-bold text-white mb-2">Free Photography</h3>
+                    <p class="text-gray-400 text-sm">We give you raw 4K footage of your dive for free.</p>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="bg-slate-800 rounded-2xl overflow-hidden shadow-xl border border-slate-700 hover:border-cyan-500 transition duration-300 flex flex-col">
-                    <div class="relative h-56">
-                        <img src="https://images.unsplash.com/photo-1682687981922-7b55dbb30892?w=600&q=80" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-5 flex-1 flex flex-col">
-                        <h3 class="text-xl font-bold mb-2">Shore Diving</h3>
-                        <div class="text-2xl font-bold text-cyan-400 mb-4">$60 <span class="text-sm text-gray-500 line-through">$75</span></div>
-                        <ul class="text-gray-400 text-sm mb-6 space-y-2 flex-1">
-                            <li><i class="fa-solid fa-check text-cyan-500"></i> Easy Entry</li>
-                            <li><i class="fa-solid fa-check text-cyan-500"></i> 40 Mins Underwater</li>
-                            <li><i class="fa-solid fa-check text-cyan-500"></i> Great for Kids</li>
-                        </ul>
-                        <button onclick="bookNow('Shore Diving', '$60')" class="w-full bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-3 rounded-lg transition">Book Now</button>
-                    </div>
+                <div class="p-8 bg-slate-900 rounded-xl hover:-translate-y-2 transition duration-300 border-t-4 border-green-500">
+                    <i class="fa-solid fa-shield-heart text-4xl text-green-500 mb-4"></i>
+                    <h3 class="text-xl font-bold text-white mb-2">100% Safety Record</h3>
+                    <p class="text-gray-400 text-sm">Zero accidents in 10 years. Safety is our religion.</p>
+                </div>
+
+                <div class="p-8 bg-slate-900 rounded-xl hover:-translate-y-2 transition duration-300 border-t-4 border-red-500">
+                    <i class="fa-solid fa-pump-medical text-4xl text-red-500 mb-4"></i>
+                    <h3 class="text-xl font-bold text-white mb-2">Sanitized Gear</h3>
+                    <p class="text-gray-400 text-sm">All regulators and masks are medically sanitized.</p>
+                </div>
+
+                <div class="p-8 bg-slate-900 rounded-xl hover:-translate-y-2 transition duration-300 border-t-4 border-purple-500">
+                    <i class="fa-solid fa-clock text-4xl text-purple-500 mb-4"></i>
+                    <h3 class="text-xl font-bold text-white mb-2">Long Dives</h3>
+                    <p class="text-gray-400 text-sm">We don't cut time. You get full underwater time.</p>
+                </div>
+
+                <div class="p-8 bg-slate-900 rounded-xl hover:-translate-y-2 transition duration-300 border-t-4 border-pink-500">
+                    <i class="fa-solid fa-child-reaching text-4xl text-pink-500 mb-4"></i>
+                    <h3 class="text-xl font-bold text-white mb-2">Kid Friendly</h3>
+                    <p class="text-gray-400 text-sm">Special gear and instructors for children aged 10+.</p>
                 </div>
 
             </div>
-            <div class="text-center mt-10">
-                <a href="services.html" class="inline-block border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900 font-bold py-3 px-8 rounded-full transition">View All 10 Packages</a>
+        </div>
+    </section>
+
+    <!-- Google Reviews Section (Simulated Fetch) -->
+    <section class="py-24 px-4 bg-slate-900 overflow-hidden">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-2">What People Say</h2>
+            <div class="flex justify-center items-center text-yellow-400 text-xl gap-1">
+                <span>4.9</span>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+                <span class="text-gray-400 text-sm ml-2 font-normal">on Google Reviews</span>
             </div>
-        </section>
+        </div>
 
-        <!-- Why Choose Us (Expanded to 6) -->
-        <section class="bg-slate-800 py-20 px-4">
-            <div class="max-w-7xl mx-auto">
-                <h2 class="text-4xl font-bold text-center mb-12">Why Choose <span class="text-cyan-400">FearLess?</span></h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
-                    
-                    <div class="p-6 border border-slate-700 rounded-xl hover:bg-slate-700 transition group">
-                        <div class="w-16 h-16 bg-slate-900 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
-                            <i class="fa-solid fa-certificate text-3xl text-yellow-400"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">PADI Certified</h3>
-                        <p class="text-gray-400 text-sm">International safety standards followed strictly.</p>
+        <!-- Infinite Scrolling Container -->
+        <div id="reviews-container" class="flex gap-6 overflow-x-hidden w-full max-w-[100vw] px-4 pb-10 cursor-pointer">
+            
+            <!-- Repeat Cards for Loop Effect -->
+            <!-- Review 1 -->
+            <div class="google-review-card min-w-[300px] bg-white text-slate-900 p-5 rounded-lg shadow-lg relative">
+                <div class="flex items-center mb-3">
+                    <img src="https://lh3.googleusercontent.com/a/default-user=s40-p" class="w-10 h-10 rounded-full mr-3">
+                    <div>
+                        <h4 class="font-bold text-sm">John Doe</h4>
+                        <div class="text-yellow-500 text-xs">★★★★★ <span class="text-gray-400">2 days ago</span></div>
                     </div>
-
-                    <div class="p-6 border border-slate-700 rounded-xl hover:bg-slate-700 transition group">
-                        <div class="w-16 h-16 bg-slate-900 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
-                            <i class="fa-solid fa-video text-3xl text-cyan-400"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">4K Media Included</h3>
-                        <p class="text-gray-400 text-sm">GoPro Hero 11 footage transferred instantly.</p>
-                    </div>
-
-                    <div class="p-6 border border-slate-700 rounded-xl hover:bg-slate-700 transition group">
-                        <div class="w-16 h-16 bg-slate-900 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
-                            <i class="fa-solid fa-heart-pulse text-3xl text-red-500"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">New Equipment</h3>
-                        <p class="text-gray-400 text-sm">Gear serviced weekly and sanitized daily.</p>
-                    </div>
-
-                    <div class="p-6 border border-slate-700 rounded-xl hover:bg-slate-700 transition group">
-                        <div class="w-16 h-16 bg-slate-900 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
-                            <i class="fa-solid fa-user-group text-3xl text-green-400"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Small Groups</h3>
-                        <p class="text-gray-400 text-sm">1 Instructor for every 2 divers max.</p>
-                    </div>
-
-                    <div class="p-6 border border-slate-700 rounded-xl hover:bg-slate-700 transition group">
-                        <div class="w-16 h-16 bg-slate-900 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
-                            <i class="fa-solid fa-clock text-3xl text-purple-400"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Long Dives</h3>
-                        <p class="text-gray-400 text-sm">We don't cut time. Full 45 mins underwater.</p>
-                    </div>
-
-                    <div class="p-6 border border-slate-700 rounded-xl hover:bg-slate-700 transition group">
-                        <div class="w-16 h-16 bg-slate-900 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
-                            <i class="fa-solid fa-money-bill-wave text-3xl text-emerald-400"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">No Hidden Costs</h3>
-                        <p class="text-gray-400 text-sm">Price includes tax, boat, gear, and photos.</p>
-                    </div>
-
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="w-6 h-6 absolute top-5 right-5">
                 </div>
+                <p class="text-sm text-gray-700">"Amazing experience! The instructors were so patient. Highly recommend the Discovery package."</p>
             </div>
-        </section>
 
-        <!-- Google Reviews Section (Simulated UI) -->
-        <section class="py-20 px-4 max-w-7xl mx-auto overflow-hidden">
-            <div class="text-center mb-12">
-                <div class="inline-flex items-center gap-2 bg-white text-slate-900 px-4 py-1 rounded-full text-sm font-bold mb-4">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="w-4 h-4" alt="G">
-                    4.9 Rating (1,200+ Reviews)
+            <!-- Review 2 -->
+            <div class="google-review-card min-w-[300px] bg-white text-slate-900 p-5 rounded-lg shadow-lg relative">
+                <div class="flex items-center mb-3">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-10 h-10 rounded-full mr-3">
+                    <div>
+                        <h4 class="font-bold text-sm">Sarah Smith</h4>
+                        <div class="text-yellow-500 text-xs">★★★★★ <span class="text-gray-400">1 week ago</span></div>
+                    </div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="w-6 h-6 absolute top-5 right-5">
                 </div>
-                <h2 class="text-4xl font-bold">What Divers <span class="text-cyan-400">Say</span></h2>
+                <p class="text-sm text-gray-700">"The photos they gave us were professional quality. Worth every penny."</p>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="google-review-card min-w-[300px] bg-white text-slate-900 p-5 rounded-lg shadow-lg relative">
+                <div class="flex items-center mb-3">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-10 h-10 rounded-full mr-3">
+                    <div>
+                        <h4 class="font-bold text-sm">Mike Ross</h4>
+                        <div class="text-yellow-500 text-xs">★★★★★ <span class="text-gray-400">3 weeks ago</span></div>
+                    </div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="w-6 h-6 absolute top-5 right-5">
+                </div>
+                <p class="text-sm text-gray-700">"Scary at first, but the team made me feel safe. Best part of my vacation!"</p>
+            </div>
+
+             <!-- Review 4 -->
+             <div class="google-review-card min-w-[300px] bg-white text-slate-900 p-5 rounded-lg shadow-lg relative">
+                <div class="flex items-center mb-3">
+                    <img src="https://randomuser.me/api/portraits/women/65.jpg" class="w-10 h-10 rounded-full mr-3">
+                    <div>
+                        <h4 class="font-bold text-sm">Emily Blunt</h4>
+                        <div class="text-yellow-500 text-xs">★★★★★ <span class="text-gray-400">1 month ago</span></div>
+                    </div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="w-6 h-6 absolute top-5 right-5">
+                </div>
+                <p class="text-sm text-gray-700">"Booking via WhatsApp was super fast. No hidden charges."</p>
             </div>
             
-            <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 snap-gallery">
-                
-                <!-- Review 1 -->
-                <div class="snap-center shrink-0 w-80 md:w-96 glass-panel p-6 rounded-2xl relative">
-                    <div class="flex items-center mb-3">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-10 h-10 rounded-full mr-3">
-                        <div>
-                            <div class="font-bold text-sm">Alex Johnson</div>
-                            <div class="text-yellow-400 text-xs">★★★★★ 2 days ago</div>
-                        </div>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="w-5 h-5 ml-auto opacity-80" alt="G">
+            <!-- Duplicates for scrolling illusion -->
+            <div class="google-review-card min-w-[300px] bg-white text-slate-900 p-5 rounded-lg shadow-lg relative">
+                <div class="flex items-center mb-3">
+                    <img src="https://lh3.googleusercontent.com/a/default-user=s40-p" class="w-10 h-10 rounded-full mr-3">
+                    <div>
+                        <h4 class="font-bold text-sm">John Doe</h4>
+                        <div class="text-yellow-500 text-xs">★★★★★</div>
                     </div>
-                    <p class="text-gray-300 text-sm mb-4">"Instructors were super patient. I was nervous but they held my hand the whole time."</p>
-                    <!-- Review Image/Video Thumbnail -->
-                    <div class="h-40 rounded-lg overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1682687981922-7b55dbb30892?w=400&q=80" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 flex items-center justify-center bg-black/30">
-                            <i class="fa-solid fa-play-circle text-4xl text-white opacity-80"></i>
-                        </div>
-                    </div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="w-6 h-6 absolute top-5 right-5">
                 </div>
-
-                <!-- Review 2 -->
-                <div class="snap-center shrink-0 w-80 md:w-96 glass-panel p-6 rounded-2xl relative">
-                    <div class="flex items-center mb-3">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-10 h-10 rounded-full mr-3">
-                        <div>
-                            <div class="font-bold text-sm">Sarah W.</div>
-                            <div class="text-yellow-400 text-xs">★★★★★ 1 week ago</div>
-                        </div>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="w-5 h-5 ml-auto opacity-80" alt="G">
-                    </div>
-                    <p class="text-gray-300 text-sm mb-4">"Best prices on the island. The photos they gave us for free were studio quality!"</p>
-                    <div class="h-40 rounded-lg overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1544551763-92ab472cad5d?w=400&q=80" class="w-full h-full object-cover">
-                    </div>
-                </div>
-
-                <!-- Review 3 -->
-                <div class="snap-center shrink-0 w-80 md:w-96 glass-panel p-6 rounded-2xl relative">
-                    <div class="flex items-center mb-3">
-                        <img src="https://randomuser.me/api/portraits/men/85.jpg" class="w-10 h-10 rounded-full mr-3">
-                        <div>
-                            <div class="font-bold text-sm">David Brown</div>
-                            <div class="text-yellow-400 text-xs">★★★★★ 3 weeks ago</div>
-                        </div>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="w-5 h-5 ml-auto opacity-80" alt="G">
-                    </div>
-                    <p class="text-gray-300 text-sm mb-4">"Professional gear and safety. Felt completely safe with Mark as my guide."</p>
-                    <div class="h-40 rounded-lg overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1544551763-46a8723ba3f9?w=400&q=80" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 flex items-center justify-center bg-black/30">
-                            <i class="fa-solid fa-play-circle text-4xl text-white opacity-80"></i>
-                        </div>
-                    </div>
-                </div>
-
+                <p class="text-sm text-gray-700">"Amazing experience! The instructors were so patient. Highly recommend."</p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- FAQ Section -->
-        <section class="bg-slate-800 py-20 px-4">
-            <div class="max-w-3xl mx-auto">
-                <h2 class="text-3xl font-bold text-center mb-10">Common Questions</h2>
-                <div class="space-y-4">
-                    <details class="group bg-slate-900 rounded-lg p-4 cursor-pointer">
-                        <summary class="font-bold text-lg flex justify-between items-center list-none text-cyan-400">
-                            Do I need to know swimming?
-                            <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
-                        </summary>
-                        <p class="text-gray-300 mt-4">No! For our beginner "Discovery Scuba" package, swimming skills are not required. Your instructor controls everything.</p>
-                    </details>
-                    <details class="group bg-slate-900 rounded-lg p-4 cursor-pointer">
-                        <summary class="font-bold text-lg flex justify-between items-center list-none text-cyan-400">
-                            Is it safe for kids?
-                            <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
-                        </summary>
-                        <p class="text-gray-300 mt-4">Yes, kids aged 10+ can dive. We have special equipment for children.</p>
-                    </details>
-                </div>
+    <!-- FAQ Section -->
+    <section class="bg-slate-800 py-20 px-4">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-10">Common Questions</h2>
+            <div class="space-y-4">
+                <details class="group bg-slate-900 rounded-lg p-4 cursor-pointer border border-slate-700">
+                    <summary class="font-bold text-lg flex justify-between items-center list-none text-cyan-400">
+                        Do I need swimming skills?
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-gray-300 mt-4">No! For beginners, the instructor holds you the entire time.</p>
+                </details>
+                <details class="group bg-slate-900 rounded-lg p-4 cursor-pointer border border-slate-700">
+                    <summary class="font-bold text-lg flex justify-between items-center list-none text-cyan-400">
+                        Is it safe for non-swimmers?
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-gray-300 mt-4">Yes, we provide buoyancy jackets and a personal guide.</p>
+                </details>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <!-- Footer (No Bottom Gap) -->
-    <footer class="bg-slate-950 pt-16 pb-12 px-4 border-t border-slate-800 w-full mt-auto">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- Footer (Zero Gap) -->
+    <footer class="bg-slate-950 pt-16 px-4 border-t border-slate-800 mt-auto">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 pb-10">
             <div>
-                <div class="flex items-center mb-4">
-                    <i class="fa-solid fa-water text-cyan-400 text-2xl mr-2"></i>
-                    <span class="font-bold text-xl">FearLess<span class="text-cyan-400">Diving</span></span>
-                </div>
-                <p class="text-gray-400 text-sm">Unlock the mysteries of the deep blue with the most trusted diving team in the region.</p>
+                <span class="font-bold text-xl text-white">FearLess<span class="text-cyan-400">Diving</span></span>
+                <p class="text-gray-500 text-sm mt-4">The ocean is calling. Answer it with confidence.</p>
             </div>
             <div>
-                <h4 class="font-bold text-lg mb-4 text-white">Contact Info</h4>
-                <ul class="text-gray-400 space-y-2 text-sm">
-                    <li><i class="fa-solid fa-location-dot mr-2 text-cyan-400"></i> Blue Bay Beach, Andaman</li>
-                    <li><i class="fa-solid fa-phone mr-2 text-cyan-400"></i> +91 98765 43210</li>
-                    <li><i class="fa-solid fa-envelope mr-2 text-cyan-400"></i> hello@fearlessdiving.com</li>
+                <h4 class="font-bold text-white mb-4">Contact</h4>
+                <ul class="text-gray-500 space-y-2 text-sm">
+                    <li>Blue Bay Beach, Andaman</li>
+                    <li>+91 98765 43210</li>
                 </ul>
             </div>
             <div>
-                <h4 class="font-bold text-lg mb-4 text-white">Sitemap</h4>
-                <ul class="text-gray-400 space-y-2 text-sm">
-                    <li><a href="about.html" class="hover:text-cyan-400">About Us</a></li>
+                <h4 class="font-bold text-white mb-4">Links</h4>
+                <ul class="text-gray-500 space-y-2 text-sm">
                     <li><a href="services.html" class="hover:text-cyan-400">Packages</a></li>
-                    <li><a href="contact.html" class="hover:text-cyan-400">Contact & Map</a></li>
+                    <li><a href="contact.html" class="hover:text-cyan-400">Location</a></li>
                 </ul>
             </div>
         </div>
-        <div class="text-center text-gray-600 text-xs mt-10">
+        <div class="bg-black py-4 text-center text-gray-700 text-xs w-full">
             &copy; 2026 FearLess Diving. All rights reserved.
         </div>
     </footer>
 
-    <!-- Fixed Floating Icons (Left & Right) -->
-    <!-- Phone Left -->
-    <a href="tel:+919876543210" class="fixed bottom-4 left-4 z-50 bg-blue-600 w-14 h-14 rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 transition border-2 border-white">
+    <!-- Fixed Buttons (Split Side) -->
+    <a href="tel:+919876543210" class="fixed bottom-6 left-6 z-50 bg-blue-600 w-14 h-14 rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 transition animate-bounce">
         <i class="fa-solid fa-phone text-2xl"></i>
     </a>
-    
-    <!-- WhatsApp Right -->
-    <a href="https://wa.me/919876543210" target="_blank" class="fixed bottom-4 right-4 z-50 bg-green-500 w-14 h-14 rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 transition border-2 border-white">
+    <a href="https://wa.me/919876543210" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 w-14 h-14 rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 transition animate-bounce">
         <i class="fa-brands fa-whatsapp text-3xl"></i>
     </a>
 
