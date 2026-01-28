@@ -1,63 +1,62 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
 
 /* Base Settings */
-body {
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
     font-family: 'Inter', sans-serif;
     background-color: #0f172a; /* Slate 900 */
     color: #f8fafc; /* Slate 50 */
     -webkit-user-select: none;
     -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
     overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
 }
 
-main {
-    flex: 1;
-}
-
-/* Scrollbar Customization */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
 }
 ::-webkit-scrollbar-track {
     background: #0f172a;
 }
 ::-webkit-scrollbar-thumb {
-    background: #06b6d4; /* Cyan 500 */
-    border-radius: 4px;
+    background: #06b6d4;
+    border-radius: 3px;
 }
 
-/* Floating Animation & Delays */
-@keyframes float {
-    0% { transform: translateY(0px); }
+/* Advanced Floating Animations for Hero */
+@keyframes floatUp {
+    0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-20px); }
-    100% { transform: translateY(0px); }
+}
+@keyframes floatDown {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(20px); }
+}
+@keyframes floatSide {
+    0%, 100% { transform: translateX(0px) rotate(0deg); }
+    50% { transform: translateX(15px) rotate(2deg); }
 }
 
-.animate-float {
-    animation: float 6s ease-in-out infinite;
-}
-.delay-1000 { animation-delay: 1s; }
-.delay-2000 { animation-delay: 2s; }
+.animate-float-1 { animation: floatUp 5s ease-in-out infinite; }
+.animate-float-2 { animation: floatDown 6s ease-in-out infinite; }
+.animate-float-3 { animation: floatSide 7s ease-in-out infinite; }
 
-/* Horizontal Scroll Snap */
+/* Horizontal Snap Gallery */
 .snap-gallery {
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;  /* IE 10+ */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 .snap-gallery::-webkit-scrollbar { 
-    display: none; /* Chrome/Safari */
+    display: none; 
 }
 
-/* Glass Effect for Reviews */
-.glass-panel {
-    background: rgba(30, 41, 59, 0.7);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+/* Google Review Card Styling */
+.google-review-card {
+    transition: transform 0.3s ease;
+}
+.google-review-card:hover {
+    transform: translateY(-5px);
 }
