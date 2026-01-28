@@ -1,61 +1,63 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
 
 /* Base Settings */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Account for fixed header */
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: #0f172a; /* Slate 900 */
     color: #f8fafc; /* Slate 50 */
     -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
     overflow-x: hidden;
     margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
 main {
-    flex: 1;
+    flex: 1; /* Pushes footer to bottom */
 }
 
 /* Scrollbar Customization */
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
 }
 ::-webkit-scrollbar-track {
     background: #0f172a;
 }
 ::-webkit-scrollbar-thumb {
-    background: #06b6d4; /* Cyan 500 */
+    background: #06b6d4;
     border-radius: 4px;
 }
 
-/* Floating Animation & Delays */
+/* Floating Animation */
 @keyframes float {
     0% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+    50% { transform: translateY(-15px); }
     100% { transform: translateY(0px); }
 }
 
 .animate-float {
-    animation: float 6s ease-in-out infinite;
+    animation: float 5s ease-in-out infinite;
 }
-.delay-1000 { animation-delay: 1s; }
-.delay-2000 { animation-delay: 2s; }
+.delay-1000 { animation-delay: 1.5s; }
+.delay-2000 { animation-delay: 3s; }
 
-/* Horizontal Scroll Snap */
+/* Snap Gallery */
 .snap-gallery {
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;  /* IE 10+ */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 .snap-gallery::-webkit-scrollbar { 
-    display: none; /* Chrome/Safari */
+    display: none; 
 }
 
-/* Glass Effect for Reviews */
+/* Glass Effect */
 .glass-panel {
     background: rgba(30, 41, 59, 0.7);
     backdrop-filter: blur(10px);
