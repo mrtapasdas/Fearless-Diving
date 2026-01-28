@@ -3,303 +3,339 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="FearLess Diving - Best Scuba Diving in India.">
-    <title>FearLess Diving | Home</title>
-    
-    <!-- 1. Tailwind CSS (CDN) -->
+    <title>FearLess Diving | Best Scuba Diving Experience</title>
+    <meta name="description" content="Experience the best scuba diving, snorkeling, and underwater adventures with FearLess Diving. Safe, professional, and unforgettable.">
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        ocean: '#0f172a',
-                        cyan: '#06b6d4',
+                        brand: {
+                            dark: '#0f172a',
+                            light: '#1e293b',
+                            accent: '#0d9488',
+                            hover: '#14b8a6'
+                        }
                     }
                 }
             }
         }
     </script>
-    
-    <!-- 2. Font Awesome (CDN) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- 3. Custom CSS -->
-    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-ocean text-gray-200 no-select">
+<body class="bg-brand-dark text-slate-200">
 
-    <!-- HEADER -->
-    <nav class="fixed w-full z-50 bg-ocean/95 backdrop-blur-md border-b border-gray-800 shadow-md">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center relative">
-            <!-- Logo -->
-            <a href="index.html" class="text-3xl font-bold text-cyan tracking-wide">
-                FearLess<span class="text-white">Diving</span>
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-brand-dark/95 backdrop-blur shadow-md border-b border-brand-light">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-brand-accent flex items-center gap-2">
+                <i class="fa-solid fa-water"></i> FearLess Diving
             </a>
             
             <!-- Desktop Menu -->
-            <div class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-wider">
-                <a href="index.html" class="text-cyan transition">Home</a>
-                <a href="about.html" class="hover:text-cyan transition">About</a>
-                <a href="services.html" class="hover:text-cyan transition">Services</a>
-                <a href="contact.html" class="hover:text-cyan transition">Contact</a>
-            </div>
+            <nav class="hidden md:flex gap-8">
+                <a href="index.html" class="hover:text-brand-accent transition">Home</a>
+                <a href="about.html" class="hover:text-brand-accent transition">About Us</a>
+                <a href="services.html" class="hover:text-brand-accent transition">Services</a>
+                <a href="contact.html" class="hover:text-brand-accent transition">Contact Us</a>
+            </nav>
 
-            <!-- Mobile Button -->
-            <button id="menu-btn" class="block md:hidden text-2xl text-cyan focus:outline-none hover:text-white transition">
-                <i class="fas fa-bars"></i>
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
             </button>
         </div>
-        
-        <!-- Mobile Menu (Dropdown) -->
-        <div id="menu" class="hidden absolute top-full left-0 w-full bg-ocean flex-col items-center border-b border-gray-800 shadow-xl py-6 space-y-6 z-40">
-            <a href="index.html" class="text-lg font-bold hover:text-cyan">Home</a>
-            <a href="about.html" class="text-lg font-bold hover:text-cyan">About Us</a>
-            <a href="services.html" class="text-lg font-bold hover:text-cyan">Services</a>
-            <a href="contact.html" class="text-lg font-bold hover:text-cyan">Contact Us</a>
-        </div>
-    </nav>
-
-    <!-- HERO SECTION -->
-    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            
-            <!-- Text Content (Z-Index increased to sit above everything) -->
-            <div class="z-20 relative text-center lg:text-left">
-                <h1 class="text-4xl lg:text-6xl font-extrabold leading-tight mb-6">
-                    Dive Into The <span class="text-cyan">Deep Blue</span>
-                </h1>
-                <p class="text-gray-400 text-lg mb-8 max-w-lg mx-auto lg:mx-0">
-                    Experience the breathtaking beauty of the underwater world with certified professionals. 
-                    Safe. Affordable. Unforgettable.
-                </p>
-                <div class="flex justify-center lg:justify-start gap-4">
-                    <a href="services.html" class="bg-cyan text-ocean font-bold py-3 px-8 rounded-full hover:bg-white transition shadow-lg shadow-cyan/50">
-                        Book Now
-                    </a>
-                    <a href="about.html" class="border border-gray-600 py-3 px-8 rounded-full hover:border-cyan hover:text-cyan transition">
-                        Learn More
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Floating Images Animation -->
-            <div class="relative h-80 lg:h-96 w-full flex justify-center items-center z-10 mt-10 lg:mt-0">
-                <!-- Image 1 -->
-                <img src="https://images.unsplash.com/photo-1544551763-46a42a46180b?w=400&q=80" 
-                     class="absolute top-0 left-4 lg:left-0 w-32 h-32 lg:w-40 lg:h-40 object-cover rounded-2xl shadow-2xl border-2 border-cyan float-img-1 opacity-90" alt="Scuba">
-                
-                <!-- Image 2 -->
-                <img src="https://images.unsplash.com/photo-1544552866-d3ed42536cfd?w=400&q=80" 
-                     class="absolute bottom-0 right-4 lg:right-10 w-40 h-40 lg:w-48 lg:h-48 object-cover rounded-2xl shadow-2xl border-2 border-cyan float-img-2 opacity-90" alt="Snorkel">
-                
-                <!-- Image 3 -->
-                <img src="https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=400&q=80" 
-                     class="absolute top-10 right-10 lg:top-20 lg:right-20 w-28 h-28 lg:w-32 lg:h-32 object-cover rounded-2xl shadow-2xl border-2 border-cyan float-img-3 opacity-90" alt="Ocean">
-            </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-light border-t border-brand-dark">
+            <a href="index.html" class="block px-4 py-3 hover:bg-brand-dark">Home</a>
+            <a href="about.html" class="block px-4 py-3 hover:bg-brand-dark">About Us</a>
+            <a href="services.html" class="block px-4 py-3 hover:bg-brand-dark">Services</a>
+            <a href="contact.html" class="block px-4 py-3 hover:bg-brand-dark">Contact Us</a>
         </div>
     </header>
 
-    <!-- SERVICES PREVIEW -->
-    <section class="py-16 bg-slate-900/50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12">Popular <span class="text-cyan">Packages</span></h2>
-            
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 overflow-hidden">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 z-10">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">Dive Into The <span class="text-brand-accent">Unknown</span></h1>
+                <p class="text-lg text-gray-400 mb-8">Explore the breathtaking underwater world with our professional divers. Safe, thrilling, and unforgettable experiences await.</p>
+                <a href="services.html" class="bg-brand-accent hover:bg-brand-hover text-white px-8 py-3 rounded-full font-bold transition shadow-lg inline-block">Explore Packages</a>
+            </div>
+            <div class="md:w-1/2 mt-12 md:mt-0 relative h-[400px] w-full">
+                <!-- Floating Images -->
+                <img src="https://images.unsplash.com/photo-1544551763-46a8723ba3f9?q=80&w=400&auto=format&fit=crop" alt="Scuba" class="absolute top-0 right-10 w-48 h-48 object-cover rounded-2xl float-img float-delay-1 border-4 border-brand-accent z-20">
+                <img src="https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?q=80&w=400&auto=format&fit=crop" alt="Snorkel" class="absolute bottom-0 left-10 w-56 h-56 object-cover rounded-2xl float-img float-delay-2 border-4 border-brand-accent z-30">
+                <img src="https://images.unsplash.com/photo-1583307223828-56df82570085?q=80&w=400&auto=format&fit=crop" alt="Coral" class="absolute top-20 left-1/2 transform -translate-x-1/2 w-40 h-40 object-cover rounded-2xl float-img float-delay-3 border-4 border-brand-accent z-10 opacity-80">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Snippet -->
+    <section class="py-16 bg-brand-light">
+        <div class="container mx-auto px-4 text-center max-w-3xl">
+            <h2 class="text-3xl font-bold mb-6 text-brand-accent">Who We Are</h2>
+            <p class="text-gray-300 leading-relaxed">
+                FearLess Diving is a premier scuba diving center dedicated to providing safe and exhilarating underwater adventures. Established by ocean lovers, we bridge the gap between human curiosity and the deep blue. Whether you are a beginner or a pro, we have the right gear and guide for you.
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-10 text-center">Our <span class="text-brand-accent">Services</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Card 1 -->
-                <div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg border border-gray-700 hover:border-cyan transition duration-300">
-                    <img src="https://images.unsplash.com/photo-1518175510444-59e86c2e35f4?w=500" alt="Scuba" class="w-full h-48 object-cover">
+                <div class="bg-brand-light rounded-xl overflow-hidden shadow-xl hover:scale-105 transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a8723ba3f9?auto=format&fit=crop&w=600" class="w-full h-48 object-cover" alt="Scuba">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Scuba Diving</h3>
                         <div class="flex justify-between items-center mb-4">
-                            <span class="text-gray-500 line-through">₹3500</span>
-                            <span class="text-cyan font-bold text-xl">₹2500</span>
+                            <span class="text-brand-accent font-bold text-lg">₹3,500</span>
+                            <span class="bg-red-500 text-xs px-2 py-1 rounded text-white">20% OFF</span>
                         </div>
-                        <ul class="text-sm text-gray-400 mb-6 space-y-2">
-                            <li><i class="fas fa-check text-cyan mr-2"></i> 20 Mins Underwater</li>
-                            <li><i class="fas fa-video text-cyan mr-2"></i> Photos & Videos</li>
-                            <li><i class="fas fa-user-shield text-cyan mr-2"></i> Training Included</li>
+                        <ul class="text-sm text-gray-400 mb-6 list-disc list-inside">
+                            <li>45 Mins Underwater</li>
+                            <li>Includes Photos & Video</li>
+                            <li>Training Included</li>
                         </ul>
-                        <button onclick="bookService('Scuba Diving', '2500')" class="w-full bg-cyan text-ocean font-bold py-2 rounded hover:bg-white transition">Book Now</button>
+                        <button onclick="bookNow('Scuba Diving')" class="w-full bg-brand-accent py-2 rounded font-bold hover:bg-brand-hover transition">Book Now</button>
                     </div>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg border border-gray-700 hover:border-cyan transition duration-300">
-                    <img src="https://images.unsplash.com/photo-1540656046779-1da01df82cb8?w=500" alt="Snorkeling" class="w-full h-48 object-cover">
+                <div class="bg-brand-light rounded-xl overflow-hidden shadow-xl hover:scale-105 transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?auto=format&fit=crop&w=600" class="w-full h-48 object-cover" alt="Snorkeling">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Snorkeling</h3>
                         <div class="flex justify-between items-center mb-4">
-                            <span class="text-gray-500 line-through">₹1500</span>
-                            <span class="text-cyan font-bold text-xl">₹999</span>
+                            <span class="text-brand-accent font-bold text-lg">₹1,500</span>
+                            <span class="bg-red-500 text-xs px-2 py-1 rounded text-white">10% OFF</span>
                         </div>
-                        <ul class="text-sm text-gray-400 mb-6 space-y-2">
-                            <li><i class="fas fa-check text-cyan mr-2"></i> Surface Swim</li>
-                            <li><i class="fas fa-life-ring text-cyan mr-2"></i> Equipment Provided</li>
-                            <li><i class="fas fa-user text-cyan mr-2"></i> Guide Included</li>
+                        <ul class="text-sm text-gray-400 mb-6 list-disc list-inside">
+                            <li>Surface Swimming</li>
+                            <li>Guide Included</li>
+                            <li>Life Jacket Provided</li>
                         </ul>
-                        <button onclick="bookService('Snorkeling', '999')" class="w-full bg-cyan text-ocean font-bold py-2 rounded hover:bg-white transition">Book Now</button>
+                        <button onclick="bookNow('Snorkeling')" class="w-full bg-brand-accent py-2 rounded font-bold hover:bg-brand-hover transition">Book Now</button>
                     </div>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg border border-gray-700 hover:border-cyan transition duration-300">
-                    <img src="https://images.unsplash.com/photo-1582967788606-a171f1080cae?w=500" alt="Shore Diving" class="w-full h-48 object-cover">
+                <div class="bg-brand-light rounded-xl overflow-hidden shadow-xl hover:scale-105 transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1518118029562-b1319c5c291c?auto=format&fit=crop&w=600" class="w-full h-48 object-cover" alt="Boat Ride">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Shore Diving</h3>
+                        <h3 class="text-xl font-bold mb-2">Island Boat Ride</h3>
                         <div class="flex justify-between items-center mb-4">
-                            <span class="text-gray-500 line-through">₹4000</span>
-                            <span class="text-cyan font-bold text-xl">₹3000</span>
+                            <span class="text-brand-accent font-bold text-lg">₹2,000</span>
+                            <span class="bg-blue-500 text-xs px-2 py-1 rounded text-white">Family</span>
                         </div>
-                        <ul class="text-sm text-gray-400 mb-6 space-y-2">
-                            <li><i class="fas fa-check text-cyan mr-2"></i> Deep Sea Entry</li>
-                            <li><i class="fas fa-star text-cyan mr-2"></i> Advanced Training</li>
-                            <li><i class="fas fa-box text-cyan mr-2"></i> Full Kit</li>
+                        <ul class="text-sm text-gray-400 mb-6 list-disc list-inside">
+                            <li>2 Hours Trip</li>
+                            <li>Dolphin Spotting</li>
+                            <li>Snacks Included</li>
                         </ul>
-                        <button onclick="bookService('Shore Diving', '3000')" class="w-full bg-cyan text-ocean font-bold py-2 rounded hover:bg-white transition">Book Now</button>
+                        <button onclick="bookNow('Island Boat Ride')" class="w-full bg-brand-accent py-2 rounded font-bold hover:bg-brand-hover transition">Book Now</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section class="py-16 bg-ocean">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-10">
-            <div class="md:w-1/2">
-                <img src="https://images.unsplash.com/photo-1628157778972-e1d84825902b?w=800" class="rounded-lg shadow-2xl border border-gray-700 w-full" alt="Team">
-            </div>
-            <div class="md:w-1/2">
-                <h2 class="text-3xl font-bold mb-4">We Are <span class="text-cyan">FearLess</span></h2>
-                <p class="text-gray-400 mb-4 leading-relaxed">
-                    Established in 2015, we have certified over 5,000 divers. Our mission is to make the underwater world accessible to everyone, regardless of swimming ability.
-                </p>
-                <ul class="text-gray-300 space-y-2 mb-6">
-                    <li><i class="fas fa-check-circle text-cyan"></i> PADI Certified Instructors</li>
-                    <li><i class="fas fa-check-circle text-cyan"></i> 100% Safety Record</li>
-                    <li><i class="fas fa-check-circle text-cyan"></i> Best Price Guarantee</li>
-                </ul>
-                <a href="about.html" class="inline-block border border-cyan text-cyan py-2 px-6 rounded hover:bg-cyan hover:text-ocean transition font-bold">Read Our Story</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- REVIEWS SLIDER -->
-    <section class="py-16 bg-slate-900">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-10">Guest <span class="text-cyan">Reviews</span></h2>
-            
-            <div class="scrolling-wrapper flex gap-6 overflow-x-auto pb-4 px-2">
-                <!-- Review 1 -->
-                <div class="card min-w-[300px] bg-ocean p-6 rounded-xl border border-gray-700 shadow-md">
-                    <div class="flex items-center mb-4">
-                        <div class="w-10 h-10 rounded-full bg-gray-600 flex items-center justify-center mr-3 text-white font-bold">RS</div>
-                        <div>
-                            <h4 class="font-bold text-sm">Rahul Sharma</h4>
-                            <div class="text-yellow-400 text-xs">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-sm text-gray-400">"The instructors were very patient. The video quality was top notch. Highly recommended!"</p>
-                </div>
-                <!-- Review 2 -->
-                <div class="card min-w-[300px] bg-ocean p-6 rounded-xl border border-gray-700 shadow-md">
-                    <div class="flex items-center mb-4">
-                         <div class="w-10 h-10 rounded-full bg-gray-600 flex items-center justify-center mr-3 text-white font-bold">PP</div>
-                        <div>
-                            <h4 class="font-bold text-sm">Priya Patel</h4>
-                            <div class="text-yellow-400 text-xs">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-sm text-gray-400">"I was scared of water, but FearLess made me feel safe. A must-try activity!"</p>
-                </div>
-                <!-- Review 3 -->
-                <div class="card min-w-[300px] bg-ocean p-6 rounded-xl border border-gray-700 shadow-md">
-                    <div class="flex items-center mb-4">
-                         <div class="w-10 h-10 rounded-full bg-gray-600 flex items-center justify-center mr-3 text-white font-bold">JD</div>
-                        <div>
-                            <h4 class="font-bold text-sm">John Doe</h4>
-                            <div class="text-yellow-400 text-xs">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-sm text-gray-400">"Excellent equipment and very professional staff. The shore diving spot was beautiful."</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- WHY CHOOSE US -->
-    <section class="py-16 bg-ocean">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12">Why Choose <span class="text-cyan">Us</span></h2>
+    <!-- Why Choose Us -->
+    <section class="py-16 bg-brand-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-10 text-center">Why Choose <span class="text-brand-accent">FearLess?</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Points -->
-                <div class="p-6 border border-gray-800 rounded-lg hover:bg-slate-800 transition text-center">
-                    <i class="fas fa-shield-alt text-4xl text-cyan mb-4"></i>
-                    <h3 class="font-bold text-lg">Safety First</h3>
-                    <p class="text-sm text-gray-400 mt-2">Strict safety protocols.</p>
+                <!-- Point 1 -->
+                <div class="p-6 bg-brand-dark rounded-lg border border-slate-700">
+                    <i class="fa-solid fa-user-shield text-3xl text-brand-accent mb-4"></i>
+                    <h3 class="font-bold mb-2">PADI Certified</h3>
+                    <p class="text-sm text-gray-400">All our instructors are internationally certified professionals.</p>
                 </div>
-                <div class="p-6 border border-gray-800 rounded-lg hover:bg-slate-800 transition text-center">
-                    <i class="fas fa-certificate text-4xl text-cyan mb-4"></i>
-                    <h3 class="font-bold text-lg">Certified Crew</h3>
-                    <p class="text-sm text-gray-400 mt-2">PADI & SSI experts.</p>
+                <!-- Point 2 -->
+                <div class="p-6 bg-brand-dark rounded-lg border border-slate-700">
+                    <i class="fa-solid fa-camera text-3xl text-yellow-500 mb-4"></i>
+                    <h3 class="font-bold mb-2">Free Photography</h3>
+                    <p class="text-sm text-gray-400">We capture your best moments underwater for free.</p>
                 </div>
-                <div class="p-6 border border-gray-800 rounded-lg hover:bg-slate-800 transition text-center">
-                    <i class="fas fa-camera text-4xl text-cyan mb-4"></i>
-                    <h3 class="font-bold text-lg">Free Photos</h3>
-                    <p class="text-sm text-gray-400 mt-2">HD memories included.</p>
+                <!-- Point 3 -->
+                <div class="p-6 bg-brand-dark rounded-lg border border-slate-700">
+                    <i class="fa-solid fa-anchor text-3xl text-blue-400 mb-4"></i>
+                    <h3 class="font-bold mb-2">Top Equipment</h3>
+                    <p class="text-sm text-gray-400">Regularly serviced, high-quality diving gear.</p>
                 </div>
-                <div class="p-6 border border-gray-800 rounded-lg hover:bg-slate-800 transition text-center">
-                    <i class="fas fa-wallet text-4xl text-cyan mb-4"></i>
-                    <h3 class="font-bold text-lg">Best Price</h3>
-                    <p class="text-sm text-gray-400 mt-2">Value for money.</p>
+                <!-- Point 4 -->
+                <div class="p-6 bg-brand-dark rounded-lg border border-slate-700">
+                    <i class="fa-solid fa-heart-pulse text-3xl text-red-500 mb-4"></i>
+                    <h3 class="font-bold mb-2">Safety First</h3>
+                    <p class="text-sm text-gray-400">Strict safety protocols and emergency oxygen kits.</p>
+                </div>
+                <!-- Point 5 -->
+                <div class="p-6 bg-brand-dark rounded-lg border border-slate-700">
+                    <i class="fa-solid fa-wallet text-3xl text-green-500 mb-4"></i>
+                    <h3 class="font-bold mb-2">Best Price</h3>
+                    <p class="text-sm text-gray-400">Affordable packages without hidden charges.</p>
+                </div>
+                <!-- Point 6 -->
+                <div class="p-6 bg-brand-dark rounded-lg border border-slate-700">
+                    <i class="fa-solid fa-clock text-3xl text-purple-500 mb-4"></i>
+                    <h3 class="font-bold mb-2">Flexible Timing</h3>
+                    <p class="text-sm text-gray-400">Choose slots that fit your holiday schedule.</p>
+                </div>
+                <!-- Point 7 -->
+                <div class="p-6 bg-brand-dark rounded-lg border border-slate-700">
+                    <i class="fa-solid fa-location-dot text-3xl text-pink-500 mb-4"></i>
+                    <h3 class="font-bold mb-2">Prime Location</h3>
+                    <p class="text-sm text-gray-400">Located at the cleanest waters of the coast.</p>
+                </div>
+                <!-- Point 8 -->
+                <div class="p-6 bg-brand-dark rounded-lg border border-slate-700">
+                    <i class="fa-solid fa-users text-3xl text-orange-500 mb-4"></i>
+                    <h3 class="font-bold mb-2">Small Groups</h3>
+                    <p class="text-sm text-gray-400">Personalized attention with small batch sizes.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-slate-900 border-t border-gray-800 pt-16 pb-24">
-        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div>
-                <a href="#" class="text-2xl font-bold text-cyan mb-4 block">FearLess<span class="text-white">Diving</span></a>
-                <p class="text-gray-400 text-sm">The ultimate destination for underwater adventures. Safe, certified, and unforgettable.</p>
+    <!-- Moving Reviews -->
+    <section class="py-16 overflow-hidden">
+        <h2 class="text-3xl font-bold mb-10 text-center">Happy <span class="text-brand-accent">Divers</span></h2>
+        <div class="marquee-container w-full">
+            <div class="marquee-content gap-6">
+                <!-- Review Items (Duplicated to ensure smooth loop) -->
+                <div class="bg-brand-light p-6 rounded-lg w-80 flex-shrink-0 border border-slate-700">
+                    <div class="text-yellow-400 mb-2"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-sm text-gray-300 italic">"Best experience of my life! The instructors were so patient."</p>
+                    <p class="text-brand-accent font-bold mt-2">- Rahul S.</p>
+                </div>
+                <div class="bg-brand-light p-6 rounded-lg w-80 flex-shrink-0 border border-slate-700">
+                    <div class="text-yellow-400 mb-2"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-sm text-gray-300 italic">"The water was crystal clear and the photos came out amazing."</p>
+                    <p class="text-brand-accent font-bold mt-2">- Sarah J.</p>
+                </div>
+                <div class="bg-brand-light p-6 rounded-lg w-80 flex-shrink-0 border border-slate-700">
+                    <div class="text-yellow-400 mb-2"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-sm text-gray-300 italic">"Highly recommend FearLess Diving for beginners."</p>
+                    <p class="text-brand-accent font-bold mt-2">- Mike T.</p>
+                </div>
+                <div class="bg-brand-light p-6 rounded-lg w-80 flex-shrink-0 border border-slate-700">
+                    <div class="text-yellow-400 mb-2"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-sm text-gray-300 italic">"Very professional and safe. Loved every minute."</p>
+                    <p class="text-brand-accent font-bold mt-2">- Anjali P.</p>
+                </div>
+                 <!-- Duplicate for smooth scroll -->
+                 <div class="bg-brand-light p-6 rounded-lg w-80 flex-shrink-0 border border-slate-700">
+                    <div class="text-yellow-400 mb-2"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-sm text-gray-300 italic">"Best experience of my life! The instructors were so patient."</p>
+                    <p class="text-brand-accent font-bold mt-2">- Rahul S.</p>
+                </div>
+                <div class="bg-brand-light p-6 rounded-lg w-80 flex-shrink-0 border border-slate-700">
+                    <div class="text-yellow-400 mb-2"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-sm text-gray-300 italic">"The water was crystal clear and the photos came out amazing."</p>
+                    <p class="text-brand-accent font-bold mt-2">- Sarah J.</p>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-brand-light">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <h2 class="text-3xl font-bold mb-10 text-center">Frequent <span class="text-brand-accent">Questions</span></h2>
+            
+            <div class="space-y-4">
+                <!-- Q1 -->
+                <div class="border border-slate-700 rounded-lg overflow-hidden bg-brand-dark">
+                    <button class="accordion-header w-full p-4 text-left font-bold flex justify-between items-center focus:outline-none">
+                        Do I need to know swimming?
+                        <i class="fa-solid fa-plus text-brand-accent"></i>
+                    </button>
+                    <div class="hidden p-4 text-sm text-gray-400 border-t border-slate-700">
+                        No, for the beginner Discovery Scuba Diving package, swimming skills are not required. Our instructor will handle the equipment and guide you.
+                    </div>
+                </div>
+                <!-- Q2 -->
+                <div class="border border-slate-700 rounded-lg overflow-hidden bg-brand-dark">
+                    <button class="accordion-header w-full p-4 text-left font-bold flex justify-between items-center focus:outline-none">
+                        Is it safe for kids?
+                        <i class="fa-solid fa-plus text-brand-accent"></i>
+                    </button>
+                    <div class="hidden p-4 text-sm text-gray-400 border-t border-slate-700">
+                        Yes, children above 10 years can participate in scuba diving. We have special gear for smaller sizes.
+                    </div>
+                </div>
+                <!-- Q3 -->
+                <div class="border border-slate-700 rounded-lg overflow-hidden bg-brand-dark">
+                    <button class="accordion-header w-full p-4 text-left font-bold flex justify-between items-center focus:outline-none">
+                        What should I bring?
+                        <i class="fa-solid fa-plus text-brand-accent"></i>
+                    </button>
+                    <div class="hidden p-4 text-sm text-gray-400 border-t border-slate-700">
+                        Bring a towel, change of clothes, sunscreen, and sunglasses. We provide the wetsuit and equipment.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-10 border-t border-slate-800">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Col 1 -->
             <div>
-                <h3 class="text-lg font-bold mb-4 text-white">Contact Info</h3>
+                <a href="index.html" class="text-2xl font-bold text-brand-accent mb-4 block"><i class="fa-solid fa-water"></i> FearLess Diving</a>
+                <p class="text-gray-500 text-sm mb-4">Conquer your fears and explore the deep blue with the most trusted diving center.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="text-xl text-gray-400 hover:text-white"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="text-xl text-gray-400 hover:text-white"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="text-xl text-gray-400 hover:text-white"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <!-- Col 2 -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Contact Info</h3>
                 <ul class="text-gray-400 text-sm space-y-2">
-                    <li><i class="fas fa-phone text-cyan mr-2"></i> +91 98765 43210</li>
-                    <li><i class="fas fa-envelope text-cyan mr-2"></i> info@fearlessdiving.com</li>
+                    <li><i class="fa-solid fa-location-dot mr-2"></i> 123 Beach Road, Malvan, India</li>
+                    <li><i class="fa-solid fa-phone mr-2"></i> +91 98765 43210</li>
+                    <li><i class="fa-solid fa-envelope mr-2"></i> info@fearlessdiving.com</li>
                 </ul>
             </div>
+            <!-- Col 3 -->
             <div>
-                <h3 class="text-lg font-bold mb-4 text-white">Quick Links</h3>
+                <h3 class="text-xl font-bold mb-4">Quick Links</h3>
                 <ul class="text-gray-400 text-sm space-y-2">
-                    <li><a href="index.html" class="hover:text-cyan">Home</a></li>
-                    <li><a href="services.html" class="hover:text-cyan">Services</a></li>
-                    <li><a href="contact.html" class="hover:text-cyan">Contact</a></li>
+                    <li><a href="about.html" class="hover:text-brand-accent">About Us</a></li>
+                    <li><a href="services.html" class="hover:text-brand-accent">Services</a></li>
+                    <li><a href="contact.html" class="hover:text-brand-accent">Contact Us</a></li>
+                    <li><a href="sitemap.xml" class="hover:text-brand-accent">Sitemap</a></li>
                 </ul>
             </div>
         </div>
-        <div class="text-center text-gray-600 text-sm mt-10 pt-6 border-t border-gray-800">
-            &copy; <span id="year"></span> FearLess Diving. All rights reserved.
+        <div class="text-center text-gray-600 text-xs mt-10">
+            &copy; 2024 FearLess Diving. All Rights Reserved.
         </div>
     </footer>
 
-    <!-- Floating Icons -->
-    <a href="tel:+919876543210" class="float-icon phone-float" aria-label="Call Us">
-        <i class="fas fa-phone-alt"></i>
-    </a>
-    <a href="#" onclick="bookService('General Inquiry', '0')" class="float-icon wa-float" aria-label="WhatsApp Us">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <!-- Floating Buttons -->
+    <div class="fab-container fixed bottom-5 left-5">
+        <a href="tel:+919876543210" class="block w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 transition animate-bounce">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+    </div>
+    <div class="fab-container fixed bottom-5 right-5">
+        <a href="https://wa.me/919876543210" target="_blank" class="block w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg hover:scale-110 transition">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
 
-    <!-- Link JS -->
     <script src="script.js"></script>
 </body>
 </html>
