@@ -1,63 +1,73 @@
-document.addEventListener('DOMContentLoaded', () => {
-    
-    // --- SECURITY FEATURES ---
-    
-    // Disable Right Click
-    document.addEventListener('contextmenu', (e) => e.preventDefault());
+// script.js
 
-    // Disable Key Combinations (Ctrl+U, Ctrl+S, Ctrl+Shift+I, etc.)
-    document.addEventListener('keydown', (e) => {
-        if (
-            (e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 's' || e.key === 'S')) ||
-            (e.ctrlKey && e.shiftKey && (e.key === 'i' || e.key === 'I')) || 
-            e.key === 'F12'
-        ) {
-            e.preventDefault();
+// 1. Security & Restrictions
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+document.onkeydown = function(e) {
+    if (e.keyCode == 123) return false; // F12
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) return false; // Ctrl+Shift+I
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) return false; // Ctrl+Shift+C
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) return false; // Ctrl+Shift+J
+    if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) return false; // Ctrl+U
+}
+
+// Disable Zoom via Wheel
+document.addEventListener('wheel', function(e) {
+    if (e.ctrlKey) {
+        e.preventDefault();
+    }
+}, { passive: false });
+
+// 2. Mobile Menu Toggle
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+if(menuBtn){
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+}
+
+// 3. Dynamic WhatsApp Booking
+function bookNow(serviceName) {
+    const phone = "919876543210"; // Replace with real number
+    const message = `Hello FearLess Diving, I am interested in booking: ${serviceName}. Please provide details.`;
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+}
+
+// 4. Review Slider (Auto Moving)
+let currentSlide = 0;
+const slides = document.querySelectorAll('.review-slide');
+
+function showSlides() {
+    if(slides.length === 0) return;
+    
+    slides.forEach((slide, index) => {
+        slide.style.display = 'none';
+    });
+    
+    currentSlide++;
+    if (currentSlide > slides.length) { currentSlide = 1 }
+    
+    slides[currentSlide - 1].style.display = 'block';
+    setTimeout(showSlides, 4000); // Change image every 4 seconds
+}
+
+document.addEventListener('DOMContentLoaded', showSlides);
+
+// 5. Accordion for FAQ
+const accordions = document.querySelectorAll('.accordion-btn');
+accordions.forEach(acc => {
+    acc.addEventListener('click', function() {
+        this.classList.toggle('active');
+        const panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+            panel.classList.add('hidden');
+        } else {
+            panel.classList.remove('hidden');
+            panel.style.maxHeight = panel.scrollHeight + "px";
         }
     });
-
-    // Disable Zoom (Ctrl + Wheel)
-    document.addEventListener('wheel', (e) => {
-        if (e.ctrlKey) {
-            e.preventDefault();
-        }
-    }, { passive: false });
-
-    // --- UI LOGIC ---
-
-    // Mobile Menu Toggle
-    const btn = document.getElementById('menu-btn');
-    const menu = document.getElementById('mobile-menu');
-
-    if(btn && menu) {
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('active');
-        });
-    }
-
-    // Google Reviews Auto-Scroll
-    const reviewContainer = document.querySelector('.review-container');
-    if (reviewContainer) {
-        let scrollAmount = 0;
-        const scrollStep = 1;
-        const delay = 30;
-
-        function autoScroll() {
-            if (reviewContainer.scrollLeft >= (reviewContainer.scrollWidth - reviewContainer.clientWidth)) {
-                reviewContainer.scrollLeft = 0; // Reset to start
-            } else {
-                reviewContainer.scrollLeft += scrollStep;
-            }
-        }
-        
-        let scrollInterval = setInterval(autoScroll, delay);
-
-        // Pause on hover
-        reviewContainer.addEventListener('mouseenter', () => clearInterval(scrollInterval));
-        reviewContainer.addEventListener('mouseleave', () => scrollInterval = setInterval(autoScroll, delay));
-    }
-
-    // Update Year in Footer
-    const yearSpan = document.getElementById('year');
-    if(yearSpan) yearSpan.innerText = new Date().getFullYear();
 });
