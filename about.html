@@ -8,81 +8,82 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-slate-900 text-slate-100 no-select flex flex-col min-h-screen">
+<body class="bg-slate-900 text-slate-200 no-select">
 
-    <header class="bg-slate-900/90 backdrop-blur-md fixed w-full top-0 z-50 border-b border-cyan-900">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-cyan-400">
-                <i class="fa-solid fa-water"></i> FearLess<span class="text-white">Diving</span>
-            </a>
-            <div class="hidden md:flex space-x-8">
+    <header class="fixed w-full z-50 bg-slate-900/90 backdrop-blur-md shadow-lg border-b border-slate-700">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-cyan-400 tracking-wider"><i class="fas fa-water mr-2"></i>FEARLESS</a>
+            <nav class="hidden md:flex space-x-8">
                 <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
-                <a href="about.html" class="text-cyan-400 font-bold">About Us</a>
+                <a href="about.html" class="text-cyan-400 font-bold transition">About Us</a>
                 <a href="services.html" class="hover:text-cyan-400 transition">Services</a>
                 <a href="contact.html" class="hover:text-cyan-400 transition">Contact Us</a>
-            </div>
-            <button id="menu-btn" class="md:hidden text-2xl"><i class="fa-solid fa-bars"></i></button>
-        </nav>
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-800 border-t border-slate-700">
-            <a href="index.html" class="block py-3 px-6 hover:bg-slate-700">Home</a>
-            <a href="about.html" class="block py-3 px-6 hover:bg-slate-700">About Us</a>
-            <a href="services.html" class="block py-3 px-6 hover:bg-slate-700">Services</a>
-            <a href="contact.html" class="block py-3 px-6 hover:bg-slate-700">Contact Us</a>
+            </nav>
+            <button id="menu-btn" class="block md:hidden"><i class="fas fa-bars text-2xl text-cyan-400"></i></button>
+        </div>
+        <div id="menu" class="hidden absolute top-full left-0 w-full bg-slate-800 flex-col items-center py-4 space-y-4 shadow-xl md:hidden">
+            <a href="index.html" class="hover:text-cyan-400">Home</a>
+            <a href="about.html" class="text-cyan-400">About Us</a>
+            <a href="services.html" class="hover:text-cyan-400">Services</a>
+            <a href="contact.html" class="hover:text-cyan-400">Contact Us</a>
         </div>
     </header>
 
-    <main class="flex-grow pt-32 pb-20 container mx-auto px-6">
-        <div class="max-w-4xl mx-auto">
-            <h1 class="text-4xl font-bold mb-8">About <span class="text-cyan-400">FearLess Diving</span></h1>
+    <main class="pt-32 pb-20">
+        <div class="container mx-auto px-6">
             
-            <div class="bg-slate-800 p-8 rounded-xl shadow-lg border-l-4 border-cyan-500 mb-10">
-                <p class="text-lg leading-relaxed text-slate-300">
-                    Established in 2015, FearLess Diving was born from a passion for the ocean and a desire to share its wonders with the world. What started as a small team of two enthusiasts has grown into the region's premier diving center, certified by PADI and trusted by thousands of adventurers.
-                </p>
+            <div class="flex flex-col md:flex-row items-center gap-12 mb-20">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1579208575657-c595a05383b7?auto=format&fit=crop&w=800&q=80" class="rounded-lg shadow-2xl border-2 border-slate-700" alt="Team">
+                </div>
+                <div class="md:w-1/2">
+                    <h1 class="text-4xl font-bold mb-6">Who We <span class="text-cyan-400">Are</span></h1>
+                    <p class="text-slate-400 leading-relaxed mb-6">
+                        FearLess Diving was established in 2015 with a simple mission: to remove the fear of the deep ocean and replace it with wonder. What started as a small two-man team in Goa has now grown into one of the most trusted PADI Dive Centers in the region.
+                    </p>
+                    <p class="text-slate-400 leading-relaxed">
+                        We believe that the underwater world belongs to everyone. Whether you are a non-swimmer or an aspiring professional diver, our team of certified experts ensures your safety while you create memories of a lifetime.
+                    </p>
+                </div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-10 mb-12">
-                <div>
-                    <img src="https://images.unsplash.com/photo-1577705998148-6da4f3963bc8?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="rounded-lg shadow-lg mb-6 w-full h-64 object-cover" alt="Team">
-                    <h3 class="text-2xl font-bold mb-2">Our Vision</h3>
-                    <p class="text-slate-400">To create a community of ocean lovers who respect marine life and practice safe, sustainable diving. We aim to make the underwater world accessible to everyone, regardless of swimming ability.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+                <div class="bg-slate-800 p-8 rounded-lg text-center border-t-4 border-cyan-500">
+                    <i class="fas fa-eye text-4xl text-cyan-400 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Our Vision</h3>
+                    <p class="text-slate-400 text-sm">To be the global leader in sustainable and safe recreational diving tourism.</p>
                 </div>
-                <div>
-                    <h3 class="text-2xl font-bold mb-4">Meet The Founders</h3>
-                    <div class="space-y-6">
-                        <div class="flex items-center gap-4">
-                            <div class="w-16 h-16 bg-cyan-600 rounded-full flex items-center justify-center text-2xl font-bold">R</div>
-                            <div>
-                                <h4 class="font-bold">Rahul Verma</h4>
-                                <p class="text-sm text-cyan-400">Master Diver & Instructor</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-4">
-                            <div class="w-16 h-16 bg-cyan-600 rounded-full flex items-center justify-center text-2xl font-bold">S</div>
-                            <div>
-                                <h4 class="font-bold">Sarah Jenkins</h4>
-                                <p class="text-sm text-cyan-400">Marine Biologist & Guide</p>
-                            </div>
-                        </div>
+                <div class="bg-slate-800 p-8 rounded-lg text-center border-t-4 border-cyan-500">
+                    <i class="fas fa-bullseye text-4xl text-cyan-400 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Our Mission</h3>
+                    <p class="text-slate-400 text-sm">Providing zero-accident, high-quality diving experiences while conserving marine life.</p>
+                </div>
+                <div class="bg-slate-800 p-8 rounded-lg text-center border-t-4 border-cyan-500">
+                    <i class="fas fa-heart text-4xl text-cyan-400 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Our Values</h3>
+                    <p class="text-slate-400 text-sm">Safety First, Customer Obsession, and Environmental Responsibility.</p>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <h2 class="text-3xl font-bold mb-10">Meet The <span class="text-cyan-400">Owners</span></h2>
+                <div class="flex flex-wrap justify-center gap-10">
+                    <div class="bg-slate-800 p-6 rounded-lg w-64 shadow-lg">
+                        <img src="https://randomuser.me/api/portraits/men/33.jpg" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-cyan-500" alt="Owner">
+                        <h4 class="font-bold text-lg">Vikram Singh</h4>
+                        <p class="text-cyan-400 text-sm">Master Diver</p>
+                    </div>
+                    <div class="bg-slate-800 p-6 rounded-lg w-64 shadow-lg">
+                        <img src="https://randomuser.me/api/portraits/women/33.jpg" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-cyan-500" alt="Owner">
+                        <h4 class="font-bold text-lg">Anjali Mehta</h4>
+                        <p class="text-cyan-400 text-sm">Operations Head</p>
                     </div>
                 </div>
             </div>
 
-            <div class="bg-cyan-900/20 p-8 rounded-xl text-center">
-                <h3 class="text-2xl font-bold mb-4">Safety First Policy</h3>
-                <p class="text-slate-300">We utilize top-tier Scubapro equipment, serviced regularly. All our dives are led by certified professionals with Emergency First Response training.</p>
-            </div>
         </div>
     </main>
 
-    <footer class="bg-slate-950 pt-16 pb-8 border-t border-slate-800">
-        <div class="container mx-auto px-6 text-center">
-             <a href="#" class="text-2xl font-bold text-cyan-400 mb-4 block"><i class="fa-solid fa-water"></i> FearLess<span class="text-white">Diving</span></a>
-             <div class="text-slate-600 mt-4">&copy; 2024 FearLess Diving.</div>
-        </div>
-    </footer>
-    <a href="tel:+919876543210" class="fixed bottom-6 left-6 bg-blue-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700 transition z-50 animate-bounce"><i class="fa-solid fa-phone text-2xl"></i></a>
-    <a href="https://wa.me/919876543210" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition z-50 animate-bounce"><i class="fa-brands fa-whatsapp text-3xl"></i></a>
     <script src="script.js"></script>
 </body>
 </html>
