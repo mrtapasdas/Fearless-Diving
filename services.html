@@ -10,8 +10,8 @@
 </head>
 <body class="bg-slate-900 text-slate-50 antialiased">
 
-    <!-- Nav -->
-    <nav class="bg-slate-800/90 backdrop-blur-md fixed w-full z-50 border-b border-cyan-900">
+    <!-- Fixed Nav -->
+    <nav class="bg-slate-900/95 backdrop-blur-md fixed top-0 w-full z-40 border-b border-cyan-900 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center">
@@ -35,7 +35,7 @@
                 </div>
             </div>
         </div>
-        <div class="hidden md:hidden bg-slate-800" id="mobile-nav">
+        <div class="hidden md:hidden bg-slate-900 border-t border-slate-800" id="mobile-nav">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="index.html" class="text-gray-300 block px-3 py-2 rounded-md">Home</a>
                 <a href="about.html" class="text-gray-300 block px-3 py-2 rounded-md">About Us</a>
@@ -45,91 +45,75 @@
         </div>
     </nav>
 
-    <div class="pt-32 pb-12 text-center">
+    <main class="pt-24 pb-12 text-center">
         <h1 class="text-4xl font-bold text-cyan-400">All Adventures</h1>
         <p class="text-gray-400 mt-2">Explore the deep with our premium packages</p>
-    </div>
-
-    <!-- Services Grid -->
-    <div class="max-w-6xl mx-auto px-4 pb-24 grid grid-cols-1 gap-12">
-
-        <!-- Service Item 1: Discovery Scuba -->
-        <div class="bg-slate-800 rounded-2xl overflow-hidden shadow-2xl border border-slate-700">
-            <!-- 4 Image Slidable Gallery -->
-            <div class="flex overflow-x-auto snap-x snap-mandatory snap-gallery h-64 md:h-80">
-                <img src="https://images.unsplash.com/photo-1544551763-46a8723ba3f9?w=800&q=80" class="snap-center w-full flex-shrink-0 object-cover">
-                <img src="https://images.unsplash.com/photo-1682687981922-7b55dbb30892?w=800&q=80" class="snap-center w-full flex-shrink-0 object-cover">
-                <img src="https://images.unsplash.com/photo-1582967788606-a171f1080ca8?w=800&q=80" class="snap-center w-full flex-shrink-0 object-cover">
-                <img src="https://images.unsplash.com/photo-1632833239869-a37e3a5806d2?w=800&q=80" class="snap-center w-full flex-shrink-0 object-cover">
-            </div>
-            <div class="p-6 md:p-8">
-                <div class="flex justify-between items-start mb-4">
-                    <h2 class="text-2xl font-bold text-white">Discovery Scuba (Beginners)</h2>
-                    <span class="bg-cyan-400 text-slate-900 font-bold px-4 py-1 rounded text-lg">$80</span>
+        
+        <!-- Services List -->
+        <div class="max-w-6xl mx-auto px-4 mt-12 grid grid-cols-1 gap-12 text-left">
+            
+            <!-- Service Item 1 -->
+            <div class="bg-slate-800 rounded-2xl overflow-hidden shadow-2xl border border-slate-700">
+                <div class="flex overflow-x-auto snap-x snap-mandatory snap-gallery h-64 md:h-80">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a8723ba3f9?w=800&q=80" class="snap-center w-full flex-shrink-0 object-cover">
+                    <img src="https://images.unsplash.com/photo-1682687981922-7b55dbb30892?w=800&q=80" class="snap-center w-full flex-shrink-0 object-cover">
+                    <img src="https://images.unsplash.com/photo-1582967788606-a171f1080ca8?w=800&q=80" class="snap-center w-full flex-shrink-0 object-cover">
+                    <img src="https://images.unsplash.com/photo-1632833239869-a37e3a5806d2?w=800&q=80" class="snap-center w-full flex-shrink-0 object-cover">
                 </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-300 mb-6">
-                    <div><span class="font-bold text-cyan-500">Location:</span> Blue Bay Reef</div>
-                    <div><span class="font-bold text-cyan-500">Duration:</span> 2 Hours (45 min dive)</div>
-                    <div><span class="font-bold text-cyan-500">Depth:</span> Max 12 Meters</div>
-                    <div><span class="font-bold text-cyan-500">Age:</span> 10+ Years</div>
-                    <div><span class="font-bold text-cyan-500">Pick/Drop:</span> Included (AC Car)</div>
-                    <div><span class="font-bold text-cyan-500">Media:</span> 4K Photos & Video Free</div>
-                    <div><span class="font-bold text-cyan-500">Training:</span> 15 Mins Pool Training</div>
-                    <div><span class="font-bold text-cyan-500">Guide:</span> 1:1 Personal Diver</div>
-                </div>
-
-                <div class="flex items-center justify-between mt-6 pt-6 border-t border-slate-700">
-                    <span class="text-green-400 text-sm"><i class="fa-solid fa-check-circle"></i> Beginner Friendly</span>
-                    <button onclick="bookNow('Discovery Scuba', '$80')" class="bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-2 px-8 rounded-lg transition">
-                        Book Now
-                    </button>
+                <div class="p-6 md:p-8">
+                    <div class="flex justify-between items-start mb-4">
+                        <h2 class="text-2xl font-bold text-white">Discovery Scuba (Beginners)</h2>
+                        <span class="bg-cyan-400 text-slate-900 font-bold px-4 py-1 rounded text-lg">$80</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-300 mb-6">
+                        <div><span class="font-bold text-cyan-500">Duration:</span> 2 Hours</div>
+                        <div><span class="font-bold text-cyan-500">Depth:</span> Max 12 Meters</div>
+                        <div><span class="font-bold text-cyan-500">Age:</span> 10+ Years</div>
+                        <div><span class="font-bold text-cyan-500">Photos:</span> Included</div>
+                    </div>
+                    <button onclick="bookNow('Discovery Scuba', '$80')" class="w-full md:w-auto bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-2 px-8 rounded-lg transition">Book Now</button>
                 </div>
             </div>
+
+            <!-- Service Item 2 -->
+            <div class="bg-slate-800 rounded-2xl overflow-hidden shadow-2xl border border-slate-700">
+                <div class="flex overflow-x-auto snap-x snap-mandatory snap-gallery h-64 md:h-80">
+                    <img src="https://images.unsplash.com/photo-1516815231560-8f41ec531527?w=800&q=80" class="snap-center w-full flex-shrink-0 object-cover">
+                    <img src="https://images.unsplash.com/photo-1571782299778-4347db1e0896?w=800&q=80" class="snap-center w-full flex-shrink-0 object-cover">
+                    <img src="https://images.unsplash.com/photo-1627915509650-6e3c03531d04?w=800&q=80" class="snap-center w-full flex-shrink-0 object-cover">
+                </div>
+                <div class="p-6 md:p-8">
+                    <div class="flex justify-between items-start mb-4">
+                        <h2 class="text-2xl font-bold text-white">PADI Open Water Course</h2>
+                        <span class="bg-cyan-400 text-slate-900 font-bold px-4 py-1 rounded text-lg">$350</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-300 mb-6">
+                        <div><span class="font-bold text-cyan-500">Duration:</span> 4 Days</div>
+                        <div><span class="font-bold text-cyan-500">Depth:</span> 18 Meters</div>
+                        <div><span class="font-bold text-cyan-500">Certification:</span> International License</div>
+                        <div><span class="font-bold text-cyan-500">Training:</span> Theory + Pool + Ocean</div>
+                    </div>
+                    <button onclick="bookNow('PADI Open Water', '$350')" class="w-full md:w-auto bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-2 px-8 rounded-lg transition">Book Now</button>
+                </div>
+            </div>
+
         </div>
+    </main>
 
-        <!-- Service Item 2: Open Water Course -->
-        <div class="bg-slate-800 rounded-2xl overflow-hidden shadow-2xl border border-slate-700">
-            <!-- 4 Image Slidable Gallery -->
-            <div class="flex overflow-x-auto snap-x snap-mandatory snap-gallery h-64 md:h-80">
-                <img src="https://images.unsplash.com/photo-1516815231560-8f41ec531527?w=800&q=80" class="snap-center w-full flex-shrink-0 object-cover">
-                <img src="https://images.unsplash.com/photo-1571782299778-4347db1e0896?w=800&q=80" class="snap-center w-full flex-shrink-0 object-cover">
-                <img src="https://images.unsplash.com/photo-1582967788606-a171f1080ca8?w=800&q=80" class="snap-center w-full flex-shrink-0 object-cover">
-                <img src="https://images.unsplash.com/photo-1627915509650-6e3c03531d04?w=800&q=80" class="snap-center w-full flex-shrink-0 object-cover">
-            </div>
-            <div class="p-6 md:p-8">
-                <div class="flex justify-between items-start mb-4">
-                    <h2 class="text-2xl font-bold text-white">PADI Open Water Course</h2>
-                    <span class="bg-cyan-400 text-slate-900 font-bold px-4 py-1 rounded text-lg">$350</span>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-300 mb-6">
-                    <div><span class="font-bold text-cyan-500">Location:</span> Deep Ocean Spots</div>
-                    <div><span class="font-bold text-cyan-500">Duration:</span> 4 Days</div>
-                    <div><span class="font-bold text-cyan-500">Depth:</span> Up to 18 Meters</div>
-                    <div><span class="font-bold text-cyan-500">Age:</span> 12+ Years</div>
-                    <div><span class="font-bold text-cyan-500">Certification:</span> International License</div>
-                    <div><span class="font-bold text-cyan-500">Media:</span> Logbook & Photos</div>
-                    <div><span class="font-bold text-cyan-500">Training:</span> Theory + Pool + 4 Ocean Dives</div>
-                    <div><span class="font-bold text-cyan-500">Guide:</span> Senior Instructor</div>
-                </div>
-
-                <div class="flex items-center justify-between mt-6 pt-6 border-t border-slate-700">
-                    <span class="text-yellow-400 text-sm"><i class="fa-solid fa-star"></i> Become a Pro</span>
-                    <button onclick="bookNow('PADI Open Water', '$350')" class="bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-2 px-8 rounded-lg transition">
-                        Book Now
-                    </button>
-                </div>
-            </div>
+    <footer class="bg-slate-950 pt-16 pb-12 px-4 border-t border-slate-800 w-full mt-auto">
+        <div class="text-center text-gray-600 text-xs">
+            &copy; 2026 FearLess Diving. All rights reserved.
         </div>
+    </footer>
 
-    </div>
+    <!-- Fixed Floating Icons (Left & Right) -->
+    <a href="tel:+919876543210" class="fixed bottom-4 left-4 z-50 bg-blue-600 w-14 h-14 rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 transition border-2 border-white">
+        <i class="fa-solid fa-phone text-2xl"></i>
+    </a>
+    <a href="https://wa.me/919876543210" target="_blank" class="fixed bottom-4 right-4 z-50 bg-green-500 w-14 h-14 rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 transition border-2 border-white">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
 
-    <!-- Fixed Buttons & Script -->
-    <div class="fixed bottom-4 right-4 flex flex-col space-y-3 z-50">
-        <a href="tel:+919876543210" class="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg"><i class="fa-solid fa-phone"></i></a>
-        <a href="https://wa.me/919876543210" target="_blank" class="bg-green-500 w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg"><i class="fa-brands fa-whatsapp text-2xl"></i></a>
-    </div>
     <script src="script.js"></script>
 </body>
 </html>
