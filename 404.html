@@ -3,59 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found - FearLess Diving</title>
+    <title>404 - Lost at Sea</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: { light: '#0ea5e9', DEFAULT: '#0284c7', dark: '#0c4a6e', accent: '#f59e0b' }
-                    }
-                }
-            }
-        }
+        tailwind.config = { theme: { extend: { colors: { deep: '#020b16', cyan: '#06b6d4', } } } }
     </script>
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-slate-900 text-slate-100 antialiased flex flex-col min-h-screen">
-
-    <header class="fixed w-full top-0 z-40 bg-slate-900/95 backdrop-blur shadow-lg border-b border-slate-800">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-brand-light flex items-center gap-2">
-                <i class="fa-solid fa-water"></i> FearLess<span class="text-white">Diving</span>
-            </a>
-            <nav class="hidden md:flex space-x-8">
-                <a href="about.html" class="hover:text-brand-light transition">About Us</a>
-                <a href="services.html" class="hover:text-brand-light transition">Services</a>
-                <a href="contact.html" class="hover:text-brand-light transition">Contact Us</a>
-            </nav>
-            <button id="mobile-menu-btn" class="md:hidden text-2xl text-white"><i class="fa-solid fa-bars"></i></button>
+<body class="bg-deep flex items-center justify-center h-screen text-center px-6 overflow-hidden">
+    <div class="relative z-10">
+        <h1 class="text-9xl font-bold text-cyan opacity-20">404</h1>
+        <div class="absolute inset-0 flex items-center justify-center">
+             <i class="fa-solid fa-anchor text-6xl text-white animate-bounce"></i>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-800 border-t border-slate-700">
-            <a href="about.html" class="block px-4 py-3 hover:bg-slate-700">About Us</a>
-            <a href="services.html" class="block px-4 py-3 hover:bg-slate-700">Services</a>
-            <a href="contact.html" class="block px-4 py-3 hover:bg-slate-700">Contact Us</a>
-        </div>
-    </header>
-
-    <main class="flex-grow flex flex-col justify-center items-center text-center px-4 mt-20">
-        <h1 class="text-9xl font-bold text-brand-dark opacity-50">404</h1>
-        <div class="absolute">
-            <i class="fa-solid fa-person-swimming text-6xl text-brand-light animate-bounce"></i>
-        </div>
-        <h2 class="text-3xl font-bold mt-8 mb-4">You've gone too deep!</h2>
-        <p class="text-slate-400 mb-8">The page you are looking for seems to be lost at sea.</p>
-        <a href="index.html" class="bg-brand hover:bg-brand-light text-white px-8 py-3 rounded-full font-semibold transition">Back to Surface (Home)</a>
-    </main>
-
-    <footer class="bg-slate-950 pt-8 pb-8 border-t border-slate-800 mt-auto">
-        <div class="container mx-auto px-4 text-center text-slate-500 text-sm">&copy; 2025 FearLess Diving.</div>
-    </footer>
+        <h2 class="text-3xl font-bold text-white mt-4">Lost at Sea?</h2>
+        <p class="text-gray-400 mt-2 mb-8">It looks like you've drifted too far from the boat.</p>
+        <a href="index.html" class="bg-cyan text-deep px-8 py-3 rounded-full font-bold hover:bg-white transition">Return to Surface</a>
+    </div>
     
-    <a href="tel:+919876543210" class="fixed left-6 bottom-6 z-50 bg-blue-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg animate-bounce"><i class="fa-solid fa-phone text-2xl"></i></a>
-    <a href="https://wa.me/919876543210" target="_blank" class="fixed right-6 bottom-6 z-50 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg animate-bounce"><i class="fa-brands fa-whatsapp text-3xl"></i></a>
-    <script src="script.js"></script>
+    <!-- Bubbles Animation Effect -->
+    <div class="absolute inset-0 z-0 pointer-events-none">
+        <div class="absolute bottom-0 left-10 w-4 h-4 bg-white/10 rounded-full animate-float-1"></div>
+        <div class="absolute bottom-0 left-1/2 w-6 h-6 bg-white/10 rounded-full animate-float-3"></div>
+        <div class="absolute bottom-0 right-20 w-3 h-3 bg-white/10 rounded-full animate-float-2"></div>
+    </div>
+    
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
