@@ -66,26 +66,34 @@ a {
     100% { transform: translateY(0px); }
 }
 
-/* Reviews Marquee Slider */
-.marquee-container {
-    overflow: hidden;
-    white-space: nowrap;
+/* ... keep previous Critical CSS ... */
+
+/* --- NEW GOOGLE REVIEWS SCROLLING --- */
+.scrolling-wrapper {
     position: relative;
+    overflow: hidden;
+    /* Adds a fade effect on left and right sides */
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
 }
 
-.marquee-content {
-    display: inline-flex;
-    animation: marquee 25s linear infinite;
+.scrolling-track {
+    display: flex;
+    gap: 1.5rem; /* Space between cards */
+    width: max-content; /* Forces content to be one long horizontal line */
+    animation: scroll 40s linear infinite; /* Adjust speed here */
 }
 
-.marquee-content:hover {
-    animation-play-state: paused;
+.scrolling-track:hover {
+    animation-play-state: paused; /* Stop scrolling on hover */
 }
 
-@keyframes marquee {
+@keyframes scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    100% { transform: translateX(-50%); } /* Moves exactly half way (one set of cards) */
 }
+
+/* ... keep Map aspect ratio and others ... */
 
 /* Map aspect ratio */
 .map-container {
