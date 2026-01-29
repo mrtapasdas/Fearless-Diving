@@ -1,74 +1,77 @@
-// --- Security & UI Protection ---
-
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
+    
+    // --- SECURITY FEATURES ---
     
     // Disable Right Click
-    document.addEventListener('contextmenu', (e) => e.preventDefault());
+    document.addEventListener('contextmenu', event => event.preventDefault());
 
-    // Disable Key Combinations (F12, Ctrl+Shift+I, Ctrl+U, Ctrl+S, Ctrl+P)
-    document.onkeydown = function(e) {
-        if (e.keyCode == 123) return false; // F12
-        if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) return false; // Ctrl+Shift+I
-        if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) return false; // Ctrl+Shift+C
-        if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) return false; // Ctrl+Shift+J
-        if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) return false; // Ctrl+U
-        if (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) return false; // Ctrl+S
-        if (e.ctrlKey && e.keyCode == 'P'.charCodeAt(0)) return false; // Ctrl+P
-    };
+    // Disable Key Combinations (Ctrl+U, Ctrl+C, F12, Zoom)
+    document.addEventListener('keydown', function(e) {
+        if (
+            e.key === 'F12' || 
+            (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+            (e.ctrlKey && e.key === 'u') || 
+            (e.ctrlKey && e.key === 'c') ||
+            (e.ctrlKey && (e.key === '=' || e.key === '-' || e.key === '0')) // Zoom
+        ) {
+            e.preventDefault();
+            return false;
+        }
+    });
 
-    // Disable Selection
-    document.onselectstart = function() { return false; };
-
-    // Disable Zoom (Ctrl + Wheel)
+    // Disable Wheel Zoom
     document.addEventListener('wheel', function(e) {
         if (e.ctrlKey) {
             e.preventDefault();
         }
     }, { passive: false });
 
-    // Disable Zoom (Touch Pinch) - Best effort for mobile
-    document.addEventListener('touchmove', function(event) {
-        if (event.scale !== 1) { 
-           event.preventDefault(); 
-        }
-    }, { passive: false });
 
-    // --- Functionality ---
+    // --- UI FUNCTIONALITY ---
 
     // Mobile Menu Toggle
     const btn = document.getElementById('menu-btn');
     const nav = document.getElementById('menu');
 
-    if(btn && nav){
-        btn.addEventListener('click', () => {
-            nav.classList.toggle('hidden');
-            nav.classList.toggle('flex');
+    btn.addEventListener('click', () => {
+        nav.classList.toggle('hidden');
+        nav.classList.toggle('flex');
+    });
+
+    // Review Slider Logic (Only runs if element exists)
+    const slides = document.querySelectorAll('.review-slide');
+    if (slides.length > 0) {
+        let currentSlide = 0;
+        const slideInterval = setInterval(nextSlide, 5000);
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+    }
+
+    // FAQ Accordion
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            const answer = item.querySelector('.faq-answer');
+            answer.classList.toggle('hidden');
+            const icon = question.querySelector('i');
+            icon.classList.toggle('fa-plus');
+            icon.classList.toggle('fa-minus');
         });
-    }
+    });
 
-    // Google Reviews Auto Slider
-    const slider = document.getElementById('reviews-slider');
-    if (slider) {
-        let scrollAmount = 0;
-        const slideTimer = setInterval(() => {
-            slider.scrollLeft += 1;
-            scrollAmount += 1;
-            // Reset if reached end (approximation)
-            if(scrollAmount >= (slider.scrollWidth - slider.clientWidth)){
-                 slider.scrollLeft = 0;
-                 scrollAmount = 0;
-            }
-        }, 20); // Speed
-    }
-
-    // Dynamic Current Year for Footer
+    // Current Year for Footer
     document.getElementById('year').textContent = new Date().getFullYear();
 });
 
-// WhatsApp Booking Function
-function bookNow(serviceName) {
-    const phone = "919876543210"; // Replace with real number
-    const text = `Hello FearLess Diving, I am interested in booking: ${serviceName}. Please provide more details.`;
+// Dynamic WhatsApp Link Generator
+function bookOnWhatsApp(serviceName, price) {
+    const phone = "919876543210"; // Replace with actual number
+    const text = `Hello FearLess Diving, I would like to book the *${serviceName}* package priced at ₹${price}. Please provide available dates.`;
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank');
 }
