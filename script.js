@@ -1,77 +1,74 @@
-/* --- SECURITY FEATURES --- */
+// --- Security & UI Protection ---
 
-// Disable Right Click
-document.addEventListener('contextmenu', (e) => {
-    e.preventDefault();
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // Disable Right Click
+    document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+    // Disable Key Combinations (F12, Ctrl+Shift+I, Ctrl+U, Ctrl+S, Ctrl+P)
+    document.onkeydown = function(e) {
+        if (e.keyCode == 123) return false; // F12
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) return false; // Ctrl+Shift+I
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) return false; // Ctrl+Shift+C
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) return false; // Ctrl+Shift+J
+        if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) return false; // Ctrl+U
+        if (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) return false; // Ctrl+S
+        if (e.ctrlKey && e.keyCode == 'P'.charCodeAt(0)) return false; // Ctrl+P
+    };
+
+    // Disable Selection
+    document.onselectstart = function() { return false; };
+
+    // Disable Zoom (Ctrl + Wheel)
+    document.addEventListener('wheel', function(e) {
+        if (e.ctrlKey) {
+            e.preventDefault();
+        }
+    }, { passive: false });
+
+    // Disable Zoom (Touch Pinch) - Best effort for mobile
+    document.addEventListener('touchmove', function(event) {
+        if (event.scale !== 1) { 
+           event.preventDefault(); 
+        }
+    }, { passive: false });
+
+    // --- Functionality ---
+
+    // Mobile Menu Toggle
+    const btn = document.getElementById('menu-btn');
+    const nav = document.getElementById('menu');
+
+    if(btn && nav){
+        btn.addEventListener('click', () => {
+            nav.classList.toggle('hidden');
+            nav.classList.toggle('flex');
+        });
+    }
+
+    // Google Reviews Auto Slider
+    const slider = document.getElementById('reviews-slider');
+    if (slider) {
+        let scrollAmount = 0;
+        const slideTimer = setInterval(() => {
+            slider.scrollLeft += 1;
+            scrollAmount += 1;
+            // Reset if reached end (approximation)
+            if(scrollAmount >= (slider.scrollWidth - slider.clientWidth)){
+                 slider.scrollLeft = 0;
+                 scrollAmount = 0;
+            }
+        }, 20); // Speed
+    }
+
+    // Dynamic Current Year for Footer
+    document.getElementById('year').textContent = new Date().getFullYear();
 });
 
-// Disable Key Combinations (Ctrl+U, Ctrl+S, Ctrl+C, F12)
-document.addEventListener('keydown', (e) => {
-    if (
-        (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c' || e.key === 'p')) ||
-        e.key === 'F12'
-    ) {
-        e.preventDefault();
-    }
-});
-
-// Disable Zoom (Ctrl + Wheel)
-document.addEventListener('wheel', (e) => {
-    if (e.ctrlKey) {
-        e.preventDefault();
-    }
-}, { passive: false });
-
-// Disable Zoom (Pinch on Touch)
-document.addEventListener('touchmove', (e) => {
-    if (e.scale !== 1) {
-        e.preventDefault();
-    }
-}, { passive: false });
-
-
-/* --- UI/UX LOGIC --- */
-
-// Mobile Menu Toggle
-const menuBtn = document.getElementById('menu-btn');
-const mobileMenu = document.getElementById('mobile-menu');
-
-if(menuBtn){
-    menuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
-}
-
-// WhatsApp Booking Logic
+// WhatsApp Booking Function
 function bookNow(serviceName) {
-    const phoneNumber = "919876543210"; // Replace with real number
-    const message = `Hello FearLess Diving, I am interested in booking the *${serviceName}*. Please provide more details.`;
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const phone = "919876543210"; // Replace with real number
+    const text = `Hello FearLess Diving, I am interested in booking: ${serviceName}. Please provide more details.`;
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank');
 }
-
-// FAQ Accordion Logic
-const accordions = document.querySelectorAll('.accordion-header');
-
-accordions.forEach(acc => {
-    acc.addEventListener('click', () => {
-        const content = acc.nextElementSibling;
-        const icon = acc.querySelector('i');
-        
-        // Close others
-        accordions.forEach(otherAcc => {
-            if(otherAcc !== acc) {
-                otherAcc.nextElementSibling.classList.add('hidden');
-                otherAcc.querySelector('i').classList.replace('fa-minus', 'fa-plus');
-            }
-        });
-
-        // Toggle current
-        content.classList.toggle('hidden');
-        if(content.classList.contains('hidden')){
-            icon.classList.replace('fa-minus', 'fa-plus');
-        } else {
-            icon.classList.replace('fa-plus', 'fa-minus');
-        }
-    });
-});
