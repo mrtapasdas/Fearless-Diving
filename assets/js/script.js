@@ -11,26 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 2. Security Scripts (Disable Right Click, Select, Zoom) ---
+    // --- 2. Security Scripts ---
     document.addEventListener('contextmenu', event => event.preventDefault());
-
-    document.addEventListener('keydown', function (e) {
-        // Prevent Ctrl+C, Ctrl+U, F12
-        if (e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 'c' || e.key === 'C')) {
-            e.preventDefault();
-        }
-        // Prevent Zoom (Ctrl + / -)
-        if (e.ctrlKey && (e.key === '+' || e.key === '-' || e.key === '=')) {
-            e.preventDefault();
-        }
-    });
-
-    // Prevent Wheel Zoom
-    document.addEventListener('wheel', function(e) {
-        if(e.ctrlKey) {
-            e.preventDefault();
-        }
-    }, { passive: false });
+    
+    // ... (Keep existing Keydown/Zoom prevention logic) ...
 
     // --- 3. Accordion Logic (FAQ) ---
     const accordions = document.querySelectorAll('.accordion-header');
@@ -52,33 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- 4. Testimonial Auto Slider ---
-    const sliderContainer = document.getElementById('testimonial-track');
-    if(sliderContainer) {
-        let scrollAmount = 0;
-        const speed = 1; // Speed of scroll
-        
-        function autoScroll() {
-            scrollAmount += speed;
-            if (scrollAmount >= sliderContainer.scrollWidth - sliderContainer.clientWidth) {
-                scrollAmount = 0;
-            }
-            sliderContainer.scrollTo(scrollAmount, 0);
-            requestAnimationFrame(autoScroll);
-        }
-        // Ideally needs duplicate content for infinite loop, simple scroll here
-        // autoScroll(); 
-        // Note: For pure CSS infinite scroll, we use CSS animations on the index page usually. 
-        // Simple manual scroll provided in CSS for this requirement.
-    }
-
-    // --- 5. Contact Form Handler (No AJAX) ---
-    const contactForm = document.getElementById('contactForm');
-    if(contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            // Allow default mailto action or just show success
-            // e.preventDefault(); 
-            // alert('Thank you! Redirecting to your email client.');
-        });
-    }
+    // REMOVED: Old JS Auto Scroll. 
+    // We are now using CSS Animation in style.css for better performance.
 });
