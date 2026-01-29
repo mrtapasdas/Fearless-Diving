@@ -66,32 +66,44 @@ a {
     100% { transform: translateY(0px); }
 }
 
-/* --- GOOGLE REVIEWS SCROLLING (FIXED) --- */
+/* style.css - Updated Scrolling Section */
+
+/* Wrapper handles the overflow and fading edges */
 .scrolling-wrapper {
     position: relative;
     overflow: hidden;
     width: 100%;
-    /* Fade effect on edges */
     mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
 }
 
+/* Track forces items into a horizontal row */
 .scrolling-track {
-    display: flex !important;         /* Force Flexbox */
-    flex-direction: row !important;   /* Force Horizontal Row */
-    flex-wrap: nowrap !important;     /* Force Single Line (No Stacking) */
-    gap: 24px;                        /* 1.5rem gap */
-    width: max-content;               /* width = content width (infinite) */
+    display: flex;
+    flex-direction: row;       /* Force horizontal */
+    flex-wrap: nowrap;         /* PREVENT wrapping to next line */
+    gap: 1.5rem;
+    width: max-content;        /* Allow div to be wider than screen */
+    min-width: 100%;
     animation: scroll 40s linear infinite;
 }
 
+/* Stop animation on hover */
 .scrolling-track:hover {
     animation-play-state: paused;
 }
 
+/* Animation definition */
 @keyframes scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } /* Moves exactly half way */
+    100% { transform: translateX(-50%); }
+}
+
+/* Force card sizing to prevent shrinking */
+.review-card {
+    flex: 0 0 auto;           /* Do not grow, do not shrink */
+    width: 350px;             /* Fixed width */
+    white-space: normal;      /* Allow text inside card to wrap normally */
 }
 /* Map aspect ratio */
 .map-container {
