@@ -1,84 +1,67 @@
-/* script.js */
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // --- 1. Security & UX Restrictions ---
+    
+    // Disable Right Click
+    document.addEventListener('contextmenu', (e) => e.preventDefault());
 
-// 1. SECURITY: Disable Right Click, Selection, and Zoom
-document.addEventListener('contextmenu', (e) => e.preventDefault());
-
-document.addEventListener('keydown', (e) => {
-    // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
-    if (
-        e.keyCode === 123 || 
-        (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) || 
-        (e.ctrlKey && e.keyCode === 85)
-    ) {
-        e.preventDefault();
-        return false;
-    }
-});
-
-// Disable Zoom (Ctrl + / Ctrl -)
-document.addEventListener('keydown', function(event) {
-    if ((event.ctrlKey || event.metaKey) && (event.key === '+' || event.key === '-' || event.key === '=')) {
-        event.preventDefault();
-    }
-});
-
-document.addEventListener('wheel', function(event) {
-    if (event.ctrlKey) {
-        event.preventDefault();
-    }
-}, { passive: false });
-
-
-// 2. MOBILE MENU TOGGLE
-const menuBtn = document.getElementById('menu-btn');
-const mobileMenu = document.getElementById('mobile-menu');
-
-if(menuBtn){
-    menuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
-}
-
-// 3. WHATSAPP BOOKING FUNCTION
-function bookNow(serviceName) {
-    const phoneNumber = "919999999999"; // Replace with real number
-    const text = `Hello FearLess Diving, I am interested in booking the *${serviceName}*. Please provide more details.`;
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
-    window.open(url, '_blank');
-}
-
-// 4. REVIEW SLIDER (Simple Auto-Scroll)
-const slider = document.getElementById('review-slider');
-if (slider) {
-    let scrollAmount = 0;
-    const scrollStep = 1;
-    const delay = 20;
-
-    function autoScroll() {
-        if (slider.scrollWidth - slider.clientWidth <= slider.scrollLeft + 1) {
-            slider.scrollLeft = 0; // Reset to start
-        } else {
-            slider.scrollLeft += scrollStep;
+    // Disable Key Combinations (Ctrl+U, Ctrl+C, F12, Ctrl+Shift+I, Zoom)
+    document.addEventListener('keydown', (e) => {
+        if (
+            e.key === 'F12' || 
+            (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+            (e.ctrlKey && e.key === 'u') || 
+            (e.ctrlKey && e.key === 'c') ||
+            (e.ctrlKey && (e.key === '=' || e.key === '-' || e.key === '0'))
+        ) {
+            e.preventDefault();
         }
-    }
-    setInterval(autoScroll, delay);
-}
+    });
 
-// 5. FAQ TOGGLE
-const faqQuestions = document.querySelectorAll('.faq-question');
-faqQuestions.forEach(q => {
-    q.addEventListener('click', () => {
-        const answer = q.nextElementSibling;
-        const icon = q.querySelector('i');
+    // Disable Scroll Wheel Zoom
+    document.addEventListener('wheel', (e) => {
+        if (e.ctrlKey) {
+            e.preventDefault();
+        }
+    }, { passive: false });
+
+    // --- 2. Mobile Menu Toggle ---
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+
+    if(btn){
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+    }
+
+    // --- 3. Dynamic WhatsApp Booking ---
+    window.bookService = function(serviceName) {
+        const phone = "919876543210"; // Replace with real number
+        const text = `Hi FearLess Diving, I am interested in booking the *${serviceName}*. Please provide more details.`;
+        const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+        window.open(url, '_blank');
+    };
+
+    // --- 4. Auto Moving Reviews (Carousel) ---
+    const reviewContainer = document.getElementById('review-container');
+    if (reviewContainer) {
+        let scrollAmount = 0;
+        const speed = 2; // Speed of scroll
         
-        if (answer.classList.contains('hidden')) {
-            answer.classList.remove('hidden');
-            icon.classList.remove('fa-plus');
-            icon.classList.add('fa-minus');
-        } else {
-            answer.classList.add('hidden');
-            icon.classList.remove('fa-minus');
-            icon.classList.add('fa-plus');
+        function autoScroll() {
+            scrollAmount += speed;
+            if (scrollAmount >= reviewContainer.scrollWidth - reviewContainer.clientWidth) {
+                scrollAmount = 0; // Reset
+            }
+            reviewContainer.scrollTo({
+                top: 0,
+                left: scrollAmount,
+                behavior: 'auto' // smooth is too laggy for continuous
+            });
         }
-    });
+        
+        // Use setInterval for simple auto movement
+        setInterval(autoScroll, 50);
+    }
 });
