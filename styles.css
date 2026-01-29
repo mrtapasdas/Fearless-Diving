@@ -1,15 +1,38 @@
 /* style.css */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
+/* --- CRITICAL CSS FALLBACKS (Fixes loading glitches) --- */
 body {
+    margin: 0;
+    padding: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: #0f172a; /* Slate 900 */
+    background-color: #0f172a; /* Slate 900 - Ensures dark theme immediately */
     color: #e2e8f0; /* Slate 200 */
     overflow-x: hidden;
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
+
+/* Force hide elements that rely on Tailwind 'hidden' to prevent double menus */
+.hidden {
+    display: none !important;
+}
+
+/* Ensure images don't overflow before Tailwind loads */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Basic Link Styling Fallback */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- END CRITICAL CSS --- */
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
