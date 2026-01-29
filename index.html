@@ -7,10 +7,18 @@
     <meta name="keywords" content="Scuba Diving, Snorkeling, Shore Diving, Water Sports, Ocean Adventure, Diving Courses">
     <meta name="author" content="FearLess Diving">
     <title>FearLess Diving | Professional Scuba & Water Sports</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 1. Load Critical CSS first to set background color immediately -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- 2. Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- 3. Tailwind CSS (Fixed Version for Stability) -->
+    <script src="https://cdn.tailwindcss.com/3.4.1"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
@@ -25,10 +33,6 @@
             }
         }
     </script>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-slate-900 text-slate-100 antialiased">
 
@@ -41,55 +45,55 @@
             
             <!-- Desktop Menu -->
             <nav class="hidden md:flex space-x-8">
-                <a href="about.html" class="hover:text-brand-light transition">About Us</a>
-                <a href="services.html" class="hover:text-brand-light transition">Services</a>
-                <a href="contact.html" class="hover:text-brand-light transition">Contact Us</a>
+                <a href="about.html" class="hover:text-brand-light transition duration-300">About Us</a>
+                <a href="services.html" class="hover:text-brand-light transition duration-300">Services</a>
+                <a href="contact.html" class="hover:text-brand-light transition duration-300">Contact Us</a>
             </nav>
 
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="md:hidden text-2xl text-white">
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-white focus:outline-none">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
 
         <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-800 border-t border-slate-700">
-            <a href="about.html" class="block px-4 py-3 hover:bg-slate-700">About Us</a>
-            <a href="services.html" class="block px-4 py-3 hover:bg-slate-700">Services</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-800 border-t border-slate-700 absolute w-full left-0">
+            <a href="about.html" class="block px-4 py-3 hover:bg-slate-700 border-b border-slate-700">About Us</a>
+            <a href="services.html" class="block px-4 py-3 hover:bg-slate-700 border-b border-slate-700">Services</a>
             <a href="contact.html" class="block px-4 py-3 hover:bg-slate-700">Contact Us</a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 overflow-hidden">
+    <section class="relative pt-32 pb-20 overflow-hidden min-h-screen flex items-center">
         <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
             <!-- Text Content -->
-            <div class="md:w-1/2 z-10 mb-10 md:mb-0">
-                <span class="text-brand-accent font-semibold tracking-wider">EXPLORE THE UNSEEN</span>
-                <h1 class="text-5xl md:text-6xl font-bold mt-4 leading-tight">Dive Into The <span class="text-brand-light">Deep Blue</span></h1>
-                <p class="text-slate-400 mt-6 text-lg max-w-lg">Experience the thrill of the ocean with certified professionals. From snorkeling to deep sea diving, we make your underwater dreams a reality.</p>
-                <div class="mt-8 flex gap-4">
+            <div class="md:w-1/2 z-10 mb-10 md:mb-0 text-center md:text-left">
+                <span class="text-brand-accent font-semibold tracking-wider block mb-2">EXPLORE THE UNSEEN</span>
+                <h1 class="text-5xl md:text-6xl font-bold leading-tight">Dive Into The <span class="text-brand-light">Deep Blue</span></h1>
+                <p class="text-slate-400 mt-6 text-lg max-w-lg mx-auto md:mx-0">Experience the thrill of the ocean with certified professionals. From snorkeling to deep sea diving, we make your underwater dreams a reality.</p>
+                <div class="mt-8 flex gap-4 justify-center md:justify-start">
                     <a href="services.html" class="bg-brand hover:bg-brand-light text-white px-8 py-3 rounded-full font-semibold transition shadow-lg shadow-brand/30">Explore Packages</a>
                     <a href="contact.html" class="border border-slate-600 hover:border-brand-light hover:text-brand-light text-slate-300 px-8 py-3 rounded-full font-semibold transition">Contact Us</a>
                 </div>
             </div>
 
             <!-- Floating Images -->
-            <div class="md:w-1/2 relative h-[400px] md:h-[500px] w-full flex justify-center items-center">
+            <div class="md:w-1/2 relative h-[400px] md:h-[500px] w-full flex justify-center items-center mt-8 md:mt-0">
                 <!-- Image 1: Scuba -->
                 <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=2070&auto=format&fit=crop" 
                      alt="Scuba Diving" 
-                     class="float-img absolute top-0 right-10 w-48 h-48 md:w-64 md:h-64 object-cover rounded-2xl shadow-2xl border-4 border-slate-800 z-10">
+                     class="float-img absolute top-0 right-4 md:right-10 w-40 h-40 md:w-64 md:h-64 object-cover rounded-2xl shadow-2xl border-4 border-slate-800 z-10">
                 
                 <!-- Image 2: Snorkeling -->
                 <img src="https://images.unsplash.com/photo-1582967788606-a171f1080cae?q=80&w=2070&auto=format&fit=crop" 
                      alt="Snorkeling" 
-                     class="float-img absolute bottom-10 left-10 w-40 h-40 md:w-56 md:h-56 object-cover rounded-2xl shadow-2xl border-4 border-slate-800 z-20">
+                     class="float-img absolute bottom-4 md:bottom-10 left-4 md:left-10 w-32 h-32 md:w-56 md:h-56 object-cover rounded-2xl shadow-2xl border-4 border-slate-800 z-20">
 
                 <!-- Image 3: Shore Diving -->
                 <img src="https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?q=80&w=2070&auto=format&fit=crop" 
                      alt="Shore Diving" 
-                     class="float-img absolute top-1/3 left-1/3 w-32 h-32 md:w-48 md:h-48 object-cover rounded-2xl shadow-2xl border-4 border-slate-800 z-30">
+                     class="float-img absolute top-1/3 left-1/3 w-28 h-28 md:w-48 md:h-48 object-cover rounded-2xl shadow-2xl border-4 border-slate-800 z-30">
             </div>
         </div>
     </section>
@@ -104,11 +108,11 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Card 1 -->
-                <div class="bg-slate-900 rounded-2xl overflow-hidden shadow-xl hover:-translate-y-2 transition duration-300">
+                <div class="bg-slate-900 rounded-2xl overflow-hidden shadow-xl hover:-translate-y-2 transition duration-300 flex flex-col">
                     <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800" class="w-full h-56 object-cover" alt="Scuba Diving">
-                    <div class="p-6">
+                    <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold mb-2">Scuba Diving (Beginner)</h3>
-                        <ul class="text-slate-400 text-sm mb-4 space-y-2">
+                        <ul class="text-slate-400 text-sm mb-4 space-y-2 flex-grow">
                             <li><i class="fa-solid fa-clock text-brand-light mr-2"></i> 45 Mins Underwater</li>
                             <li><i class="fa-solid fa-video text-brand-light mr-2"></i> Photos & Videos Included</li>
                             <li><i class="fa-solid fa-check text-brand-light mr-2"></i> No Swimming Required</li>
@@ -126,12 +130,12 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="bg-slate-900 rounded-2xl overflow-hidden shadow-xl hover:-translate-y-2 transition duration-300 border border-brand/30">
+                <div class="bg-slate-900 rounded-2xl overflow-hidden shadow-xl hover:-translate-y-2 transition duration-300 border border-brand/30 flex flex-col">
                     <div class="bg-brand-accent text-slate-900 text-xs font-bold text-center py-1">BEST SELLER</div>
                     <img src="https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?auto=format&fit=crop&w=800" class="w-full h-52 object-cover" alt="Boat Scuba">
-                    <div class="p-6">
+                    <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold mb-2">Boat Scuba Diving</h3>
-                        <ul class="text-slate-400 text-sm mb-4 space-y-2">
+                        <ul class="text-slate-400 text-sm mb-4 space-y-2 flex-grow">
                             <li><i class="fa-solid fa-ship text-brand-light mr-2"></i> Deep Sea Boat Ride</li>
                             <li><i class="fa-solid fa-clock text-brand-light mr-2"></i> 1 Hour Duration</li>
                             <li><i class="fa-solid fa-person-swimming text-brand-light mr-2"></i> Personal Diver</li>
@@ -149,11 +153,11 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="bg-slate-900 rounded-2xl overflow-hidden shadow-xl hover:-translate-y-2 transition duration-300">
+                <div class="bg-slate-900 rounded-2xl overflow-hidden shadow-xl hover:-translate-y-2 transition duration-300 flex flex-col">
                     <img src="https://images.unsplash.com/photo-1582967788606-a171f1080cae?auto=format&fit=crop&w=800" class="w-full h-56 object-cover" alt="Parasailing">
-                    <div class="p-6">
+                    <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold mb-2">Combo: Scuba + Parasailing</h3>
-                        <ul class="text-slate-400 text-sm mb-4 space-y-2">
+                        <ul class="text-slate-400 text-sm mb-4 space-y-2 flex-grow">
                             <li><i class="fa-solid fa-star text-brand-light mr-2"></i> Full Adventure Pack</li>
                             <li><i class="fa-solid fa-cloud text-brand-light mr-2"></i> High Fly Parasailing</li>
                             <li><i class="fa-solid fa-camera text-brand-light mr-2"></i> HD Footage</li>
@@ -183,7 +187,7 @@
             <div class="md:w-1/2">
                 <img src="https://images.unsplash.com/photo-1636537511494-c3e558e0702b?auto=format&fit=crop&w=1200" alt="About Team" class="rounded-2xl shadow-2xl border-l-8 border-brand">
             </div>
-            <div class="md:w-1/2">
+            <div class="md:w-1/2 text-center md:text-left">
                 <h4 class="text-brand-accent font-bold tracking-widest uppercase mb-2">Who We Are</h4>
                 <h2 class="text-3xl md:text-4xl font-bold mb-6">Experience Safety & Adventure with FearLess Diving</h2>
                 <p class="text-slate-400 mb-4 leading-relaxed">
@@ -192,7 +196,7 @@
                 <p class="text-slate-400 mb-6 leading-relaxed">
                     Whether you are a complete beginner or a seasoned pro, our state-of-the-art equipment and personalized attention ensure you have the best dive of your life.
                 </p>
-                <a href="about.html" class="text-brand-light font-semibold hover:text-white transition group">Read More About Us <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i></a>
+                <a href="about.html" class="text-brand-light font-semibold hover:text-white transition group inline-flex items-center">Read More About Us <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i></a>
             </div>
         </div>
     </section>
@@ -263,8 +267,7 @@
         </div>
         <div class="marquee-container w-full">
             <div class="marquee-content gap-6 px-4">
-                <!-- Repeat these cards effectively for marquee loop -->
-                <!-- Review 1 -->
+                <!-- Review Cards Loop -->
                 <div class="bg-white text-slate-900 p-4 rounded-xl w-80 flex-shrink-0">
                     <div class="flex items-center gap-2 mb-2">
                         <img src="https://ui-avatars.com/api/?name=John+Doe&background=0D8ABC&color=fff" class="w-10 h-10 rounded-full" alt="User">
@@ -275,7 +278,6 @@
                     </div>
                     <p class="text-sm">"Absolutely amazing experience! The instructors were so patient."</p>
                 </div>
-                 <!-- Review 2 -->
                  <div class="bg-white text-slate-900 p-4 rounded-xl w-80 flex-shrink-0">
                     <div class="flex items-center gap-2 mb-2">
                         <img src="https://ui-avatars.com/api/?name=Sarah+Smith&background=f59e0b&color=fff" class="w-10 h-10 rounded-full" alt="User">
@@ -286,7 +288,6 @@
                     </div>
                     <p class="text-sm">"Best part of our Goa trip. The photos came out stunning!"</p>
                 </div>
-                 <!-- Review 3 -->
                  <div class="bg-white text-slate-900 p-4 rounded-xl w-80 flex-shrink-0">
                     <div class="flex items-center gap-2 mb-2">
                         <img src="https://ui-avatars.com/api/?name=Mike+R&background=10b981&color=fff" class="w-10 h-10 rounded-full" alt="User">
@@ -339,7 +340,7 @@
             
             <div class="space-y-4">
                 <!-- Q1 -->
-                <div class="faq-item bg-slate-800 rounded-lg overflow-hidden">
+                <div class="faq-item bg-slate-800 rounded-lg overflow-hidden border border-slate-700">
                     <button class="faq-question w-full px-6 py-4 text-left font-semibold flex justify-between items-center hover:bg-slate-700 transition">
                         <span>Do I need to know swimming?</span>
                         <i class="fa-solid fa-plus text-brand-light"></i>
@@ -349,7 +350,7 @@
                     </div>
                 </div>
                 <!-- Q2 -->
-                <div class="faq-item bg-slate-800 rounded-lg overflow-hidden">
+                <div class="faq-item bg-slate-800 rounded-lg overflow-hidden border border-slate-700">
                     <button class="faq-question w-full px-6 py-4 text-left font-semibold flex justify-between items-center hover:bg-slate-700 transition">
                         <span>What is the minimum age?</span>
                         <i class="fa-solid fa-plus text-brand-light"></i>
@@ -359,7 +360,7 @@
                     </div>
                 </div>
                 <!-- Q3 -->
-                <div class="faq-item bg-slate-800 rounded-lg overflow-hidden">
+                <div class="faq-item bg-slate-800 rounded-lg overflow-hidden border border-slate-700">
                     <button class="faq-question w-full px-6 py-4 text-left font-semibold flex justify-between items-center hover:bg-slate-700 transition">
                         <span>Is it safe?</span>
                         <i class="fa-solid fa-plus text-brand-light"></i>
@@ -376,23 +377,23 @@
     <footer class="bg-slate-950 pt-16 pb-8 border-t border-slate-800">
         <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12">
             <!-- Col 1 -->
-            <div>
-                <a href="index.html" class="text-2xl font-bold text-brand-light flex items-center gap-2 mb-4">
+            <div class="text-center md:text-left">
+                <a href="index.html" class="text-2xl font-bold text-brand-light flex items-center justify-center md:justify-start gap-2 mb-4">
                     <i class="fa-solid fa-water"></i> FearLess<span class="text-white">Diving</span>
                 </a>
                 <p class="text-slate-400 text-sm leading-relaxed mb-4">
                     The premier destination for underwater adventures. Join us to explore the hidden mysteries of the ocean safely and affordably.
                 </p>
-                <div class="flex space-x-4">
+                <div class="flex justify-center md:justify-start space-x-4">
                     <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand transition text-white"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand transition text-white"><i class="fa-brands fa-instagram"></i></a>
                     <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand transition text-white"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
             <!-- Col 2 -->
-            <div>
+            <div class="text-center md:text-left">
                 <h3 class="text-lg font-bold text-white mb-4">Contact Info</h3>
-                <ul class="space-y-3 text-slate-400 text-sm">
+                <ul class="space-y-3 text-slate-400 text-sm inline-block md:block text-left">
                     <li class="flex items-start gap-3">
                         <i class="fa-solid fa-location-dot text-brand-light mt-1"></i>
                         <span>Beach Road, Malvan, Maharashtra,<br>India - 416606</span>
@@ -408,14 +409,14 @@
                 </ul>
             </div>
             <!-- Col 3 -->
-            <div>
+            <div class="text-center md:text-left">
                 <h3 class="text-lg font-bold text-white mb-4">Sitemap</h3>
                 <ul class="space-y-2 text-slate-400 text-sm">
                     <li><a href="index.html" class="hover:text-brand-light transition">Home</a></li>
                     <li><a href="about.html" class="hover:text-brand-light transition">About Us</a></li>
                     <li><a href="services.html" class="hover:text-brand-light transition">Services</a></li>
                     <li><a href="contact.html" class="hover:text-brand-light transition">Contact Us</a></li>
-                    <li><a href="privacy.html" class="hover:text-brand-light transition">Privacy Policy</a></li>
+                    <li><a href="404.html" class="hover:text-brand-light transition">Privacy Policy</a></li>
                 </ul>
             </div>
         </div>
