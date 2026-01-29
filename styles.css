@@ -1,55 +1,71 @@
-/* Custom Styles & Animations that Tailwind doesn't cover by default */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #0f172a; /* Slate 900 */
-    color: #f8fafc; /* Slate 50 */
+    color: #e2e8f0; /* Slate 200 */
     overflow-x: hidden;
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
 }
 
-/* Floating Animation for Hero Images */
+/* Security: Disable Selection */
+.no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+    background: #0ea5e9;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #0284c7;
+}
+
+/* Hero Floating Animation */
 @keyframes float {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-20px); }
     100% { transform: translateY(0px); }
 }
 
-.animate-float-1 { animation: float 4s ease-in-out infinite; }
-.animate-float-2 { animation: float 5s ease-in-out infinite; animation-delay: 1s; }
-.animate-float-3 { animation: float 6s ease-in-out infinite; animation-delay: 2s; }
+.float-img-1 { animation: float 6s ease-in-out infinite; }
+.float-img-2 { animation: float 7s ease-in-out infinite; animation-delay: 1s; }
+.float-img-3 { animation: float 5s ease-in-out infinite; animation-delay: 2s; }
 
-/* Scrollbar Styling */
-::-webkit-scrollbar {
-    width: 10px;
-}
-::-webkit-scrollbar-track {
-    background: #0f172a; 
-}
-::-webkit-scrollbar-thumb {
-    background: #06b6d4; 
-    border-radius: 5px;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: #22d3ee; 
+/* Mobile Hero Image Stacking */
+.hero-stack-container {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
 }
 
-/* Review Slider Animation */
-.scrolling-wrapper {
-    -webkit-overflow-scrolling: touch;
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: hidden; /* Hidden to control via JS */
-    scroll-behavior: smooth;
+/* Review Slider Fade */
+.review-slide {
+    display: none;
+    animation: fadeIn 1s;
 }
-.card-review {
-    flex: 0 0 auto;
+.review-slide.active {
+    display: block;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-/* Hide content to prevent drag copying */
-img {
-    pointer-events: none;
+/* Custom Utilities */
+.text-gold { color: #ffd700; }
+.bg-glass {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
