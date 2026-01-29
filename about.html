@@ -8,125 +8,91 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            dark: '#0f172a',
-                            light: '#1e293b',
-                            accent: '#0d9488',
-                            hover: '#14b8a6'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
 </head>
-<body class="bg-brand-dark text-slate-200 flex flex-col min-h-screen">
+<body class="bg-slate-900 text-white antialiased">
 
-     <!-- Header (Same as index) -->
-     <header class="fixed w-full top-0 z-50 bg-brand-dark/95 backdrop-blur shadow-md border-b border-brand-light">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-brand-accent flex items-center gap-2">
-                <i class="fa-solid fa-water"></i> FearLess Diving
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-slate-900/95 backdrop-blur shadow-lg border-b border-slate-800">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-cyan-400 uppercase tracking-widest">
+                <i class="fa-solid fa-water"></i> FearLess
             </a>
-            <nav class="hidden md:flex gap-8">
-                <a href="index.html" class="hover:text-brand-accent transition">Home</a>
-                <a href="about.html" class="text-brand-accent transition">About Us</a>
-                <a href="services.html" class="hover:text-brand-accent transition">Services</a>
-                <a href="contact.html" class="hover:text-brand-accent transition">Contact Us</a>
-            </nav>
-            <button id="menu-btn" class="md:hidden text-2xl focus:outline-none"><i class="fa-solid fa-bars"></i></button>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-brand-light border-t border-brand-dark">
-            <a href="index.html" class="block px-4 py-3 hover:bg-brand-dark">Home</a>
-            <a href="about.html" class="block px-4 py-3 hover:bg-brand-dark">About Us</a>
-            <a href="services.html" class="block px-4 py-3 hover:bg-brand-dark">Services</a>
-            <a href="contact.html" class="block px-4 py-3 hover:bg-brand-dark">Contact Us</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
+                <a href="about.html" class="text-cyan-400 transition">About Us</a>
+                <a href="services.html" class="hover:text-cyan-400 transition">Services</a>
+                <a href="contact.html" class="hover:text-cyan-400 transition">Contact Us</a>
+            </div>
+            <button id="menu-btn" class="md:hidden text-cyan-400 focus:outline-none">
+                <i class="fa-solid fa-bars fa-2x"></i>
+            </button>
+        </nav>
+        <div id="menu" class="hidden absolute top-full left-0 w-full bg-slate-900 flex-col items-center py-8 space-y-6 shadow-xl border-b border-slate-700">
+            <a href="index.html" class="hover:text-cyan-400">Home</a>
+            <a href="about.html" class="hover:text-cyan-400">About Us</a>
+            <a href="services.html" class="hover:text-cyan-400">Services</a>
+            <a href="contact.html" class="hover:text-cyan-400">Contact Us</a>
         </div>
     </header>
 
-    <main class="flex-grow pt-28 pb-10">
-        <div class="container mx-auto px-4">
+    <main class="pt-32 pb-20">
+        <!-- History Section -->
+        <section class="container mx-auto px-6 mb-20">
+            <h1 class="text-4xl font-bold text-center mb-12">About <span class="text-cyan-400">FearLess Diving</span></h1>
             
-            <!-- Intro -->
-            <div class="flex flex-col md:flex-row gap-10 items-center mb-20">
-                <div class="md:w-1/2">
-                    <h1 class="text-4xl font-bold mb-6">Our <span class="text-brand-accent">Story</span></h1>
-                    <p class="text-gray-400 leading-relaxed mb-4">
-                        Founded in 2015, FearLess Diving started as a small passion project by two friends who wanted to share the magic of the ocean with the world. Over the years, we have grown into one of the most respected diving centers in the region.
-                    </p>
-                    <p class="text-gray-400 leading-relaxed">
-                        Our mission is to make diving accessible, safe, and fun for everyone. We believe that confronting the fear of the deep leads to the most beautiful discoveries of one's life.
-                    </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-gray-300">
+                    <h2 class="text-2xl font-bold text-white">Our History</h2>
+                    <p>Established in 2015, FearLess Diving started as a small shack on the beach with just two sets of diving gear. Our founders, avid ocean lovers, wanted to share the mesmerizing silence of the deep sea with the world.</p>
+                    <p>Over the years, we have grown into a premier diving center, certified by international bodies, having trained over 5000+ students and conducted 10,000+ dives.</p>
+                    
+                    <h2 class="text-2xl font-bold text-white mt-8">Our Vision</h2>
+                    <p>To create a community of ocean guardians. We believe that once people see the beauty of the underwater world, they will fight to protect it. We aim to make diving accessible, safe, and educational for everyone.</p>
                 </div>
-                <div class="md:w-1/2">
-                    <img src="https://images.unsplash.com/photo-1682685797769-481b48196247?auto=format&fit=crop&w=800" class="rounded-xl shadow-2xl border-4 border-brand-light" alt="Team">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1682687220509-61b8a906ca19?auto=format&fit=crop&q=80&w=600" class="rounded-xl shadow-2xl border-4 border-slate-800" alt="History">
                 </div>
             </div>
+        </section>
 
-            <!-- Vision -->
-            <div class="bg-brand-light p-10 rounded-xl mb-20 text-center">
-                <h2 class="text-3xl font-bold mb-4 text-brand-accent">Future Vision</h2>
-                <p class="max-w-2xl mx-auto text-gray-400">
-                    We aim to become a 100% eco-friendly diving center by 2026, eliminating single-use plastics from our operations and participating in weekly reef cleaning drives.
-                </p>
+        <!-- Gallery Section -->
+        <section class="bg-slate-800 py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">Our <span class="text-cyan-400">Gallery</span></h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="overflow-hidden rounded-lg h-48 md:h-64">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a8723ba3f9?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover hover:scale-110 transition duration-500" alt="Gallery 1">
+                    </div>
+                    <div class="overflow-hidden rounded-lg h-48 md:h-64">
+                        <img src="https://images.unsplash.com/photo-1519817914152-22d216bb9170?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover hover:scale-110 transition duration-500" alt="Gallery 2">
+                    </div>
+                    <div class="overflow-hidden rounded-lg h-48 md:h-64">
+                        <img src="https://images.unsplash.com/photo-1582967788606-a171f1080ca8?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover hover:scale-110 transition duration-500" alt="Gallery 3">
+                    </div>
+                    <div class="overflow-hidden rounded-lg h-48 md:h-64">
+                        <img src="https://images.unsplash.com/photo-1544552866-d3ed42536cfd?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover hover:scale-110 transition duration-500" alt="Gallery 4">
+                    </div>
+                    <!-- Video Placeholders -->
+                    <div class="col-span-2 overflow-hidden rounded-lg h-48 md:h-64 relative bg-black">
+                         <div class="absolute inset-0 flex items-center justify-center text-cyan-400 opacity-50"><i class="fa-solid fa-play fa-3x"></i></div>
+                         <img src="https://images.unsplash.com/photo-1632833239869-a37e3a5806d2?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover opacity-60" alt="Video 1">
+                    </div>
+                    <div class="col-span-2 overflow-hidden rounded-lg h-48 md:h-64 relative bg-black">
+                        <div class="absolute inset-0 flex items-center justify-center text-cyan-400 opacity-50"><i class="fa-solid fa-play fa-3x"></i></div>
+                        <img src="https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover opacity-60" alt="Video 2">
+                    </div>
+                </div>
             </div>
-
-            <!-- Gallery -->
-            <h2 class="text-3xl font-bold mb-10 text-center">Our <span class="text-brand-accent">Gallery</span></h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <img src="https://images.unsplash.com/photo-1544551763-46a8723ba3f9?w=400" class="rounded-lg hover:opacity-75 transition h-48 w-full object-cover">
-                <img src="https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=400" class="rounded-lg hover:opacity-75 transition h-48 w-full object-cover">
-                <img src="https://images.unsplash.com/photo-1583307223828-56df82570085?w=400" class="rounded-lg hover:opacity-75 transition h-48 w-full object-cover">
-                <img src="https://images.unsplash.com/photo-1518118029562-b1319c5c291c?w=400" class="rounded-lg hover:opacity-75 transition h-48 w-full object-cover">
-                <img src="https://images.unsplash.com/photo-1599723023246-3221cb915951?w=400" class="rounded-lg hover:opacity-75 transition h-48 w-full object-cover">
-                <img src="https://images.unsplash.com/photo-1682685797769-481b48196247?w=400" class="rounded-lg hover:opacity-75 transition h-48 w-full object-cover">
-                <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=400" class="rounded-lg hover:opacity-75 transition h-48 w-full object-cover">
-                <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=400" class="rounded-lg hover:opacity-75 transition h-48 w-full object-cover">
-            </div>
-
-        </div>
+        </section>
     </main>
 
-    <!-- Footer Same as index -->
-    <footer class="bg-black py-10 border-t border-slate-800">
-        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-                <a href="index.html" class="text-2xl font-bold text-brand-accent mb-4 block"><i class="fa-solid fa-water"></i> FearLess Diving</a>
-                <p class="text-gray-500 text-sm mb-4">Conquer your fears and explore the deep blue with the most trusted diving center.</p>
-            </div>
-            <div>
-                <h3 class="text-xl font-bold mb-4">Contact Info</h3>
-                <ul class="text-gray-400 text-sm space-y-2">
-                    <li><i class="fa-solid fa-location-dot mr-2"></i> 123 Beach Road, Malvan, India</li>
-                    <li><i class="fa-solid fa-phone mr-2"></i> +91 98765 43210</li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="text-xl font-bold mb-4">Quick Links</h3>
-                <ul class="text-gray-400 text-sm space-y-2">
-                    <li><a href="about.html" class="hover:text-brand-accent">About Us</a></li>
-                    <li><a href="services.html" class="hover:text-brand-accent">Services</a></li>
-                    <li><a href="contact.html" class="hover:text-brand-accent">Contact Us</a></li>
-                    <li><a href="sitemap.xml" class="hover:text-brand-accent">Sitemap</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="text-center text-gray-600 text-xs mt-10">
-            &copy; 2024 FearLess Diving. All Rights Reserved.
+    <!-- Footer (Same as Index) -->
+    <footer class="bg-slate-950 pt-16 pb-8 border-t border-slate-800">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-500 text-xs">&copy; <span id="year"></span> FearLess Diving. All rights reserved.</p>
         </div>
     </footer>
 
-    <div class="fab-container fixed bottom-5 left-5">
-        <a href="tel:+919876543210" class="block w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 transition animate-bounce"><i class="fa-solid fa-phone"></i></a>
-    </div>
-    <div class="fab-container fixed bottom-5 right-5">
-        <a href="https://wa.me/919876543210" target="_blank" class="block w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg hover:scale-110 transition"><i class="fa-brands fa-whatsapp"></i></a>
-    </div>
     <script src="script.js"></script>
 </body>
 </html>
