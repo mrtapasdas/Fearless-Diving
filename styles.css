@@ -1,29 +1,14 @@
-/* Import Google Font */
+/* Custom Styles & Animations that Tailwind doesn't cover by default */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #0f172a; /* Slate 900 */
-    color: #e2e8f0; /* Slate 200 */
+    color: #f8fafc; /* Slate 50 */
     overflow-x: hidden;
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-    width: 10px;
-}
-::-webkit-scrollbar-track {
-    background: #1e293b;
-}
-::-webkit-scrollbar-thumb {
-    background: #0d9488; /* Teal 600 */
-    border-radius: 5px;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: #14b8a6;
 }
 
 /* Floating Animation for Hero Images */
@@ -33,34 +18,38 @@ body {
     100% { transform: translateY(0px); }
 }
 
-.float-img {
-    animation: float 6s ease-in-out infinite;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
-    border-radius: 1rem;
+.animate-float-1 { animation: float 4s ease-in-out infinite; }
+.animate-float-2 { animation: float 5s ease-in-out infinite; animation-delay: 1s; }
+.animate-float-3 { animation: float 6s ease-in-out infinite; animation-delay: 2s; }
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #0f172a; 
+}
+::-webkit-scrollbar-thumb {
+    background: #06b6d4; 
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #22d3ee; 
 }
 
-.float-delay-1 { animation-delay: 0s; }
-.float-delay-2 { animation-delay: 2s; }
-.float-delay-3 { animation-delay: 4s; }
-
-/* Marquee for Reviews */
-.marquee-container {
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
+/* Review Slider Animation */
+.scrolling-wrapper {
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: hidden; /* Hidden to control via JS */
+    scroll-behavior: smooth;
+}
+.card-review {
+    flex: 0 0 auto;
 }
 
-.marquee-content {
-    display: inline-flex;
-    animation: scroll 30s linear infinite;
-}
-
-@keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
-/* Floating Action Buttons */
-.fab-container {
-    z-index: 9999;
+/* Hide content to prevent drag copying */
+img {
+    pointer-events: none;
 }
