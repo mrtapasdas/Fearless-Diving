@@ -52,10 +52,12 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+<!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20">
+        <!-- Background Overlay -->
         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-deep z-10"></div>
         
+        <!-- Content -->
         <div class="container mx-auto px-6 relative z-20 text-center">
             <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
                 Explore the <span class="text-cyan-400">Deep Blue</span>
@@ -64,30 +66,36 @@
                 Professional Scuba Diving & Water Sports adventures tailored for thrill-seekers.
             </p>
 
-            <!-- CHANGE 1: Added Explore Packages Button -->
-            <div class="mb-12">
+            <!-- CHANGE 1: Increased margin-bottom (mb-24 md:mb-32) to create gap between button and floating images -->
+            <div class="mb-24 md:mb-32">
                 <a href="services.html" class="inline-flex items-center justify-center bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-3 px-8 rounded-full shadow-lg shadow-cyan-500/30 transition transform hover:scale-105">
                     Explore Packages <i class="fa-solid fa-arrow-right ml-2"></i>
                 </a>
             </div>
-            <!-- Animated Images Grid (Unchanged) -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- CHANGE 2: Increased vertical gap (gap-y-12) for mobile so floating images don't overlap when stacked -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-y-12 md:gap-6">
+                
+                <!-- Image 1 -->
                 <div class="animate-float">
                     <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500&q=80" alt="Scuba Diving" class="rounded-xl shadow-2xl border-2 border-cyan-400/30 w-full h-64 object-cover">
-                    <p class="mt-2 text-cyan-400 font-bold">Scuba</p>
+                    <p class="mt-4 text-cyan-400 font-bold text-xl tracking-wide">Scuba</p>
                 </div>
-                <div class="animate-float-delay md:-mt-12">
+
+                <!-- Image 2 (Has negative margin on desktop to pull it up, but normal flow on mobile) -->
+                <div class="animate-float-delay md:-mt-16">
                     <img src="https://images.unsplash.com/photo-1580019542155-247062e19ce4?w=500&q=80" alt="Snorkeling" class="rounded-xl shadow-2xl border-2 border-cyan-400/30 w-full h-64 object-cover">
-                    <p class="mt-2 text-cyan-400 font-bold">Snorkeling</p>
+                    <p class="mt-4 text-cyan-400 font-bold text-xl tracking-wide">Snorkeling</p>
                 </div>
+
+                <!-- Image 3 -->
                 <div class="animate-float">
                     <img src="https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=500&q=80" alt="Shore Diving" class="rounded-xl shadow-2xl border-2 border-cyan-400/30 w-full h-64 object-cover">
-                    <p class="mt-2 text-cyan-400 font-bold">Shore Dives</p>
+                    <p class="mt-4 text-cyan-400 font-bold text-xl tracking-wide">Shore Dives</p>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Services Preview (Unchanged) -->
     <section class="py-20 bg-ocean">
         <div class="container mx-auto px-6">
