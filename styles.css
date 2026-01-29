@@ -66,35 +66,33 @@ a {
     100% { transform: translateY(0px); }
 }
 
-/* ... keep previous Critical CSS ... */
-
-/* --- NEW GOOGLE REVIEWS SCROLLING --- */
+/* --- GOOGLE REVIEWS SCROLLING (FIXED) --- */
 .scrolling-wrapper {
     position: relative;
     overflow: hidden;
-    /* Adds a fade effect on left and right sides */
+    width: 100%;
+    /* Fade effect on edges */
     mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
 }
 
 .scrolling-track {
-    display: flex;
-    gap: 1.5rem; /* Space between cards */
-    width: max-content; /* Forces content to be one long horizontal line */
-    animation: scroll 40s linear infinite; /* Adjust speed here */
+    display: flex !important;         /* Force Flexbox */
+    flex-direction: row !important;   /* Force Horizontal Row */
+    flex-wrap: nowrap !important;     /* Force Single Line (No Stacking) */
+    gap: 24px;                        /* 1.5rem gap */
+    width: max-content;               /* width = content width (infinite) */
+    animation: scroll 40s linear infinite;
 }
 
 .scrolling-track:hover {
-    animation-play-state: paused; /* Stop scrolling on hover */
+    animation-play-state: paused;
 }
 
 @keyframes scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } /* Moves exactly half way (one set of cards) */
+    100% { transform: translateX(-50%); } /* Moves exactly half way */
 }
-
-/* ... keep Map aspect ratio and others ... */
-
 /* Map aspect ratio */
 .map-container {
     position: relative;
