@@ -263,9 +263,10 @@
 <!-- Moving Reviews Section -->
     <section class="py-20 bg-slate-900 border-t border-slate-800">
         <div class="container mx-auto px-4 mb-10 text-center">
-            <div class="inline-flex items-center gap-2 bg-white text-slate-900 px-4 py-2 rounded-full shadow-lg mb-4">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" class="w-6 h-6">
-                <span class="font-bold text-lg">4.9</span>
+            <!-- Google Rating Badge -->
+            <div class="inline-flex items-center gap-3 bg-white text-slate-900 px-6 py-2 rounded-full shadow-lg mb-4">
+                <i class="fa-brands fa-google text-2xl text-blue-500"></i> <!-- Fixed Icon -->
+                <span class="font-bold text-xl">4.9</span>
                 <div class="text-yellow-500 text-sm">
                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
@@ -274,21 +275,20 @@
         </div>
 
         <!-- Scrolling Container -->
-        <div class="scrolling-wrapper w-full">
-            <!-- Track contains TWO sets of reviews for seamless looping -->
+        <div class="scrolling-wrapper">
             <div class="scrolling-track py-4 pl-4">
                 
                 <!-- === SET 1 === -->
                 
                 <!-- Review 1 -->
-                <div class="w-[350px] bg-white text-slate-900 p-6 rounded-2xl shadow-lg border border-slate-200 flex flex-col flex-shrink-0">
+                <div class="review-card bg-white text-slate-900 p-6 rounded-2xl shadow-lg border border-slate-200 flex flex-col">
                     <div class="flex items-center gap-3 mb-3">
                         <img src="https://ui-avatars.com/api/?name=Rohan+Sharma&background=random" class="w-10 h-10 rounded-full" alt="User">
                         <div>
                             <h4 class="font-bold text-sm">Rohan Sharma</h4>
                             <div class="text-xs text-slate-500">Local Guide • 12 reviews</div>
                         </div>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="w-5 h-5 ml-auto opacity-50" alt="G">
+                        <i class="fa-brands fa-google text-slate-300 text-lg ml-auto"></i>
                     </div>
                     <div class="text-yellow-500 text-xs mb-3">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -298,14 +298,14 @@
                 </div>
 
                 <!-- Review 2 -->
-                <div class="w-[350px] bg-white text-slate-900 p-6 rounded-2xl shadow-lg border border-slate-200 flex flex-col flex-shrink-0">
+                <div class="review-card bg-white text-slate-900 p-6 rounded-2xl shadow-lg border border-slate-200 flex flex-col">
                     <div class="flex items-center gap-3 mb-3">
                         <img src="https://ui-avatars.com/api/?name=Sarah+Jenkins&background=f59e0b&color=fff" class="w-10 h-10 rounded-full" alt="User">
                         <div>
                             <h4 class="font-bold text-sm">Sarah Jenkins</h4>
                             <div class="text-xs text-slate-500">Tourist • 5 reviews</div>
                         </div>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="w-5 h-5 ml-auto opacity-50" alt="G">
+                        <i class="fa-brands fa-google text-slate-300 text-lg ml-auto"></i>
                     </div>
                     <div class="text-yellow-500 text-xs mb-3">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -315,14 +315,14 @@
                 </div>
 
                 <!-- Review 3 -->
-                <div class="w-[350px] bg-white text-slate-900 p-6 rounded-2xl shadow-lg border border-slate-200 flex flex-col flex-shrink-0">
+                <div class="review-card bg-white text-slate-900 p-6 rounded-2xl shadow-lg border border-slate-200 flex flex-col">
                     <div class="flex items-center gap-3 mb-3">
                         <img src="https://ui-avatars.com/api/?name=Amit+Patel&background=10b981&color=fff" class="w-10 h-10 rounded-full" alt="User">
                         <div>
                             <h4 class="font-bold text-sm">Amit Patel</h4>
                             <div class="text-xs text-slate-500">Local Guide • 45 reviews</div>
                         </div>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="w-5 h-5 ml-auto opacity-50" alt="G">
+                        <i class="fa-brands fa-google text-slate-300 text-lg ml-auto"></i>
                     </div>
                     <div class="text-yellow-500 text-xs mb-3">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -332,14 +332,14 @@
                 </div>
 
                 <!-- Review 4 -->
-                <div class="w-[350px] bg-white text-slate-900 p-6 rounded-2xl shadow-lg border border-slate-200 flex flex-col flex-shrink-0">
+                <div class="review-card bg-white text-slate-900 p-6 rounded-2xl shadow-lg border border-slate-200 flex flex-col">
                     <div class="flex items-center gap-3 mb-3">
                         <img src="https://ui-avatars.com/api/?name=Priya+D&background=ec4899&color=fff" class="w-10 h-10 rounded-full" alt="User">
                         <div>
                             <h4 class="font-bold text-sm">Priya D.</h4>
                             <div class="text-xs text-slate-500">Tourist • 2 reviews</div>
                         </div>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="w-5 h-5 ml-auto opacity-50" alt="G">
+                        <i class="fa-brands fa-google text-slate-300 text-lg ml-auto"></i>
                     </div>
                     <div class="text-yellow-500 text-xs mb-3">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -348,17 +348,17 @@
                     <p class="text-sm text-slate-700 leading-relaxed">"Parasailing was thrilling! The view from the top is breathtaking. A must-do activity with FearLess."</p>
                 </div>
 
-                <!-- === SET 2 (DUPLICATE OF SET 1 FOR LOOP) === -->
+                <!-- === SET 2 (DUPLICATE) === -->
                 
                 <!-- Review 1 Copy -->
-                <div class="w-[350px] bg-white text-slate-900 p-6 rounded-2xl shadow-lg border border-slate-200 flex flex-col flex-shrink-0">
+                <div class="review-card bg-white text-slate-900 p-6 rounded-2xl shadow-lg border border-slate-200 flex flex-col">
                     <div class="flex items-center gap-3 mb-3">
                         <img src="https://ui-avatars.com/api/?name=Rohan+Sharma&background=random" class="w-10 h-10 rounded-full" alt="User">
                         <div>
                             <h4 class="font-bold text-sm">Rohan Sharma</h4>
                             <div class="text-xs text-slate-500">Local Guide • 12 reviews</div>
                         </div>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="w-5 h-5 ml-auto opacity-50" alt="G">
+                        <i class="fa-brands fa-google text-slate-300 text-lg ml-auto"></i>
                     </div>
                     <div class="text-yellow-500 text-xs mb-3">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -368,14 +368,14 @@
                 </div>
 
                 <!-- Review 2 Copy -->
-                <div class="w-[350px] bg-white text-slate-900 p-6 rounded-2xl shadow-lg border border-slate-200 flex flex-col flex-shrink-0">
+                <div class="review-card bg-white text-slate-900 p-6 rounded-2xl shadow-lg border border-slate-200 flex flex-col">
                     <div class="flex items-center gap-3 mb-3">
                         <img src="https://ui-avatars.com/api/?name=Sarah+Jenkins&background=f59e0b&color=fff" class="w-10 h-10 rounded-full" alt="User">
                         <div>
                             <h4 class="font-bold text-sm">Sarah Jenkins</h4>
                             <div class="text-xs text-slate-500">Tourist • 5 reviews</div>
                         </div>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="w-5 h-5 ml-auto opacity-50" alt="G">
+                        <i class="fa-brands fa-google text-slate-300 text-lg ml-auto"></i>
                     </div>
                     <div class="text-yellow-500 text-xs mb-3">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -385,14 +385,14 @@
                 </div>
 
                 <!-- Review 3 Copy -->
-                <div class="w-[350px] bg-white text-slate-900 p-6 rounded-2xl shadow-lg border border-slate-200 flex flex-col flex-shrink-0">
+                <div class="review-card bg-white text-slate-900 p-6 rounded-2xl shadow-lg border border-slate-200 flex flex-col">
                     <div class="flex items-center gap-3 mb-3">
                         <img src="https://ui-avatars.com/api/?name=Amit+Patel&background=10b981&color=fff" class="w-10 h-10 rounded-full" alt="User">
                         <div>
                             <h4 class="font-bold text-sm">Amit Patel</h4>
                             <div class="text-xs text-slate-500">Local Guide • 45 reviews</div>
                         </div>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="w-5 h-5 ml-auto opacity-50" alt="G">
+                        <i class="fa-brands fa-google text-slate-300 text-lg ml-auto"></i>
                     </div>
                     <div class="text-yellow-500 text-xs mb-3">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -402,14 +402,14 @@
                 </div>
 
                 <!-- Review 4 Copy -->
-                <div class="w-[350px] bg-white text-slate-900 p-6 rounded-2xl shadow-lg border border-slate-200 flex flex-col flex-shrink-0">
+                <div class="review-card bg-white text-slate-900 p-6 rounded-2xl shadow-lg border border-slate-200 flex flex-col">
                     <div class="flex items-center gap-3 mb-3">
                         <img src="https://ui-avatars.com/api/?name=Priya+D&background=ec4899&color=fff" class="w-10 h-10 rounded-full" alt="User">
                         <div>
                             <h4 class="font-bold text-sm">Priya D.</h4>
                             <div class="text-xs text-slate-500">Tourist • 2 reviews</div>
                         </div>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="w-5 h-5 ml-auto opacity-50" alt="G">
+                        <i class="fa-brands fa-google text-slate-300 text-lg ml-auto"></i>
                     </div>
                     <div class="text-yellow-500 text-xs mb-3">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -421,7 +421,6 @@
             </div>
         </div>
     </section>
-
     <!-- FAQ Section -->
     <section class="py-20">
         <div class="container mx-auto px-4 max-w-3xl">
