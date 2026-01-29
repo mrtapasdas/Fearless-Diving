@@ -1,57 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- 1. Security & UX Restrictions ---
-    
-    // Disable Right Click
-    document.addEventListener('contextmenu', event => event.preventDefault());
-
-    // Disable Key Combinations for Zoom (Ctrl+, Ctrl-, Ctrl+0) and Developer Tools
-    document.addEventListener('keydown', (e) => {
-        if (
-            (e.ctrlKey && (e.key === '+' || e.key === '-' || e.key === '0' || e.key === '=')) || // Zoom
-            (e.ctrlKey && e.shiftKey && e.key === 'I') || // DevTools
-            (e.ctrlKey && e.shiftKey && e.key === 'J') || // DevTools
-            (e.ctrlKey && e.key === 'U') // View Source
-        ) {
-            e.preventDefault();
-        }
-    });
-
-    // Disable Wheel Zoom (Ctrl + Scroll)
-    document.addEventListener('wheel', (e) => {
-        if (e.ctrlKey) {
-            e.preventDefault();
-        }
-    }, { passive: false });
-
-    // --- 2. Mobile Menu Toggle ---
+    // --- 1. Mobile Menu Toggle ---
     const btn = document.getElementById('menu-btn');
     const nav = document.getElementById('menu');
 
     if(btn && nav) {
         btn.addEventListener('click', () => {
-            btn.classList.toggle('open');
-            nav.classList.toggle('flex');
             nav.classList.toggle('hidden');
+            nav.classList.toggle('flex');
         });
     }
 
-    // --- 3. Testimonial Animation Logic ---
-    const scrollers = document.querySelectorAll(".scroller");
-    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        scrollers.forEach((scroller) => {
-            scroller.setAttribute("data-animated", "true");
-            const scrollerInner = scroller.querySelector(".scroller__inner");
-            const scrollerContent = Array.from(scrollerInner.children);
-            scrollerContent.forEach((item) => {
-                const duplicatedItem = item.cloneNode(true);
-                duplicatedItem.setAttribute("aria-hidden", "true");
-                scrollerInner.appendChild(duplicatedItem);
-            });
-        });
-    }
+    // --- 2. Security Scripts (Disable Right Click, Select, Zoom) ---
+    document.addEventListener('contextmenu', event => event.preventDefault());
 
-    // --- 4. FAQ Accordion ---
+    document.addEventListener('keydown', function (e) {
+        // Prevent Ctrl+C, Ctrl+U, F12
+        if (e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 'c' || e.key === 'C')) {
+            e.preventDefault();
+        }
+        // Prevent Zoom (Ctrl + / -)
+        if (e.ctrlKey && (e.key === '+' || e.key === '-' || e.key === '=')) {
+            e.preventDefault();
+        }
+    });
+
+    // Prevent Wheel Zoom
+    document.addEventListener('wheel', function(e) {
+        if(e.ctrlKey) {
+            e.preventDefault();
+        }
+    }, { passive: false });
+
+    // --- 3. Accordion Logic (FAQ) ---
     const accordions = document.querySelectorAll('.accordion-header');
     accordions.forEach(acc => {
         acc.addEventListener('click', function() {
@@ -67,10 +48,37 @@ document.addEventListener('DOMContentLoaded', () => {
                 panel.style.maxHeight = panel.scrollHeight + "px";
                 icon.classList.remove('fa-plus');
                 icon.classList.add('fa-minus');
-            } 
+            }
         });
     });
 
-    // Update Year
-    document.getElementById('year').textContent = new Date().getFullYear();
+    // --- 4. Testimonial Auto Slider ---
+    const sliderContainer = document.getElementById('testimonial-track');
+    if(sliderContainer) {
+        let scrollAmount = 0;
+        const speed = 1; // Speed of scroll
+        
+        function autoScroll() {
+            scrollAmount += speed;
+            if (scrollAmount >= sliderContainer.scrollWidth - sliderContainer.clientWidth) {
+                scrollAmount = 0;
+            }
+            sliderContainer.scrollTo(scrollAmount, 0);
+            requestAnimationFrame(autoScroll);
+        }
+        // Ideally needs duplicate content for infinite loop, simple scroll here
+        // autoScroll(); 
+        // Note: For pure CSS infinite scroll, we use CSS animations on the index page usually. 
+        // Simple manual scroll provided in CSS for this requirement.
+    }
+
+    // --- 5. Contact Form Handler (No AJAX) ---
+    const contactForm = document.getElementById('contactForm');
+    if(contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            // Allow default mailto action or just show success
+            // e.preventDefault(); 
+            // alert('Thank you! Redirecting to your email client.');
+        });
+    }
 });
