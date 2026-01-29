@@ -1,52 +1,81 @@
+/* style.css */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #0f172a; /* Slate 900 */
-    color: #e2e8f0;
+    color: #e2e8f0; /* Slate 200 */
     overflow-x: hidden;
-}
-
-/* --- Security & UI Locking --- */
-.no-select {
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
 }
 
-/* Hide scrollbar for review container but allow functionality */
-.scrollbar-hide::-webkit-scrollbar {
-    display: none;
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
 }
-.scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+    background: #0ea5e9;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #0284c7;
 }
 
-/* --- Hero Animation --- */
+/* Hero Floating Animation */
+.float-img {
+    animation: float 6s ease-in-out infinite;
+}
+.float-img:nth-child(2) {
+    animation-delay: 2s;
+}
+.float-img:nth-child(3) {
+    animation-delay: 4s;
+}
+
 @keyframes float {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-20px); }
     100% { transform: translateY(0px); }
 }
 
-.animate-float-1 { animation: float 4s ease-in-out infinite; }
-.animate-float-2 { animation: float 5s ease-in-out infinite; animation-delay: 1s; }
-.animate-float-3 { animation: float 6s ease-in-out infinite; animation-delay: 2s; }
+/* Reviews Marquee Slider */
+.marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
 
-/* --- Mobile Menu Transition --- */
-#mobile-menu {
-    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    max-height: 0;
-    opacity: 0;
+.marquee-content {
+    display: inline-flex;
+    animation: marquee 25s linear infinite;
+}
+
+.marquee-content:hover {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Map aspect ratio */
+.map-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
     overflow: hidden;
 }
-#mobile-menu.active {
-    max-height: 500px;
-    opacity: 1;
-}
-
-/* --- Map & Form --- */
-iframe {
-    filter: invert(90%) hue-rotate(180deg); /* Dark mode map */
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
