@@ -38,7 +38,8 @@
         </div>
     </header>
 
-    <div class="pt-28 pb-10 container mx-auto px-6 h-screen flex flex-col justify-center">
+    <!-- FIXED: Changed h-screen to min-h-screen so mobile content expands correctly -->
+    <div class="pt-28 pb-10 container mx-auto px-6 min-h-screen flex flex-col justify-center">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 h-full md:h-auto">
             
             <!-- Contact Form -->
@@ -82,7 +83,7 @@
     </div>
 
 <!-- Footer -->
-    <footer class="bg-deep pt-12 pb-6 border-t border-white/10">
+    <footer class="bg-deep pt-12 pb-6 border-t border-white/10 relative z-10">
         <div class="container mx-auto px-6">
             
             <!-- Main Footer Content -->
@@ -91,8 +92,8 @@
                     <a href="https://www.fearlessdiving.com" class="text-2xl font-bold text-cyan-300 uppercase tracking-widest">
                        The FearLess Diving India Centre
                     </a>
-                    <p class="mt-4 text-slate-400 text-sm"><b></b>Reg. No - 20921/LC/2025</b></p>
-                    <p class="mt-4 text-slate-400 text-sm"><b></b>GSTIN - 35AAPFT4191A1Z5</b></p>
+                    <p class="mt-4 text-slate-400 text-sm"><b>Reg. No - 20921/LC/2025</b></p>
+                    <p class="mt-4 text-slate-400 text-sm"><b>GSTIN - 35AAPFT4191A1Z5</b></p>
                     <div class="mt-6 flex space-x-4">
                         <a href="https://www.facebook.com/thefearlessdivingcentre/" class="text-white hover:text-cyan-400 transition"><i class="fa-brands fa-facebook fa-lg"></i></a>
                         <a href="https://www.instagram.com/divefearless_/" class="text-white hover:text-cyan-400 transition"><i class="fa-brands fa-instagram fa-lg"></i></a>
