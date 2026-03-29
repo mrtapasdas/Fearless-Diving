@@ -3,8 +3,8 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #0f172a; /* Slate 900 */
-    color: #e2e8f0; /* Slate 200 */
+    background-color: #ffffff; /* Slate 900 */
+    color: #1e293b; /* Slate 200 */
     overflow-x: hidden;
 }
 
@@ -42,7 +42,7 @@ html {
     width: 10px;
 }
 ::-webkit-scrollbar-track {
-    background: #0f172a;
+    background: #ffffff;
 }
 ::-webkit-scrollbar-thumb {
     background: #06b6d4;
@@ -51,18 +51,6 @@ html {
 ::-webkit-scrollbar-thumb:hover {
     background: #0891b2;
 }
-
-/* --- Existing styles remain the same --- */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #0f172a;
-    color: #e2e8f0;
-    overflow-x: hidden;
-}
-
-/* ... (Keep existing scrollbar, security classes, and float animations) ... */
 
 /* --- NEW: Infinite Testimonial Scroll --- */
 @keyframes scroll {
