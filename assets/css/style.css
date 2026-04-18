@@ -3,7 +3,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #ffffff; /* Slate 900 */
+    background-color: #0f172a; /* Slate 900 */
     color: #1e293b; /* Slate 200 */
     overflow-x: hidden;
 }
@@ -42,7 +42,7 @@ html {
     width: 10px;
 }
 ::-webkit-scrollbar-track {
-    background: #ffffff;
+    background: #0f172a;
 }
 ::-webkit-scrollbar-thumb {
     background: #06b6d4;
